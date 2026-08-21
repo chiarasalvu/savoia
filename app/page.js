@@ -1,4 +1,6 @@
 import Image from "next/image";
+import RevealSection from "@/components/RevealSection";
+import ContactInfoBar from "@/components/ContactInfoBar";
 
 export default function Home() {
   return (
@@ -64,6 +66,8 @@ export default function Home() {
           </a>
         </div>
       </main>
+      <RevealSection><h2 className="text-2xl font-bold py-8">Reveal test</h2></RevealSection>
+      <ContactInfoBar />
     </div>
   );
 }
