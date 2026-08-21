@@ -1,73 +1,77 @@
-import Image from "next/image";
-import RevealSection from "@/components/RevealSection";
-import ContactInfoBar from "@/components/ContactInfoBar";
+import Carousel from '@/components/Carousel';
+import HotelCard from '@/components/HotelCard';
+import ContactInfoBar from '@/components/ContactInfoBar';
+import RevealSection from '@/components/RevealSection';
 
-export default function Home() {
+const SLIDES = [
+  { src: '/img/home/entrada-hamlet.jpeg', alt: 'Entrada Hotel Savoia' },
+  { src: '/img/home/portada.jpg', alt: 'Hoteles Savoia' },
+  { src: '/img/home/portada-mendoza.jpg', alt: 'Hotel Savoia Mendoza' },
+];
+
+const HOTELS = [
+  {
+    title: 'Hotel Savoia Ostende',
+    titleHref: 'https://www.hotelessavoia.com/ostende/index.html',
+    addressHref: 'https://maps.app.goo.gl/YmDr8pttmDuPLWZp7',
+    addressText: 'Biarritz 184 e/ Defensa y Progreso - Ostende, Pinamar',
+    phoneHref: 'tel:02254496600',
+    phoneText: 'Tel: (02254) 49-6600',
+  },
+  {
+    title: 'Puerto Hamlet',
+    titleHref: 'https://www.puertohamlet.com/index.html',
+    addressHref: 'https://maps.app.goo.gl/XCG5uryNonStL4ms6',
+    addressText: 'Cerezo 104 - Cariló',
+    phoneHref: 'tel:02254571623',
+    phoneText: 'Tel: (02254) 57-1623',
+  },
+  {
+    title: 'Hotel Savoia Mendoza',
+    titleHref: '/mendoza',
+    addressHref: 'https://maps.app.goo.gl/5tZqW9x7ouJCyS276',
+    addressText: 'Avellaneda 3653, Bermejo - Mendoza',
+    phoneHref: 'tel:1157379702',
+    phoneText: 'Tel: (+54) 11 5737-9702',
+  },
+  {
+    title: 'Hotel Savoia San Bernardo',
+    titleHref: '/san-bernardo',
+    addressHref: 'https://maps.app.goo.gl/tT5bGSmaVbJpzRU6A',
+    addressText: 'Strobel 2099 - San Bernardo',
+    phoneHref: 'tel:02257460211',
+    phoneText: 'Tel: (02257) 460-211 / 250',
+  },
+  {
+    title: 'Hotel Savoia Córdoba',
+    titleHref: '#',
+    addressHref: 'https://maps.app.goo.gl/REYafKwb5dTTgCmHA',
+    addressText: 'La falda - Córdoba',
+    phoneHref: 'tel:03548421292',
+    phoneText: 'Tel: (03548) 42-1292',
+  },
+  {
+    title: 'Molise viajes - central de reservas',
+    titleHref: '#',
+    addressHref: 'https://maps.app.goo.gl/6gZ1Gr2gGvhAJ3CR7',
+    addressText: 'F.D. Roosevelt 2445 1D / CABA',
+    phoneHref: 'tel:1147886969',
+    phoneText: 'Tel: (011) 4788-6969',
+  },
+];
+
+export const metadata = { title: 'Hoteles Savoia | Bienvenidos' };
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.js
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-      <RevealSection><h2 className="text-2xl font-bold py-8">Reveal test</h2></RevealSection>
+    <main>
+      <Carousel slides={SLIDES} />
+      <RevealSection className="mx-auto grid max-w-[1100px] grid-cols-1 gap-6 px-5 py-10 md:grid-cols-2 lg:grid-cols-3">
+        {HOTELS.map((hotel) => (
+          <HotelCard key={hotel.title} {...hotel} />
+        ))}
+      </RevealSection>
       <ContactInfoBar />
-    </div>
+    </main>
   );
 }
