@@ -10,7 +10,7 @@ const CARDS = [
     alt: 'Hotel Savoia Ostende',
     headline: 'HOTEL SAVOIA OSTENDE',
     infoLines: ['Biarritz 184 e/ Defensa y Progreso', 'Tel: (02254) 49-6600', 'Ver más'],
-    href: 'https://www.hotelessavoia.com/ostende/index.html',
+    href: '/ostende',
   },
   {
     src: '/img/hoteles/puerto-hamlet.jpeg',

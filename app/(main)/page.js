@@ -12,7 +12,7 @@ const SLIDES = [
 const HOTELS = [
   {
     title: 'Hotel Savoia Ostende',
-    titleHref: 'https://www.hotelessavoia.com/ostende/index.html',
+    titleHref: '/ostende',
     addressHref: 'https://maps.app.goo.gl/YmDr8pttmDuPLWZp7',
     addressText: 'Biarritz 184 e/ Defensa y Progreso - Ostende, Pinamar',
     phoneHref: 'tel:02254496600',
