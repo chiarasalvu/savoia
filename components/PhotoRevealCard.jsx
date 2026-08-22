@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 function CardInner({ src, alt, headline, infoLines }) {
   const hasOverlay = Boolean(headline) || (infoLines && infoLines.length > 0);
@@ -23,9 +24,9 @@ export default function PhotoRevealCard({ src, alt, headline, infoLines, href })
   const inner = <CardInner src={src} alt={alt} headline={headline} infoLines={infoLines} />;
   if (href) {
     return (
-      <a href={href} className="m-4 block">
+      <Link href={href} className="m-4 block">
         {inner}
-      </a>
+      </Link>
     );
   }
   return <div className="m-4">{inner}</div>;
