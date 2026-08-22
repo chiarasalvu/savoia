@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-export default function GuestCounter() {
+export default function GuestCounter({ adultsName = 'adults', childrenName = 'children' }) {
   const [open, setOpen] = useState(false);
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
@@ -28,8 +28,8 @@ export default function GuestCounter() {
         </div>
       )}
 
-      <input type="hidden" name="adults" value={adults} />
-      <input type="hidden" name="children" value={children} />
+      <input type="hidden" name={adultsName} value={adults} />
+      <input type="hidden" name={childrenName} value={children} />
     </div>
   );
 }
