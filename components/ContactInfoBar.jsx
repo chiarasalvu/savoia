@@ -16,14 +16,16 @@ export default function ContactInfoBar({
 
   return (
     <section className="bg-savoia-dark text-white">
-      <div className="mx-auto flex max-w-[1100px] flex-col justify-center gap-8 px-5 py-10 md:flex-row">
+      <div className="mx-auto flex max-w-[1100px] flex-col justify-center gap-10 px-6 py-16 md:flex-row md:px-8">
         {items.map(({ Icon, title, href, text }) => (
           <div key={title} className="flex-1 text-center">
             <a href={href} className="text-white">
-              <Icon size={40} className="mx-auto mb-2" />
-              <h3 className="text-lg font-medium">{title}</h3>
+              <span className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-savoia-accent/15 text-savoia-accent">
+                <Icon size={28} />
+              </span>
+              <h3 className="text-xs font-medium uppercase tracking-[0.15em] text-savoia-stone/70">{title}</h3>
             </a>
-            <a href={href} className="text-white">
+            <a href={href} className="mt-2 block text-white">
               {text}
             </a>
           </div>
