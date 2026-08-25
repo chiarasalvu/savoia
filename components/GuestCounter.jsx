@@ -9,20 +9,20 @@ export default function GuestCounter({ adultsName = 'adults', childrenName = 'ch
 
   return (
     <div className="relative mx-auto mb-5 w-full max-w-[400px]">
-      <label htmlFor="guest-field" className="mb-1 block text-left">
+      <label htmlFor="guest-field" className="mb-1 block text-left text-xs font-medium uppercase tracking-[0.15em] text-savoia-taupe">
         Cantidad de huéspedes
       </label>
       <button
         type="button"
         id="guest-field"
         onClick={() => setOpen((o) => !o)}
-        className="flex w-4/5 items-center border border-[#ccc] bg-white p-2 text-left"
+        className="flex w-4/5 items-center border-b border-savoia-taupe/40 bg-transparent p-2 text-left transition-colors hover:border-savoia-charcoal"
       >
         {adults} Adulto{adults !== 1 ? 's' : ''}, {children} Menor{children !== 1 ? 'es' : ''}
       </button>
 
       {open && (
-        <div className="absolute left-0 top-full z-10 rounded border border-[#ccc] bg-white p-3 shadow-md">
+        <div className="absolute left-0 top-full z-10 rounded border border-savoia-taupe/40 bg-savoia-sand p-3 shadow-md">
           <Stepper label="Adultos" value={adults} min={1} onChange={setAdults} />
           <Stepper label="Menores (menor de 12 años)" value={children} min={0} onChange={setChildren} />
         </div>
@@ -41,12 +41,16 @@ function Stepper({ label, value, min, onChange }) {
       <button
         type="button"
         onClick={() => onChange(Math.max(min, value - 1))}
-        className="h-8 w-8 rounded-full bg-gray-500 text-white"
+        className="h-8 w-8 rounded-full bg-savoia-charcoal text-savoia-sand transition-colors hover:bg-savoia-accent hover:text-savoia-charcoal"
       >
         -
       </button>
-      <input readOnly value={value} className="w-12 border border-[#ccc] text-center" />
-      <button type="button" onClick={() => onChange(value + 1)} className="h-8 w-8 rounded-full bg-gray-500 text-white">
+      <input readOnly value={value} className="w-12 border border-savoia-taupe/40 bg-transparent text-center" />
+      <button
+        type="button"
+        onClick={() => onChange(value + 1)}
+        className="h-8 w-8 rounded-full bg-savoia-charcoal text-savoia-sand transition-colors hover:bg-savoia-accent hover:text-savoia-charcoal"
+      >
         +
       </button>
     </div>
