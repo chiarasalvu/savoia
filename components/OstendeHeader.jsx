@@ -20,7 +20,7 @@ export default function OstendeHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="bg-white">
+    <header className="bg-savoia-sand">
       <nav className="mx-auto flex max-w-[1100px] items-center justify-between px-5">
         <Link href="/ostende">
           <Image src="/img/ostende/logonuevo-savoia.jpg" alt="Hotel Savoia Ostende" width={140} height={80} />
@@ -40,11 +40,16 @@ export default function OstendeHeader() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`block px-8 py-8 text-center transition-colors hover:bg-[#ece9e3] ${
-                  pathname === link.href ? 'bg-[#ece9e3]' : ''
+                className={`group relative block px-8 py-8 text-center text-sm tracking-wide transition-colors ${
+                  pathname === link.href ? 'text-savoia-charcoal' : 'text-savoia-charcoal/70 hover:text-savoia-charcoal'
                 }`}
               >
                 {link.label}
+                <span
+                  className={`absolute bottom-6 left-1/2 h-0.5 w-6 -translate-x-1/2 bg-savoia-accent transition-transform duration-300 ${
+                    pathname === link.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  }`}
+                />
               </Link>
             </li>
           ))}
@@ -58,7 +63,7 @@ export default function OstendeHeader() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed bottom-0 right-0 top-0 z-50 w-64 bg-white p-6 shadow-lg"
+            className="fixed bottom-0 right-0 top-0 z-50 w-64 bg-savoia-sand p-6 shadow-lg"
           >
             <button
               type="button"
