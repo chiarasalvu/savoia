@@ -48,7 +48,7 @@ const CARDS = [
 export default function HotelesPage() {
   return (
     <main>
-      <RevealSection className="flex flex-wrap justify-center bg-savoia-light py-10">
+      <RevealSection className="flex flex-wrap justify-center bg-savoia-stone py-16 md:py-24">
         {CARDS.map((card) => (
           <PhotoRevealCard key={card.src} {...card} />
         ))}
