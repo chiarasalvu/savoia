@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className="font-sans text-[#333]">
+      <body className="font-sans text-savoia-charcoal">
         {children}
         <WhatsAppFloat />
         <Footer />
