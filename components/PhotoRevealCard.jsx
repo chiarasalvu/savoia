@@ -19,7 +19,7 @@ function CardInner({ src, alt, headline, infoLines }) {
         className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
       />
       {hasOverlay && (
-        <div className="absolute inset-x-0 bottom-0 max-h-16 overflow-hidden bg-gradient-to-t from-black/90 via-black/50 to-transparent px-4 pb-3 pt-8 transition-[max-height] duration-300 ease-out group-hover:max-h-40">
+        <div className="absolute inset-x-0 bottom-0 max-h-16 overflow-hidden bg-gradient-to-t from-savoia-charcoal/95 via-savoia-charcoal/60 to-transparent px-4 pb-3 pt-8 transition-[max-height] duration-300 ease-out group-hover:max-h-40">
           <p className="text-sm font-medium uppercase tracking-[0.15em] text-white">{primaryLabel}</p>
           <span className="mt-1 block h-0.5 w-0 bg-savoia-accent transition-all duration-300 group-hover:w-10" />
           {secondaryLines && secondaryLines.length > 0 && (
