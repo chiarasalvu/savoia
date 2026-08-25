@@ -21,7 +21,7 @@ export default function OstendeHeader() {
 
   return (
     <header className="bg-savoia-sand">
-      <nav className="mx-auto flex max-w-[1100px] items-center justify-between px-5">
+      <nav className="mx-auto flex max-w-[1100px] items-center justify-between px-6 md:px-8">
         <Link href="/ostende">
           <Image src="/img/ostende/logonuevo-savoia.jpg" alt="Hotel Savoia Ostende" width={140} height={80} />
         </Link>

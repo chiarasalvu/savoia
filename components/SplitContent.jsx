@@ -10,7 +10,7 @@ export default function SplitContent({ imageSrc, imageAlt, imageSide = 'left', t
     <div className="flex flex-col justify-center gap-3 px-6 py-12 md:flex-1 md:px-10 md:py-16">
       <h2 className="text-2xl font-medium">{title}</h2>
       <span className="block h-0.5 w-10 bg-savoia-accent" />
-      {subtitle && <h3 className="text-lg text-savoia-taupe">{subtitle}</h3>}
+      {subtitle && <h3 className="text-lg text-savoia-taupe-text">{subtitle}</h3>}
       {paragraphs.map((p) => (
         <p key={p.slice(0, 20)}>{p}</p>
       ))}

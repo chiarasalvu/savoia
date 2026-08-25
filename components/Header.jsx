@@ -20,7 +20,7 @@ export default function Header() {
 
   return (
     <header className="bg-savoia-sand">
-      <nav className="mx-auto flex max-w-[1100px] items-center justify-between px-5">
+      <nav className="mx-auto flex max-w-[1100px] items-center justify-between px-6 md:px-8">
         <Link href="/">
           <Image src="/img/logo-savoia.jpg" alt="Hoteles Savoia" width={130} height={80} />
         </Link>

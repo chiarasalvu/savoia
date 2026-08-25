@@ -11,7 +11,7 @@ export default function AmenityDetail({ images, title, detailLines }) {
         <span className="mb-6 mt-2 block h-0.5 w-10 bg-savoia-accent" />
         {detailLines.map(({ label, text }) => (
           <div key={label} className="mb-4">
-            <p className="text-xs font-medium uppercase tracking-[0.15em] text-savoia-taupe">{label}</p>
+            <p className="text-xs font-medium uppercase tracking-[0.15em] text-savoia-taupe-text">{label}</p>
             <p className="mt-1">{text}</p>
           </div>
         ))}

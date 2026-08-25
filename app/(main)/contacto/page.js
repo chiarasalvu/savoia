@@ -12,7 +12,7 @@ export default function ContactoPage() {
         <div className="mx-auto max-w-[1100px] px-6 md:px-8">
           <h1 className="text-4xl font-medium tracking-tight md:text-5xl">CONTACTO</h1>
           <span className="mx-auto mt-4 block h-0.5 w-10 bg-savoia-accent" />
-          <h3 className="mt-4 text-lg text-savoia-taupe">¡Contactanos y viví una experiencia inolvidable!</h3>
+          <h3 className="mt-4 text-lg text-savoia-taupe-text">¡Contactanos y viví una experiencia inolvidable!</h3>
 
           <form
             className="mx-auto mt-10 max-w-[600px] text-left"

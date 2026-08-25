@@ -8,15 +8,15 @@ export default function GuestCounter({ adultsName = 'adults', childrenName = 'ch
   const [children, setChildren] = useState(0);
 
   return (
-    <div className="relative mx-auto mb-5 w-full max-w-[400px]">
-      <label htmlFor="guest-field" className="mb-1 block text-left text-xs font-medium uppercase tracking-[0.15em] text-savoia-taupe">
+    <div className="relative w-full">
+      <label htmlFor="guest-field" className="mb-1 block text-left text-xs font-medium uppercase tracking-[0.15em] text-savoia-taupe-text">
         Cantidad de huéspedes
       </label>
       <button
         type="button"
         id="guest-field"
         onClick={() => setOpen((o) => !o)}
-        className="flex w-4/5 items-center border-b border-savoia-taupe/40 bg-transparent p-2 text-left transition-colors hover:border-savoia-charcoal"
+        className="flex w-full items-center border-b border-savoia-taupe/40 bg-transparent p-2 text-left transition-colors hover:border-savoia-charcoal"
       >
         {adults} Adulto{adults !== 1 ? 's' : ''}, {children} Menor{children !== 1 ? 'es' : ''}
       </button>
