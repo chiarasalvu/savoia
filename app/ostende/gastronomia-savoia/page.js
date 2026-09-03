@@ -8,6 +8,7 @@ const DESAYUNO_IMAGES = [
   { src: '/img/ostende/desayuno/desayuno-1.jpg', alt: 'Masitas Desayuno Savoia' },
   { src: '/img/ostende/desayuno/desayuno-2.jpg', alt: 'Masitas Desayuno Savoia' },
   { src: '/img/ostende/desayuno/desayuno-3.jpg', alt: 'Desayuno Savoia' },
+  { src: '/img/ostende/desayuno/desayuno-4.jpg', alt: 'Huevos revueltos Desayuno Savoia' },
 ];
 
 const DESAYUNO_DETAILS = [
