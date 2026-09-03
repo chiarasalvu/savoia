@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import { Sun, TreePine, Mountain, Users, CalendarCheck, UtensilsCrossed, Trophy, Gamepad2 } from 'lucide-react';
-import PhotoRevealCard from '@/components/PhotoRevealCard';
+import { Sun, TreePine, Mountain, Users, CalendarCheck, UtensilsCrossed, Trophy, Gamepad2, BedDouble, Bath } from 'lucide-react';
 import ServiceRow from '@/components/ServiceRow';
 import MendozaContactForm from '@/components/MendozaContactForm';
 import ContactInfoBar from '@/components/ContactInfoBar';
@@ -8,12 +7,18 @@ import RevealSection from '@/components/RevealSection';
 
 export const metadata = { title: 'Hoteles Savoia | Mendoza' };
 
-const HABITACIONES = [
-  { src: '/img/mendoza/habitacion1-mendoza.jpg', alt: 'Habitación Hotel Savoia Mendoza' },
-  { src: '/img/mendoza/habitacion2-mendoza.jpg', alt: 'Habitación Hotel Savoia Mendoza' },
-];
-
 const SERVICIOS = [
+  {
+    src: '/img/mendoza/habitacion1-mendoza.jpg',
+    alt: 'Habitación Hotel Savoia Mendoza',
+    badge: 'Descanso',
+    title: 'HABITACIONES',
+    description: 'Habitaciones cómodas y equipadas para que disfrutes de un descanso placentero durante tu estadía.',
+    features: [
+      { icon: BedDouble, text: 'Camas dobles y triples' },
+      { icon: Bath, text: 'Baño privado' },
+    ],
+  },
   {
     src: '/img/mendoza/pileta-mendoza.jpg',
     alt: 'Pileta climatizada',
@@ -98,14 +103,7 @@ export default function MendozaPage() {
         </p>
       </RevealSection>
 
-      <h2 className="mb-6 text-center text-3xl font-medium md:text-4xl">HABITACIONES</h2>
-      <RevealSection className="flex flex-wrap justify-center pb-16 md:pb-24">
-        {HABITACIONES.map((room) => (
-          <PhotoRevealCard key={room.src} {...room} />
-        ))}
-      </RevealSection>
-
-      <div className="mx-auto flex max-w-[1100px] flex-col gap-16 px-6 pb-10 md:gap-24 md:px-8 md:pb-16">
+      <div className="mx-auto flex max-w-[1100px] flex-col gap-16 px-6 pb-10 pt-10 md:gap-24 md:px-8 md:pb-16 md:pt-16">
         {SERVICIOS.map((servicio, index) => (
           <RevealSection key={servicio.title}>
             <ServiceRow {...servicio} href="#contacto" ctaLabel="Reservar ahora" imageSide={index % 2 === 0 ? 'left' : 'right'} />
