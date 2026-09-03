@@ -1,5 +1,4 @@
 import './globals.css';
-import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 export const metadata = {
@@ -13,7 +12,6 @@ export default function RootLayout({ children }) {
       <body className="font-sans text-savoia-charcoal">
         {children}
         <WhatsAppFloat />
-        <Footer />
       </body>
     </html>
   );

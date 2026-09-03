@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { User, Users } from 'lucide-react';
 
 export default function GuestCounter({ adultsName = 'adults', childrenName = 'children' }) {
   const [open, setOpen] = useState(false);
@@ -9,22 +10,28 @@ export default function GuestCounter({ adultsName = 'adults', childrenName = 'ch
 
   return (
     <div className="relative w-full">
-      <label htmlFor="guest-field" className="mb-1 block text-left text-xs font-medium uppercase tracking-[0.15em] text-savoia-taupe-text">
+      <label htmlFor="guest-field" className="mb-2 block text-left text-sm text-savoia-charcoal">
         Cantidad de huéspedes
       </label>
       <button
         type="button"
         id="guest-field"
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center border-b border-savoia-taupe/40 bg-transparent p-2 text-left transition-colors hover:border-savoia-charcoal"
+        className={`flex w-full items-center gap-3 rounded-2xl border bg-white px-5 py-4 text-left text-savoia-charcoal transition-colors ${
+          open ? 'border-savoia-charcoal' : 'border-savoia-taupe/30 hover:border-savoia-charcoal'
+        }`}
       >
-        {adults} Adulto{adults !== 1 ? 's' : ''}, {children} Menor{children !== 1 ? 'es' : ''}
+        <Users size={20} className="shrink-0 text-savoia-charcoal" />
+        <span>
+          {adults} Adulto{adults !== 1 ? 's' : ''}, {children} Menor{children !== 1 ? 'es' : ''}
+        </span>
       </button>
 
       {open && (
-        <div className="absolute left-0 top-full z-10 rounded border border-savoia-taupe/40 bg-savoia-sand p-3 shadow-md">
-          <Stepper label="Adultos" value={adults} min={1} onChange={setAdults} />
-          <Stepper label="Menores (menor de 12 años)" value={children} min={0} onChange={setChildren} />
+        <div className="absolute left-0 top-full z-10 mt-2 w-full rounded-2xl border border-savoia-taupe/30 bg-white p-2 shadow-md">
+          <Stepper icon={User} label="Adultos" value={adults} min={1} onChange={setAdults} />
+          <div className="h-px bg-savoia-taupe/15" />
+          <Stepper icon={Users} label="Menores" sublabel="Menor de 12 años" value={children} min={0} onChange={setChildren} />
         </div>
       )}
 
@@ -34,25 +41,36 @@ export default function GuestCounter({ adultsName = 'adults', childrenName = 'ch
   );
 }
 
-function Stepper({ label, value, min, onChange }) {
+function Stepper({ icon: Icon, label, sublabel, value, min, onChange }) {
   return (
-    <div className="mb-2 flex items-center justify-center gap-2">
-      <label className="mr-2">{label}</label>
-      <button
-        type="button"
-        onClick={() => onChange(Math.max(min, value - 1))}
-        className="h-8 w-8 rounded-full bg-savoia-charcoal text-savoia-sand transition-colors hover:bg-savoia-accent hover:text-savoia-charcoal"
-      >
-        -
-      </button>
-      <input readOnly value={value} className="w-12 border border-savoia-taupe/40 bg-transparent text-center" />
-      <button
-        type="button"
-        onClick={() => onChange(value + 1)}
-        className="h-8 w-8 rounded-full bg-savoia-charcoal text-savoia-sand transition-colors hover:bg-savoia-accent hover:text-savoia-charcoal"
-      >
-        +
-      </button>
+    <div className="flex items-center justify-between gap-4 px-3 py-4">
+      <div className="flex items-center gap-3">
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-savoia-stone text-savoia-charcoal">
+          <Icon size={20} />
+        </span>
+        <div>
+          <p className="text-sm font-medium text-savoia-charcoal">{label}</p>
+          {sublabel && <p className="text-xs text-savoia-taupe-text">{sublabel}</p>}
+        </div>
+      </div>
+      <div className="flex items-center gap-3">
+        <button
+          type="button"
+          onClick={() => onChange(Math.max(min, value - 1))}
+          disabled={value <= min}
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-savoia-stone text-savoia-taupe-text transition-opacity disabled:opacity-40"
+        >
+          −
+        </button>
+        <span className="w-4 text-center text-savoia-charcoal">{value}</span>
+        <button
+          type="button"
+          onClick={() => onChange(value + 1)}
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-savoia-charcoal text-white transition-opacity hover:opacity-90"
+        >
+          +
+        </button>
+      </div>
     </div>
   );
 }

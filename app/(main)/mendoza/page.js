@@ -28,7 +28,7 @@ export default function MendozaPage() {
       </div>
 
       <RevealSection className="mx-auto max-w-[1100px] px-5 py-10 text-center">
-        <h2 className="text-3xl font-medium">HOTEL SAVOIA MENDOZA</h2>
+        <h2 className="text-3xl font-medium md:text-4xl">HOTEL SAVOIA MENDOZA</h2>
         <p className="mt-4">
           Ubicado en el corazón del vino, rodeado de naturaleza.
           <br />
@@ -39,21 +39,21 @@ export default function MendozaPage() {
         </Link>
       </RevealSection>
 
-      <h2 className="text-center text-3xl font-medium">HABITACIONES</h2>
+      <h2 className="text-center text-3xl font-medium md:text-4xl">HABITACIONES</h2>
       <RevealSection className="flex flex-wrap justify-center py-6">
         {HABITACIONES.map((room) => (
           <PhotoRevealCard key={room.src} {...room} />
         ))}
       </RevealSection>
 
-      <h2 className="text-center text-3xl font-medium">SERVICIOS</h2>
+      <h2 className="text-center text-3xl font-medium md:text-4xl">SERVICIOS</h2>
       <RevealSection className="flex flex-wrap justify-center py-6">
         {SERVICIOS.map((servicio) => (
           <PhotoRevealCard key={servicio.src} {...servicio} />
         ))}
       </RevealSection>
 
-      <h2 className="text-center text-3xl font-medium">UBICACIÓN</h2>
+      <h2 className="text-center text-3xl font-medium md:text-4xl">UBICACIÓN</h2>
       <div className="flex justify-center py-6">
         <iframe
           title="Ubicación Hotel Savoia Mendoza"

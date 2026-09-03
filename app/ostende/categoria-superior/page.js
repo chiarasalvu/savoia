@@ -7,7 +7,6 @@ export const metadata = { title: 'Hoteles Savoia | Habitaciones' };
 const IMAGES = [
   { src: '/img/ostende/categoria-superior/foto1-superior.jpg', alt: 'Categoría Superior' },
   { src: '/img/ostende/categoria-superior/foto2-superior.jpg', alt: 'Categoría Superior' },
-  { src: '/img/ostende/categoria-superior/foto3-superior.jpg', alt: 'Categoría Superior' },
 ];
 
 const DETAILS = [
@@ -28,7 +27,7 @@ const DETAILS = [
 export default function CategoriaSuperiorPage() {
   return (
     <main>
-      <HeroBand imageSrc="/img/ostende/habitaciones/imagen-habitacion-opacidad.png" imageAlt="Categoría Superior" title="CATEGORÍA SUPERIOR" />
+      <HeroBand imageSrc="/img/ostende/categoria-superior/portada-superior.jpg" imageAlt="Categoría Superior" title="CATEGORÍA SUPERIOR" />
       <AmenityDetail images={IMAGES} title="DESCRIPCIÓN" detailLines={DETAILS} />
       <ContactInfoBar
         locationHref="https://maps.app.goo.gl/7KvrAK9TjD1MjuA89"

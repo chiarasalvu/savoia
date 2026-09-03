@@ -22,7 +22,7 @@ export default function OstendeGastronomiaPage() {
     <main>
       <section className="mt-8 py-8 text-center">
         <h3 className="text-lg">DELÉITESE CON NUESTRAS PROPUESTAS GASTRONÓMICAS, TODAS ELABORADAS EN EL HOTEL</h3>
-        <h1 className="mt-2 text-3xl font-medium">GASTRONOMÍA</h1>
+        <h1 className="mt-2 text-3xl font-medium md:text-4xl">GASTRONOMÍA</h1>
       </section>
 
       <div className="flex flex-wrap justify-center">
@@ -32,12 +32,18 @@ export default function OstendeGastronomiaPage() {
       </div>
 
       <div className="relative mx-auto my-6 h-[300px] w-full max-w-[1200px]">
-        <Image src="/img/ostende/home/collage-gastronomia.jpg" alt="Savoia" fill className="object-cover" />
+        <Image
+          src="/img/ostende/home/collage-gastronomia.jpg"
+          alt="Savoia"
+          fill
+          sizes="(min-width: 1200px) 1200px, 100vw"
+          className="object-cover"
+        />
       </div>
 
       <section className="py-8 text-center">
         <h3 className="text-lg">DISFRUTE DE LOS MEJORES COCKTAILS FRENTE AL MAR</h3>
-        <h1 className="mt-2 text-3xl font-medium">DRINKS</h1>
+        <h1 className="mt-2 text-3xl font-medium md:text-4xl">DRINKS</h1>
       </section>
 
       <div className="flex flex-wrap justify-center">
@@ -46,7 +52,13 @@ export default function OstendeGastronomiaPage() {
       </div>
 
       <div className="relative mx-auto my-6 h-[300px] w-full max-w-[1200px]">
-        <Image src="/img/ostende/home/collage-gastronomia.jpg" alt="Savoia" fill className="object-cover" />
+        <Image
+          src="/img/ostende/home/collage-gastronomia.jpg"
+          alt="Savoia"
+          fill
+          sizes="(min-width: 1200px) 1200px, 100vw"
+          className="object-cover"
+        />
       </div>
 
       <ContactInfoBar

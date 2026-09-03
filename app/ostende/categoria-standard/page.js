@@ -7,7 +7,6 @@ export const metadata = { title: 'Hoteles Savoia | Habitaciones' };
 const IMAGES = [
   { src: '/img/ostende/habitaciones2/piso2/foto1-standard.jpg', alt: 'Categoría Estandar' },
   { src: '/img/ostende/habitaciones2/piso2/foto2-standard.jpg', alt: 'Categoría Estandar' },
-  { src: '/img/ostende/habitaciones2/piso2/standard3.jpg', alt: 'Categoría Estandar' },
 ];
 
 const DETAILS = [
@@ -25,7 +24,7 @@ const DETAILS = [
 export default function CategoriaStandardPage() {
   return (
     <main>
-      <HeroBand imageSrc="/img/ostende/habitaciones/imagen-habitacion-opacidad.png" imageAlt="Categoría Estandar" title="CATEGORÍA ESTANDAR" />
+      <HeroBand imageSrc="/img/ostende/habitaciones2/piso2/portada-standard.jpg" imageAlt="Categoría Estandar" title="CATEGORÍA ESTANDAR" />
       <AmenityDetail images={IMAGES} title="DESCRIPCIÓN" detailLines={DETAILS} />
       <ContactInfoBar
         locationHref="https://maps.app.goo.gl/7KvrAK9TjD1MjuA89"

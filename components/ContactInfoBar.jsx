@@ -20,12 +20,10 @@ export default function ContactInfoBar({
         {items.map(({ Icon, title, href, text }) => (
           <div key={title} className="flex-1 text-center">
             <a href={href} className="text-white">
-              <span className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-savoia-accent/15 text-savoia-accent">
-                <Icon size={28} />
-              </span>
-              <h3 className="text-xs font-medium uppercase tracking-[0.15em] text-savoia-stone/70">{title}</h3>
+              <Icon size={40} className="mx-auto mb-2" />
+              <h3 className="pb-5 text-xl font-medium text-white">{title}</h3>
             </a>
-            <a href={href} className="mt-2 block text-white">
+            <a href={href} className="block text-white">
               {text}
             </a>
           </div>

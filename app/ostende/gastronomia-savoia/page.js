@@ -1,12 +1,18 @@
+import HeroBand from '@/components/HeroBand';
 import AmenityDetail from '@/components/AmenityDetail';
 import ContactInfoBar from '@/components/ContactInfoBar';
 
 export const metadata = { title: 'Hoteles Savoia | Gastronomía' };
 
 const DESAYUNO_IMAGES = [
-  { src: '/img/ostende/desayuno/desayuno1.jpg', alt: 'Desayuno Savoia' },
-  { src: '/img/ostende/desayuno/desayuno2.jpg', alt: 'Desayuno Savoia' },
-  { src: '/img/ostende/desayuno/desay515.jpg', alt: 'Desayuno Savoia' },
+  { src: '/img/ostende/desayuno/desayuno-1.jpg', alt: 'Masitas Desayuno Savoia' },
+  { src: '/img/ostende/desayuno/desayuno-2.jpg', alt: 'Masitas Desayuno Savoia' },
+  { src: '/img/ostende/desayuno/desayuno-3.jpg', alt: 'Masitas Desayuno Savoia' },
+  { src: '/img/ostende/desayuno/desayuno-4.jpg', alt: 'Masitas Desayuno Savoia' },
+  { src: '/img/ostende/desayuno/desayuno-5.jpg', alt: 'Desayuno Savoia' },
+  { src: '/img/ostende/desayuno/desayuno-6.jpg', alt: 'Desayuno Savoia' },
+  { src: '/img/ostende/desayuno/desayuno-7.jpg', alt: 'Desayuno Savoia' },
+  { src: '/img/ostende/desayuno/desayuno-8.jpg', alt: 'Desayuno Savoia' },
 ];
 
 const DESAYUNO_DETAILS = [
@@ -17,9 +23,15 @@ const DESAYUNO_DETAILS = [
 ];
 
 const CENA_IMAGES = [
-  { src: '/img/ostende/cena/cena1.jpg', alt: 'Cena Savoia' },
-  { src: '/img/ostende/gastronomia2/buffet/cena2.jpg', alt: 'Cena Savoia' },
-  { src: '/img/ostende/gastronomia2/buffet/cena3.jpg', alt: 'Cena Savoia' },
+  { src: '/img/ostende/cena/cena-1.jpg', alt: 'Paella Savoia' },
+  { src: '/img/ostende/cena/cena-2.jpg', alt: 'Cena Savoia' },
+  { src: '/img/ostende/cena/cena-3.jpg', alt: 'Cena Savoia' },
+  { src: '/img/ostende/cena/cena-4.jpg', alt: 'Cena Savoia' },
+  { src: '/img/ostende/cena/cena-5.jpg', alt: 'Cena Savoia' },
+  { src: '/img/ostende/cena/cena-6.jpg', alt: 'Cena Savoia' },
+  { src: '/img/ostende/cena/cena-7.jpg', alt: 'Cena Savoia' },
+  { src: '/img/ostende/cena/cena-8.jpg', alt: 'Postres Cena Savoia' },
+  { src: '/img/ostende/cena/cena-9.jpg', alt: 'Postres Cena Savoia' },
 ];
 
 const CENA_DETAILS = [
@@ -35,6 +47,7 @@ const CENA_DETAILS = [
 export default function GastronomiaSavoiaPage() {
   return (
     <main>
+      <HeroBand imageSrc="/img/ostende/servicios/gastronomia-hero.jpg" imageAlt="Salón Gastronomía Savoia" />
       <AmenityDetail images={DESAYUNO_IMAGES} title="DESAYUNO SAVOIA" detailLines={DESAYUNO_DETAILS} />
       <AmenityDetail images={CENA_IMAGES} title="CENA SAVOIA" detailLines={CENA_DETAILS} />
       <ContactInfoBar

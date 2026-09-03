@@ -28,7 +28,7 @@ const DETAILS = [
 export default function CategoriaEjecutivaPage() {
   return (
     <main>
-      <HeroBand imageSrc="/img/ostende/habitaciones/imagen-habitacion-opacidad.png" imageAlt="Categoría Ejecutiva" title="CATEGORÍA EJECUTIVA" />
+      <HeroBand imageSrc="/img/ostende/habitaciones2/piso4/portada-ejecutiva.jpg" imageAlt="Categoría Ejecutiva" title="CATEGORÍA EJECUTIVA" />
       <AmenityDetail images={IMAGES} title="DESCRIPCIÓN" detailLines={DETAILS} />
       <ContactInfoBar
         locationHref="https://maps.app.goo.gl/7KvrAK9TjD1MjuA89"

@@ -1,47 +1,54 @@
-export default function FormField({ label, name, type = 'text', required, className = '', as = 'input', children, ...rest }) {
-  const useStaticLabel = as === 'select' || type === 'date';
+export default function FormField({ label, name, type = 'text', required, className = '', as = 'input', icon: Icon, ...rest }) {
+  const Tag = as;
 
-  if (useStaticLabel) {
-    const Tag = as;
+  if (as === 'textarea') {
     return (
       <div className={className}>
-        <label htmlFor={name} className="mb-1 block text-xs font-medium uppercase tracking-[0.15em] text-savoia-taupe-text">
-          {label}
-        </label>
-        <Tag
-          id={name}
-          name={name}
-          {...(as === 'input' ? { type } : {})}
-          required={required}
-          className="w-full border-b border-savoia-taupe/40 bg-transparent px-1 pb-2 pt-1 text-savoia-charcoal outline-none transition-colors focus:border-savoia-charcoal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-savoia-accent"
-          {...rest}
-        >
-          {children}
-        </Tag>
+        <div className="flex items-start gap-3 rounded-2xl border border-savoia-taupe/30 bg-white px-5 py-4 transition-colors focus-within:border-savoia-charcoal">
+          {Icon && <Icon size={20} className="mt-0.5 shrink-0 text-savoia-charcoal" />}
+          <Tag
+            id={name}
+            name={name}
+            required={required}
+            placeholder={label}
+            className="w-full min-w-0 resize-y bg-transparent text-savoia-charcoal outline-none placeholder:text-savoia-taupe-text"
+            {...rest}
+          />
+        </div>
       </div>
     );
   }
 
-  const Tag = as;
-  return (
-    <div className={`relative ${className}`}>
+  // Date inputs can't show a custom placeholder, so they keep a visible label
+  // above the field — same treatment as GuestCounter and the Hotel dropdown.
+  const showTopLabel = type === 'date';
+
+  const field = (
+    <div className="flex items-center gap-3 rounded-2xl border border-savoia-taupe/30 bg-white px-5 py-4 transition-colors focus-within:border-savoia-charcoal">
+      {Icon && <Icon size={20} className="shrink-0 text-savoia-charcoal" />}
       <Tag
         id={name}
         name={name}
-        {...(as === 'input' ? { type } : {})}
+        type={type}
         required={required}
-        placeholder=" "
-        className="peer w-full border-b border-savoia-taupe/40 bg-transparent px-1 pb-2 pt-5 text-savoia-charcoal outline-none transition-colors focus:border-savoia-charcoal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-savoia-accent"
+        placeholder={showTopLabel ? undefined : label}
+        aria-label={label}
+        className="w-full min-w-0 bg-transparent text-savoia-charcoal outline-none placeholder:text-savoia-taupe-text"
         {...rest}
-      >
-        {children}
-      </Tag>
-      <label
-        htmlFor={name}
-        className="pointer-events-none absolute left-1 top-5 text-savoia-taupe-text transition-all duration-200 peer-focus:top-0 peer-focus:text-xs peer-focus:tracking-[0.1em] peer-[&:not(:placeholder-shown)]:top-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:tracking-[0.1em]"
-      >
-        {label}
-      </label>
+      />
     </div>
   );
+
+  if (showTopLabel) {
+    return (
+      <div className={className}>
+        <label htmlFor={name} className="mb-2 block text-left text-sm text-savoia-charcoal">
+          {label}
+        </label>
+        {field}
+      </div>
+    );
+  }
+
+  return <div className={className}>{field}</div>;
 }

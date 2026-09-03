@@ -1,19 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  /* Warm-neutral palette */
-  --color-savoia-sand: #F7F4EF;
-  --color-savoia-stone: #EDE7DC;
-  --color-savoia-charcoal: #2B2823;
-  --color-savoia-taupe: #948C7E;
-  --color-savoia-taupe-text: #6B6357;
+  /* Palette matched to the live site (sitio-viejo/css/style.css) — white +
+     light gray, cool dark blue-gray for dark sections, peach only as the
+     site's own .text-primary accent. */
+  --color-savoia-sand: #FFFFFF;
+  --color-savoia-stone: #F4F4F4;
+  --color-savoia-charcoal: #222222;
+  --color-savoia-taupe: #808080;
+  --color-savoia-taupe-text: #808080;
   --color-savoia-accent: #F7C08A;
+  --color-savoia-nav-hover: #ECE9E3;
 
   /* Legacy token names kept as aliases so the 19 pages not yet migrated in
      this phase automatically pick up the new palette with zero code changes. */
-  --color-savoia-dark: #2B2823;
-  --color-savoia-footer: #2B2823;
-  --color-savoia-light: #EDE7DC;
+  --color-savoia-dark: #373F47;
+  --color-savoia-footer: #333C46;
+  --color-savoia-light: #F4F4F4;
 
   --color-whatsapp-green: #25D366;
   --font-sans: "Gill Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
@@ -22,5 +25,35 @@
 
 body {
   margin: 0;
-  background: #F7F4EF;
+  background: #FFFFFF;
+}
+
+/* The Ostende sub-brand uses navy on the live site — not just body text, but
+   its dark sections too: ostende/css/style.css has .bg-dark at #00244D (the
+   contact-info band) and #main-footer at #001F41, both distinct from the
+   main site's cooler dark blue-gray. Overriding all three tokens here means
+   every shared component (ContactInfoBar, Footer, headings) picks up the
+   right color for free inside pages wrapped in .ostende-theme — while the
+   main site stays on its own black/gray, no mixing within either. */
+.ostende-theme {
+  --color-savoia-charcoal: #00244D;
+  --color-savoia-dark: #00244D;
+  --color-savoia-footer: #001F41;
+}
+
+/* Browser autofill (and the text-selection highlight it leaves behind while
+   the field still has focus) defaults to a jarring blue. Neutralize both so
+   autofilled fields match the rest of the form instead of flashing blue. */
+input::selection,
+textarea::selection {
+  background-color: var(--color-savoia-nav-hover);
+  color: var(--color-savoia-charcoal);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-savoia-charcoal);
+  -webkit-box-shadow: 0 0 0 1000px #FFFFFF inset;
+  transition: background-color 5000s ease-in-out 0s;
 }

@@ -1,3 +1,4 @@
+import HeroBand from '@/components/HeroBand';
 import AmenityDetail from '@/components/AmenityDetail';
 import ContactInfoBar from '@/components/ContactInfoBar';
 
@@ -18,6 +19,7 @@ const DETAILS = [
 export default function GymSaunaPage() {
   return (
     <main>
+      <HeroBand imageSrc="/img/ostende/servicios2/Gimnasio/gym-hero.jpg" imageAlt="Gimnasio y sauna" />
       <AmenityDetail images={IMAGES} title="GIMNASIO Y SAUNA" detailLines={DETAILS} />
       <ContactInfoBar
         locationHref="https://maps.app.goo.gl/7KvrAK9TjD1MjuA89"

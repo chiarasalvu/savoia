@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const NAV_LINKS = [
@@ -23,7 +22,14 @@ export default function OstendeHeader() {
     <header className="bg-savoia-sand">
       <nav className="mx-auto flex max-w-[1100px] items-center justify-between px-6 md:px-8">
         <Link href="/ostende">
-          <Image src="/img/ostende/logonuevo-savoia.jpg" alt="Hotel Savoia Ostende" width={140} height={80} />
+          <Image
+            src="/img/ostende/logonuevo-savoia.png"
+            alt="Hotel Savoia Ostende"
+            width={140}
+            height={80}
+            style={{ height: 'auto' }}
+            priority
+          />
         </Link>
 
         <button
@@ -40,51 +46,52 @@ export default function OstendeHeader() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`group relative block px-8 py-8 text-center text-sm tracking-wide transition-colors ${
-                  pathname === link.href ? 'text-savoia-charcoal' : 'text-savoia-charcoal/70 hover:text-savoia-charcoal'
+                className={`block px-8 py-8 text-center text-sm tracking-wide text-savoia-charcoal transition-colors ${
+                  pathname === link.href ? 'bg-savoia-nav-hover' : 'hover:bg-savoia-nav-hover'
                 }`}
               >
                 {link.label}
-                <span
-                  className={`absolute bottom-6 left-1/2 h-0.5 w-6 -translate-x-1/2 bg-savoia-accent transition-transform duration-300 ${
-                    pathname === link.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-                  }`}
-                />
               </Link>
             </li>
           ))}
         </ul>
       </nav>
 
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed bottom-0 right-0 top-0 z-50 w-64 bg-savoia-sand p-6 shadow-lg"
-          >
-            <button
-              type="button"
-              aria-label="Cerrar menú"
-              className="absolute right-4 top-4"
-              onClick={() => setMenuOpen(false)}
-            >
-              <X size={24} />
-            </button>
-            <ul className="mt-12 flex flex-col gap-4">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} onClick={() => setMenuOpen(false)} className="text-lg">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Backdrop */}
+      <div
+        role="presentation"
+        onClick={() => setMenuOpen(false)}
+        className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 md:hidden ${
+          menuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
+        }`}
+      />
+
+      {/* Slide-in panel — plain CSS transform instead of a JS animation library,
+          which needs to measure the element before it can tween a percentage
+          transform and was leaving the panel stuck off-screen on mobile. */}
+      <div
+        className={`fixed bottom-0 right-0 top-0 z-50 w-64 bg-savoia-sand p-6 shadow-lg transition-transform duration-300 ease-in-out ${
+          menuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <button
+          type="button"
+          aria-label="Cerrar menú"
+          className="absolute right-4 top-4"
+          onClick={() => setMenuOpen(false)}
+        >
+          <X size={24} />
+        </button>
+        <ul className="mt-12 flex flex-col gap-4">
+          {NAV_LINKS.map((link) => (
+            <li key={link.href}>
+              <Link href={link.href} onClick={() => setMenuOpen(false)} className="text-lg">
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </header>
   );
 }

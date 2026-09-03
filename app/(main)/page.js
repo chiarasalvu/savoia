@@ -65,8 +65,8 @@ export const metadata = { title: 'Hoteles Savoia | Bienvenidos' };
 export default function HomePage() {
   return (
     <main>
-      <Carousel slides={SLIDES} />
-      <RevealSection className="mx-auto grid max-w-[1100px] grid-cols-1 gap-6 px-5 py-10 md:grid-cols-2 lg:grid-cols-3">
+      <Carousel slides={SLIDES} showArrows={false} />
+      <RevealSection className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {HOTELS.map((hotel) => (
           <HotelCard key={hotel.title} {...hotel} />
         ))}

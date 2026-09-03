@@ -19,7 +19,7 @@ export default function SanBernardoPage() {
       </div>
 
       <RevealSection className="mx-auto max-w-[1100px] px-5 py-10 text-center">
-        <h2 className="text-3xl font-medium">HOTEL SAVOIA SAN BERNARDO</h2>
+        <h2 className="text-3xl font-medium md:text-4xl">HOTEL SAVOIA SAN BERNARDO</h2>
         <p className="mt-4">
           Ubicado en el corazón de la costa, a metros de la playa.
           <br />
@@ -30,21 +30,27 @@ export default function SanBernardoPage() {
         </Link>
       </RevealSection>
 
-      <h2 className="text-center text-3xl font-medium">HABITACIONES</h2>
+      <h2 className="text-center text-3xl font-medium md:text-4xl">HABITACIONES</h2>
       <RevealSection className="flex flex-wrap justify-center py-6">
         {HABITACIONES.map((room) => (
           <PhotoRevealCard key={room.src} {...room} />
         ))}
       </RevealSection>
 
-      <h2 className="text-center text-3xl font-medium">DESCANSÁ Y RENOVÁ TUS ENERGÍAS CON NOSOTROS</h2>
+      <h2 className="text-center text-3xl font-medium md:text-4xl">DESCANSÁ Y RENOVÁ TUS ENERGÍAS CON NOSOTROS</h2>
       <RevealSection className="flex justify-center py-6">
         <div className="relative h-[400px] w-full max-w-[1200px]">
-          <Image src="/img/san-bernardo/sala-sanber.jpg" alt="Hotel Savoia San Bernardo" fill className="object-cover" />
+          <Image
+            src="/img/san-bernardo/sala-sanber.jpg"
+            alt="Hotel Savoia San Bernardo"
+            fill
+            sizes="(min-width: 1200px) 1200px, 100vw"
+            className="object-cover"
+          />
         </div>
       </RevealSection>
 
-      <h2 className="text-center text-3xl font-medium">UBICACIÓN</h2>
+      <h2 className="text-center text-3xl font-medium md:text-4xl">UBICACIÓN</h2>
       <div className="flex justify-center py-6">
         <iframe
           title="Ubicación Hotel Savoia San Bernardo"

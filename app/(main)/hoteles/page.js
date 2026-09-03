@@ -1,58 +1,64 @@
-import PhotoRevealCard from '@/components/PhotoRevealCard';
+import LocationCard from '@/components/LocationCard';
 import ContactInfoBar from '@/components/ContactInfoBar';
 import RevealSection from '@/components/RevealSection';
 
 export const metadata = { title: 'Hoteles Savoia | Hoteles' };
 
-const CARDS = [
+const LOCATIONS = [
   {
-    src: '/img/hoteles/ostende-inicio.jpeg',
+    src: '/img/home/portada.jpg',
     alt: 'Hotel Savoia Ostende',
-    headline: 'HOTEL SAVOIA OSTENDE',
-    infoLines: ['Biarritz 184 e/ Defensa y Progreso', 'Tel: (02254) 49-6600', 'Ver más'],
+    name: 'Hotel Savoia Ostende',
+    address: 'Biarritz 184 e/ Defensa y Progreso, Pinamar',
+    phoneText: 'Tel: (02254) 49-6600',
+    phoneHref: 'tel:02254496600',
     href: '/ostende',
   },
   {
-    src: '/img/hoteles/puerto-hamlet.jpeg',
+    src: '/img/home/entrada-hamlet.jpeg',
     alt: 'Puerto Hamlet Cariló',
-    headline: 'PUERTO HAMLET CARILÓ',
-    infoLines: ['Cerezo 104 - Cariló', 'Tel: (02254) 57-1623', 'Ver más'],
+    name: 'Puerto Hamlet',
+    address: 'Cerezo 104, Cariló',
+    phoneText: 'Tel: (02254) 57-1623',
+    phoneHref: 'tel:02254571623',
     href: 'https://www.puertohamlet.com/',
   },
   {
     src: '/img/hoteles/hotel-mendoza.jpeg',
     alt: 'Hotel Savoia Mendoza',
-    headline: 'HOTEL SAVOIA MENDOZA',
-    infoLines: ['Avellaneda 3653, Bermejo - Mendoza', 'Tel: (+54) 11 5737-9702', 'Ver más'],
+    name: 'Hotel Savoia Mendoza',
+    address: 'Avellaneda 3653, Bermejo - Mendoza',
+    phoneText: 'Tel: (+54) 11 5737-9702',
+    phoneHref: 'tel:1157379702',
     href: '/mendoza',
   },
   {
     src: '/img/hoteles/san-bernardo.jpeg',
     alt: 'Hotel San Bernardo',
-    headline: 'HOTEL SAN BERNARDO',
-    infoLines: ['Strobel 2099 - San Bernardo', 'Tel: (02257) 460-211 / 250', 'Ver más'],
+    name: 'Hotel Savoia San Bernardo',
+    address: 'Strobel 2099, San Bernardo',
+    phoneText: 'Tel: (02257) 460-211 / 250',
+    phoneHref: 'tel:02257460211',
     href: '/san-bernardo',
-  },
-  {
-    src: '/img/hoteles/logo-molisana-molise.jpg',
-    alt: 'Molise Viajes',
-    infoLines: [
-      'MOLISE VIAJES',
-      'Central de reservas de Hoteles Savoia',
-      'F.D. Roosevelt 2445 1D / CABA',
-      'Tel: (011) 4788-6969',
-    ],
   },
 ];
 
 export default function HotelesPage() {
   return (
     <main>
-      <RevealSection className="flex flex-wrap justify-center bg-savoia-stone py-16 md:py-24">
-        {CARDS.map((card) => (
-          <PhotoRevealCard key={card.src} {...card} />
-        ))}
+      <RevealSection className="bg-savoia-stone pb-16 pt-10 md:pb-24 md:pt-14">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-8">
+          <h1 className="mb-12 text-center text-3xl font-medium uppercase tracking-tight text-savoia-charcoal md:mb-16 md:text-4xl">
+            Nuestras ubicaciones
+          </h1>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {LOCATIONS.map((location) => (
+              <LocationCard key={location.name} {...location} />
+            ))}
+          </div>
+        </div>
       </RevealSection>
+
       <ContactInfoBar />
     </main>
   );

@@ -5,7 +5,7 @@ export const metadata = { title: 'Hoteles Savoia | Ubicación' };
 export default function OstendeUbicacionPage() {
   return (
     <main>
-      <h1 className="mt-8 text-center text-3xl font-medium">UBICACIÓN</h1>
+      <h1 className="mt-8 text-center text-3xl font-medium md:text-4xl">UBICACIÓN</h1>
 
       <div className="flex justify-center py-8">
         <iframe
