@@ -65,10 +65,10 @@ const SERVICIOS = [
   },
   {
     src: '/img/mendoza/cancha-tenis.jpg',
-    alt: 'Cancha de tenis',
+    alt: 'Cancha de padel',
     badge: 'Deportes',
-    title: 'CANCHA DE TENIS',
-    description: 'Una cancha propia para practicar tenis o pádel durante tu estadía, rodeada de un entorno arbolado.',
+    title: 'CANCHA DE PADEL',
+    description: 'Una cancha propia para practicar pádel durante tu estadía, rodeada de un entorno arbolado.',
     features: [
       { icon: Trophy, text: 'Cancha propia' },
       { icon: Sun, text: 'Al aire libre' },
