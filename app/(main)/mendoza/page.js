@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Sun, TreePine, Users, CalendarCheck, UtensilsCrossed, Trophy, Gamepad2, BedDouble, Bath, Goal } from 'lucide-react';
+import { Sun, TreePine, Mountain, Users, CalendarCheck, UtensilsCrossed, Trophy, Gamepad2, BedDouble, Bath, Goal, Sparkles } from 'lucide-react';
 import ServiceRow from '@/components/ServiceRow';
 import MendozaContactForm from '@/components/MendozaContactForm';
 import ContactInfoBar from '@/components/ContactInfoBar';
@@ -8,6 +8,17 @@ import RevealSection from '@/components/RevealSection';
 export const metadata = { title: 'Hoteles Savoia | Mendoza' };
 
 const SERVICIOS = [
+  {
+    src: '/img/mendoza/recepcion-mendoza.jpg',
+    alt: 'Recepción Hotel Savoia Mendoza',
+    badge: 'Bienvenida',
+    title: 'RECEPCIÓN',
+    description: 'Te recibimos en un espacio cálido y elegante, listo para acompañarte durante toda tu estadía en Mendoza.',
+    features: [
+      { icon: Users, text: 'Atención personalizada' },
+      { icon: Sparkles, text: 'Ambiente cálido y elegante' },
+    ],
+  },
   {
     src: '/img/mendoza/habitacion1-mendoza.jpg',
     alt: 'Habitación Hotel Savoia Mendoza',
@@ -28,6 +39,17 @@ const SERVICIOS = [
     features: [
       { icon: Sun, text: 'Piscina climatizada' },
       { icon: TreePine, text: 'Entorno natural y arbolado' },
+    ],
+  },
+  {
+    src: '/img/mendoza/espacios-verdes-mendoza.jpg',
+    alt: 'Espacios verdes',
+    badge: 'Naturaleza',
+    title: 'ESPACIOS VERDES',
+    description: 'Un entorno único rodeado de montañas y espacios verdes, ideal para desconectar y disfrutar del paisaje mendocino.',
+    features: [
+      { icon: Mountain, text: 'Vista a la cordillera' },
+      { icon: TreePine, text: 'Amplios espacios verdes' },
     ],
   },
   {
