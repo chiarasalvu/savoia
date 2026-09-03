@@ -1,15 +1,40 @@
 'use client';
 
 import { useState } from 'react';
-import { User, Mail, MessageSquare, CheckCircle2 } from 'lucide-react';
+import { User, Mail, MessageSquare, CheckCircle2, AlertCircle } from 'lucide-react';
 import GuestCounter from '@/components/GuestCounter';
 import DatePicker from '@/components/DatePicker';
-import Captcha from '@/components/Captcha';
 import ContactInfoBar from '@/components/ContactInfoBar';
 import FormField from '@/components/FormField';
 
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xldryqnw';
+
 export default function OstendeContactoPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setSubmitting(true);
+    setError(false);
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: new FormData(e.target),
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
+  }
 
   return (
     <main>
@@ -25,13 +50,7 @@ export default function OstendeContactoPage() {
               <p className="mt-2 text-savoia-taupe-text">Nos pondremos en contacto pronto.</p>
             </div>
           ) : (
-            <form
-              className="mx-auto mt-10 max-w-[600px] text-left"
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSubmitted(true);
-              }}
-            >
+            <form className="mx-auto mt-10 max-w-[600px] text-left" onSubmit={handleSubmit}>
               <FormField icon={User} label="Nombre y apellido" name="nombre" required className="mb-6" />
               <FormField icon={Mail} label="Email" name="email" type="email" required className="mb-6" />
 
@@ -46,13 +65,19 @@ export default function OstendeContactoPage() {
 
               <FormField icon={MessageSquare} label="Mensaje" name="mensaje" as="textarea" rows={5} className="mb-6" />
 
-              <Captcha className="mb-8" />
+              {error && (
+                <div className="mb-6 flex items-center gap-3 rounded-2xl border border-red-300 bg-red-50 px-5 py-4 text-red-700">
+                  <AlertCircle size={20} className="shrink-0" />
+                  <span>No pudimos enviar tu consulta. Probá de nuevo en unos minutos.</span>
+                </div>
+              )}
 
               <button
                 type="submit"
-                className="w-full rounded-2xl bg-[#00244D] py-4 text-base font-medium text-white transition-colors hover:bg-[#003a75]"
+                disabled={submitting}
+                className="w-full rounded-2xl bg-[#00244D] py-4 text-base font-medium text-white transition-colors hover:bg-[#003a75] disabled:opacity-60"
               >
-                Enviar
+                {submitting ? 'Enviando...' : 'Enviar'}
               </button>
             </form>
           )}
