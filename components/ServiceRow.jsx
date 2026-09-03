@@ -1,10 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Carousel from '@/components/Carousel';
 
 // Editorial zigzag row: photo on one side, badge + title + description +
 // feature bullets + outlined CTA on the other. Image side alternates per row.
+// Pass either `src` (single photo, the common case) or `images` (an array of
+// {src, alt} slides) when a row needs to show more than one photo.
 export default function ServiceRow({
   src,
+  images,
   alt,
   badge,
   title,
@@ -19,7 +23,11 @@ export default function ServiceRow({
   return (
     <div className={`flex flex-col items-center gap-10 md:gap-16 ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
       <div className="relative h-[280px] w-full overflow-hidden rounded-2xl md:h-[420px] md:w-1/2">
-        <Image src={src} alt={alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+        {images ? (
+          <Carousel slides={images} className="relative h-full w-full overflow-hidden" />
+        ) : (
+          <Image src={src} alt={alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+        )}
       </div>
 
       <div className="flex w-full flex-col items-start md:w-1/2">

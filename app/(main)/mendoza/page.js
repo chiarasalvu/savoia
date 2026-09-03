@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Sun, TreePine, Mountain, Users, CalendarCheck, UtensilsCrossed, Trophy, Gamepad2, BedDouble, Bath, Goal, Sparkles } from 'lucide-react';
+import { Sun, TreePine, Mountain, Users, CalendarCheck, UtensilsCrossed, Gamepad2, BedDouble, Bath, Goal, Sparkles } from 'lucide-react';
 import ServiceRow from '@/components/ServiceRow';
 import MendozaContactForm from '@/components/MendozaContactForm';
 import ContactInfoBar from '@/components/ContactInfoBar';
@@ -42,25 +42,17 @@ const SERVICIOS = [
     ],
   },
   {
-    src: '/img/mendoza/espacios-verdes-mendoza.jpg',
-    alt: 'Espacios verdes',
-    badge: 'Naturaleza',
-    title: 'ESPACIOS VERDES',
-    description: 'Un entorno único rodeado de montañas y espacios verdes, ideal para desconectar y disfrutar del paisaje mendocino.',
+    images: [
+      { src: '/img/mendoza/espacios-verdes-mendoza.jpg', alt: 'Espacios verdes' },
+      { src: '/img/mendoza/cancha-tenis.jpg', alt: 'Cancha de pádel' },
+      { src: '/img/mendoza/cancha-futbol.jpg', alt: 'Cancha de fútbol' },
+    ],
+    badge: 'Deporte y Naturaleza',
+    title: 'DEPORTE & NATURALEZA',
+    description: 'Un entorno único rodeado de montañas y espacios verdes, con canchas propias de pádel y fútbol para disfrutar al aire libre.',
     features: [
       { icon: Mountain, text: 'Vista a la cordillera' },
-      { icon: TreePine, text: 'Amplios espacios verdes' },
-    ],
-  },
-  {
-    src: '/img/mendoza/cancha-futbol.jpg',
-    alt: 'Cancha de fútbol',
-    badge: 'Deportes',
-    title: 'CANCHA DE FÚTBOL',
-    description: 'Una cancha de fútbol propia rodeada de árboles, ideal para organizar un partido durante tu estadía.',
-    features: [
-      { icon: Goal, text: 'Cancha propia' },
-      { icon: Sun, text: 'Al aire libre' },
+      { icon: Goal, text: 'Canchas de pádel y fútbol' },
     ],
   },
   {
@@ -83,17 +75,6 @@ const SERVICIOS = [
     features: [
       { icon: UtensilsCrossed, text: 'Servicio de desayuno y cena' },
       { icon: Users, text: 'Ambiente familiar' },
-    ],
-  },
-  {
-    src: '/img/mendoza/cancha-tenis.jpg',
-    alt: 'Cancha de padel',
-    badge: 'Deportes',
-    title: 'CANCHA DE PADEL',
-    description: 'Una cancha propia para practicar pádel durante tu estadía, rodeada de un entorno arbolado.',
-    features: [
-      { icon: Trophy, text: 'Cancha propia' },
-      { icon: Sun, text: 'Al aire libre' },
     ],
   },
   {
