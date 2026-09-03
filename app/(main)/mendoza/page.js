@@ -106,7 +106,7 @@ export default function MendozaPage() {
         </p>
       </RevealSection>
 
-      <div className="mx-auto flex max-w-[1100px] flex-col gap-16 px-6 pb-10 pt-10 md:gap-24 md:px-8 md:pb-16 md:pt-16">
+      <div className="mx-auto flex max-w-[1100px] flex-col gap-16 px-6 pb-10 md:gap-24 md:px-8 md:pb-16">
         {SERVICIOS.map((servicio, index) => (
           <RevealSection key={servicio.title}>
             <ServiceRow {...servicio} href="#contacto" ctaLabel="Reservar ahora" imageSide={index % 2 === 0 ? 'left' : 'right'} />
