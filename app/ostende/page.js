@@ -24,7 +24,7 @@ const HIGHLIGHTS = [
     href: '/ostende/pileta',
   },
   {
-    src: '/img/ostende/home/cocina-home.jpg',
+    src: '/img/ostende/desayuno/desayuno-1.jpg',
     alt: 'Gastronomía Savoia',
     headline: 'GASTRONOMÍA SAVOIA',
     infoLines: [

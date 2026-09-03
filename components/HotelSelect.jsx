@@ -10,9 +10,9 @@ const HOTELS = [
   { value: 'cariló', label: 'Puerto Hamlet Cariló' },
 ];
 
-export default function HotelSelect({ name = 'hotel', required }) {
+export default function HotelSelect({ name = 'hotel', required, defaultValue }) {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(() => HOTELS.find((h) => h.value === defaultValue) ?? null);
 
   return (
     <div className="relative w-full">
