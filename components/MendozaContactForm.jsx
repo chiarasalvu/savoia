@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { User, Mail, MessageSquare, CheckCircle2, AlertCircle } from 'lucide-react';
 import GuestCounter from '@/components/GuestCounter';
-import HotelSelect from '@/components/HotelSelect';
+import LockedHotelField from '@/components/LockedHotelField';
 import DatePicker from '@/components/DatePicker';
 import FormField from '@/components/FormField';
 
@@ -53,7 +53,7 @@ export default function MendozaContactForm() {
             <FormField icon={User} label="Nombre y apellido" name="name" required className="mb-6" />
             <FormField icon={Mail} label="Email" name="email" type="email" required className="mb-6" />
             <div className="mb-6">
-              <HotelSelect defaultValue="mendoza" required />
+              <LockedHotelField label="Hotel Savoia Mendoza" value="mendoza" />
             </div>
 
             <div className="mb-6">
