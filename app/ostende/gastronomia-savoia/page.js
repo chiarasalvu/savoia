@@ -7,12 +7,7 @@ export const metadata = { title: 'Hoteles Savoia | Gastronomía' };
 const DESAYUNO_IMAGES = [
   { src: '/img/ostende/desayuno/desayuno-1.jpg', alt: 'Masitas Desayuno Savoia' },
   { src: '/img/ostende/desayuno/desayuno-2.jpg', alt: 'Masitas Desayuno Savoia' },
-  { src: '/img/ostende/desayuno/desayuno-3.jpg', alt: 'Masitas Desayuno Savoia' },
-  { src: '/img/ostende/desayuno/desayuno-4.jpg', alt: 'Masitas Desayuno Savoia' },
-  { src: '/img/ostende/desayuno/desayuno-5.jpg', alt: 'Desayuno Savoia' },
-  { src: '/img/ostende/desayuno/desayuno-6.jpg', alt: 'Desayuno Savoia' },
-  { src: '/img/ostende/desayuno/desayuno-7.jpg', alt: 'Desayuno Savoia' },
-  { src: '/img/ostende/desayuno/desayuno-8.jpg', alt: 'Desayuno Savoia' },
+  { src: '/img/ostende/desayuno/desayuno-3.jpg', alt: 'Desayuno Savoia' },
 ];
 
 const DESAYUNO_DETAILS = [
@@ -28,10 +23,7 @@ const CENA_IMAGES = [
   { src: '/img/ostende/cena/cena-3.jpg', alt: 'Cena Savoia' },
   { src: '/img/ostende/cena/cena-4.jpg', alt: 'Cena Savoia' },
   { src: '/img/ostende/cena/cena-5.jpg', alt: 'Cena Savoia' },
-  { src: '/img/ostende/cena/cena-6.jpg', alt: 'Cena Savoia' },
-  { src: '/img/ostende/cena/cena-7.jpg', alt: 'Cena Savoia' },
-  { src: '/img/ostende/cena/cena-8.jpg', alt: 'Postres Cena Savoia' },
-  { src: '/img/ostende/cena/cena-9.jpg', alt: 'Postres Cena Savoia' },
+  { src: '/img/ostende/cena/cena-6.jpg', alt: 'Postres Cena Savoia' },
 ];
 
 const CENA_DETAILS = [
