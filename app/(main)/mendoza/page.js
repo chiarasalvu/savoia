@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Sun, TreePine, Mountain, Users, CalendarCheck, UtensilsCrossed, Trophy, Gamepad2, BedDouble, Bath } from 'lucide-react';
+import { Sun, TreePine, Users, CalendarCheck, UtensilsCrossed, Trophy, Gamepad2, BedDouble, Bath, Goal } from 'lucide-react';
 import ServiceRow from '@/components/ServiceRow';
 import MendozaContactForm from '@/components/MendozaContactForm';
 import ContactInfoBar from '@/components/ContactInfoBar';
@@ -31,14 +31,14 @@ const SERVICIOS = [
     ],
   },
   {
-    src: '/img/mendoza/paisaje1-mendoza.jpg',
-    alt: 'Paisajes increíbles',
-    badge: 'Naturaleza',
-    title: 'PAISAJES INCREÍBLES',
-    description: 'Un entorno único rodeado de montañas y espacios verdes, ideal para desconectar y disfrutar del paisaje mendocino.',
+    src: '/img/mendoza/cancha-futbol.jpg',
+    alt: 'Cancha de fútbol',
+    badge: 'Deportes',
+    title: 'CANCHA DE FÚTBOL',
+    description: 'Una cancha de fútbol propia rodeada de árboles, ideal para organizar un partido durante tu estadía.',
     features: [
-      { icon: Mountain, text: 'Vista a la cordillera' },
-      { icon: TreePine, text: 'Amplios espacios verdes' },
+      { icon: Goal, text: 'Cancha propia' },
+      { icon: Sun, text: 'Al aire libre' },
     ],
   },
   {
