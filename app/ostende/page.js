@@ -86,7 +86,7 @@ export default function OstendeHomePage() {
         />
       </div>
 
-      <div className="mt-16 md:mt-24">
+      <div className="mt-0 md:mt-24">
         <SplitContent
           imageSrc="/img/ostende/home/collage-gastronomia.jpg"
           imageAlt="Comida"
