@@ -54,7 +54,13 @@ export default function SanBernardoPage() {
   return (
     <main>
       <div className="relative flex h-[70vh] w-full items-center justify-center">
-        <Image src="/img/san-bernardo/san-bernardo-7.jpg" alt="Hotel Savoia San Bernardo" fill priority className="object-cover" />
+        <Image
+          src="/img/san-bernardo/san-bernardo-7.jpg"
+          alt="Hotel Savoia San Bernardo"
+          fill
+          priority
+          className="object-cover object-[75%_center] md:object-center"
+        />
       </div>
 
       <RevealSection className="mx-auto max-w-[1100px] px-5 py-10 text-center md:py-16">

@@ -32,12 +32,12 @@ const SERVICIOS = [
   },
   {
     src: '/img/mendoza/pileta-mendoza.jpg',
-    alt: 'Pileta climatizada',
+    alt: 'Pileta exterior',
     badge: 'Relax',
-    title: 'PILETA CLIMATIZADA',
-    description: 'Una piscina climatizada rodeada de verde, ideal para refrescarte o simplemente relajarte al aire libre.',
+    title: 'PILETA EXTERIOR',
+    description: 'Una piscina exterior rodeada de verde, ideal para refrescarte o simplemente relajarte al aire libre.',
     features: [
-      { icon: Sun, text: 'Piscina climatizada' },
+      { icon: Sun, text: 'Piscina exterior' },
       { icon: TreePine, text: 'Entorno natural y arbolado' },
     ],
   },
