@@ -64,7 +64,9 @@ export default function SanBernardoPage() {
       </div>
 
       <RevealSection className="mx-auto max-w-[1100px] px-5 py-10 text-center md:py-16">
-        <h1 className="text-3xl font-medium md:text-4xl">HOTEL SAVOIA SAN BERNARDO</h1>
+        <h1 className="text-3xl font-medium md:text-4xl">
+          HOTEL SAVOIA<br className="md:hidden" /> SAN BERNARDO
+        </h1>
         <p className="mt-4 text-savoia-taupe-text">
           Ubicado en el corazón de la costa, a metros de la playa.
           <br />
