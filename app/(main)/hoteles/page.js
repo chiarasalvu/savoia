@@ -21,7 +21,7 @@ const LOCATIONS = [
     address: 'Cerezo 104, Cariló',
     phoneText: 'Tel: (02254) 57-1623',
     phoneHref: 'tel:02254571623',
-    href: 'https://www.puertohamlet.com/',
+    href: '/puerto-hamlet',
   },
   {
     src: '/img/hoteles/hotel-mendoza.jpeg',

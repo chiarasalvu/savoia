@@ -17,6 +17,7 @@ export default function ServiceRow({
   href,
   imageSide = 'left',
   ctaLabel = 'Ver detalles',
+  target,
 }) {
   const reverse = imageSide === 'right';
 
@@ -48,6 +49,8 @@ export default function ServiceRow({
 
         <Link
           href={href}
+          target={target}
+          rel={target === '_blank' ? 'noopener noreferrer' : undefined}
           className="mt-8 rounded-full border border-savoia-charcoal px-6 py-2.5 text-sm font-medium uppercase tracking-wide text-savoia-charcoal transition-colors hover:bg-savoia-charcoal hover:text-white"
         >
           {ctaLabel}

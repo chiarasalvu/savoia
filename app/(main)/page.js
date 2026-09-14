@@ -20,7 +20,7 @@ const HOTELS = [
   },
   {
     title: 'Puerto Hamlet',
-    titleHref: 'https://www.puertohamlet.com/index.html',
+    titleHref: '/puerto-hamlet',
     addressHref: 'https://maps.app.goo.gl/XCG5uryNonStL4ms6',
     addressText: 'Cerezo 104 - Cariló',
     phoneHref: 'tel:02254571623',
