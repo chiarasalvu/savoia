@@ -134,21 +134,6 @@ export default function PuertoHamletPage() {
         ))}
       </div>
 
-      <RevealSection className="mx-auto flex max-w-[700px] flex-col items-center gap-4 px-6 py-16 text-center md:py-24">
-        <h2 className="text-3xl font-medium md:text-4xl">DESCUBRÍ PUERTO HAMLET</h2>
-        <p className="text-savoia-taupe-text">
-          Conocé todas las cabañas, tarifas y disponibilidad en el sitio oficial de Puerto Hamlet.
-        </p>
-        <a
-          href={PUERTO_HAMLET_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-2 rounded-full bg-savoia-charcoal px-8 py-3.5 text-sm font-medium uppercase tracking-wide text-white transition-colors hover:bg-savoia-charcoal/90"
-        >
-          Ir a puertohamlet.com
-        </a>
-      </RevealSection>
-
       <PuertoHamletContactForm />
 
       <div className="h-[450px] w-full">
