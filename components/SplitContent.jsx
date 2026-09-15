@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-export default function SplitContent({ imageSrc, imageAlt, imageSide = 'left', title, subtitle, paragraphs }) {
+export default function SplitContent({ imageSrc, imageAlt, imageSide = 'left', title, subtitle, paragraphs, height }) {
   // On mobile every row stacks as text-then-photo, whichever `imageSide` says —
   // that's what keeps a text/photo/text/photo rhythm when two of these sit
   // back to back. `order` restores the left/right split once md:flex-row
@@ -9,8 +9,12 @@ export default function SplitContent({ imageSrc, imageAlt, imageSide = 'left', t
   const imageOrder = imageSide === 'left' ? 'order-2 md:order-1' : 'order-2';
   const textOrder = imageSide === 'left' ? 'order-1 md:order-2' : 'order-1';
 
+  // Optional fixed height (e.g. "420px") so two SplitContent rows placed back
+  // to back come out the same size on desktop, regardless of how much text
+  // each one has — without it, md:h-auto just stretches to each row's own
+  // (possibly different) text length.
   return (
-    <section className="flex flex-col md:flex-row">
+    <section className="flex flex-col md:flex-row" style={height ? { minHeight: height } : undefined}>
       <div className={`relative h-[300px] md:h-auto md:flex-1 ${imageOrder}`}>
         <Image
           src={imageSrc}
