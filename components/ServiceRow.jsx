@@ -47,14 +47,16 @@ export default function ServiceRow({
           ))}
         </ul>
 
-        <Link
-          href={href}
-          target={target}
-          rel={target === '_blank' ? 'noopener noreferrer' : undefined}
-          className="mt-8 rounded-full border border-savoia-charcoal px-6 py-2.5 text-sm font-medium uppercase tracking-wide text-savoia-charcoal transition-colors hover:bg-savoia-charcoal hover:text-white"
-        >
-          {ctaLabel}
-        </Link>
+        {href && (
+          <Link
+            href={href}
+            target={target}
+            rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+            className="mt-8 rounded-full border border-savoia-charcoal px-6 py-2.5 text-sm font-medium uppercase tracking-wide text-savoia-charcoal transition-colors hover:bg-savoia-charcoal hover:text-white"
+          >
+            {ctaLabel}
+          </Link>
+        )}
       </div>
     </div>
   );

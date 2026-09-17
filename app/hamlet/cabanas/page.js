@@ -43,18 +43,6 @@ const UNITS = [
     ],
   },
   {
-    src: '/img/hamlet/cabanas/real-1.jpg',
-    alt: 'Cabaña de Puerto Hamlet entre los pinos',
-    badge: '5 personas · 55m²',
-    title: 'DOS Y ½ AMBIENTES',
-    description:
-      'Cabaña única en Puerto Hamlet, con patio y parrilla individual: la de mayor intimidad y privacidad del complejo por su distancia con las demás unidades. Dos ambientes con baño y cocina completos, con LCD y reproductor de DVD, más un dormitorio en entrepiso con dos camas de una plaza, aire acondicionado y LCD.',
-    features: [
-      { icon: Users, text: '5 personas' },
-      { icon: Ruler, text: '55m²' },
-    ],
-  },
-  {
     src: '/img/hamlet/cabanas/real-2.jpg',
     alt: 'Dormitorio de una cabaña de Puerto Hamlet',
     badge: '5 a 6 personas · 75m²',
@@ -79,7 +67,7 @@ export default function HamletCabanasPage() {
       <div className="mx-auto flex max-w-[1100px] flex-col gap-16 px-6 pb-10 md:gap-24 md:px-8 md:pb-16">
         {UNITS.map((unit, index) => (
           <RevealSection key={unit.title}>
-            <ServiceRow {...unit} href="/hamlet/contacto" ctaLabel="Consultar" imageSide={index % 2 === 0 ? 'left' : 'right'} />
+            <ServiceRow {...unit} imageSide={index % 2 === 0 ? 'left' : 'right'} />
           </RevealSection>
         ))}
       </div>

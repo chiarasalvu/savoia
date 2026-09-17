@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 const NAV_LINKS = [
-  { href: '/hamlet', label: 'INICIO' },
+  { href: 'https://www.hotelessavoia.com', label: 'INICIO', external: true },
   { href: '/hamlet/cabanas', label: 'CABAÑAS' },
   { href: '/hamlet/servicios', label: 'SERVICIOS' },
   // Grupos & Eventos: oculto del nav por pedido del cliente, la página sigue
@@ -44,18 +44,29 @@ export default function HamletHeader() {
         </button>
 
         <ul className="hidden md:flex">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className={`block px-6 py-8 text-center text-sm tracking-wide text-savoia-charcoal transition-colors ${
-                  pathname === link.href ? 'bg-savoia-nav-hover' : 'hover:bg-savoia-nav-hover'
-                }`}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          {NAV_LINKS.map((link) =>
+            link.external ? (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="block px-6 py-8 text-center text-sm tracking-wide text-savoia-charcoal transition-colors hover:bg-savoia-nav-hover"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ) : (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`block px-6 py-8 text-center text-sm tracking-wide text-savoia-charcoal transition-colors ${
+                    pathname === link.href ? 'bg-savoia-nav-hover' : 'hover:bg-savoia-nav-hover'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            )
+          )}
         </ul>
       </nav>
 
@@ -83,13 +94,21 @@ export default function HamletHeader() {
           <X size={24} />
         </button>
         <ul className="mt-12 flex flex-col gap-4">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <Link href={link.href} onClick={() => setMenuOpen(false)} className="text-lg">
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          {NAV_LINKS.map((link) =>
+            link.external ? (
+              <li key={link.href}>
+                <a href={link.href} onClick={() => setMenuOpen(false)} className="text-lg">
+                  {link.label}
+                </a>
+              </li>
+            ) : (
+              <li key={link.href}>
+                <Link href={link.href} onClick={() => setMenuOpen(false)} className="text-lg">
+                  {link.label}
+                </Link>
+              </li>
+            )
+          )}
         </ul>
       </div>
     </header>
