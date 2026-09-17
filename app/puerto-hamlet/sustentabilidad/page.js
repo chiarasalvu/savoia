@@ -12,14 +12,14 @@ const PRACTICAS = [
 ];
 
 const CERTIFICACIONES = [
-  { src: '/img/hamlet/sustentabilidad/certificaciones/aht.png', alt: 'Certificación AHT', width: 150, height: 150 },
+  { src: '/img/puerto-hamlet/sustentabilidad/certificaciones/aht.png', alt: 'Certificación AHT', width: 150, height: 150 },
   {
-    src: '/img/hamlet/sustentabilidad/certificaciones/hoteles-mas-verdes.png',
+    src: '/img/puerto-hamlet/sustentabilidad/certificaciones/hoteles-mas-verdes.png',
     alt: 'Certificación Hoteles Más Verdes — Bronce',
     width: 157,
     height: 131,
   },
-  { src: '/img/hamlet/sustentabilidad/certificaciones/ecolideres.png', alt: 'Certificación Ecolíderes', width: 204, height: 80 },
+  { src: '/img/puerto-hamlet/sustentabilidad/certificaciones/ecolideres.png', alt: 'Certificación Ecolíderes', width: 204, height: 80 },
 ];
 
 export default function HamletSustentabilidadPage() {
@@ -56,7 +56,7 @@ export default function HamletSustentabilidadPage() {
         </div>
         <div className="relative h-64 w-full overflow-hidden rounded-2xl md:h-full">
           <Image
-            src="/img/hamlet/sustentabilidad/certificacion-bronce.jpg"
+            src="/img/puerto-hamlet/sustentabilidad/certificacion-bronce.jpg"
             alt="Certificación Bronce Hoteles Más Verdes de Puerto Hamlet"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
@@ -67,7 +67,7 @@ export default function HamletSustentabilidadPage() {
 
       <div className="relative h-64 w-full overflow-hidden md:h-80">
         <Image
-          src="/img/hamlet/sustentabilidad/parque-soleado.jpg"
+          src="/img/puerto-hamlet/sustentabilidad/parque-soleado.jpg"
           alt="Parque de Puerto Hamlet en un día soleado"
           fill
           sizes="100vw"

@@ -3,6 +3,16 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/hamlet',
+        destination: '/puerto-hamlet',
+        permanent: true,
+      },
+      {
+        source: '/hamlet/:path*',
+        destination: '/puerto-hamlet/:path*',
+        permanent: true,
+      },
+      {
         source: '/:path*',
         has: [
           {

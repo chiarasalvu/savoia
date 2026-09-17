@@ -7,7 +7,7 @@ export const metadata = { title: 'Hoteles Savoia | Puerto Hamlet — Servicios' 
 
 const SERVICES = [
   {
-    src: '/img/hamlet/servicios/pileta-descubierta-portada.jpg',
+    src: '/img/puerto-hamlet/servicios/pileta-descubierta-portada.jpg',
     alt: 'Piscina descubierta de Puerto Hamlet con reposeras y sombrillas',
     badge: 'Octubre a marzo',
     title: 'SECTOR DESCUBIERTO',
@@ -20,8 +20,8 @@ const SERVICES = [
   },
   {
     images: [
-      { src: '/img/hamlet/servicios/pileta-climatizada.jpg', alt: 'Pileta climatizada cubierta de Puerto Hamlet' },
-      { src: '/img/hamlet/servicios/sauna.jpg', alt: 'Sauna seco de madera en Puerto Hamlet' },
+      { src: '/img/puerto-hamlet/servicios/pileta-climatizada.jpg', alt: 'Pileta climatizada cubierta de Puerto Hamlet' },
+      { src: '/img/puerto-hamlet/servicios/sauna.jpg', alt: 'Sauna seco de madera en Puerto Hamlet' },
     ],
     badge: 'Todo el año',
     title: 'SECTOR CUBIERTO',
@@ -33,7 +33,7 @@ const SERVICES = [
     ],
   },
   {
-    src: '/img/hamlet/servicios/club-house.jpg',
+    src: '/img/puerto-hamlet/servicios/club-house.jpg',
     alt: 'Salón de desayuno del Club House de Puerto Hamlet',
     badge: 'Desayuno incluido',
     title: 'CLUB HOUSE',
@@ -45,7 +45,7 @@ const SERVICES = [
     ],
   },
   {
-    src: '/img/hamlet/servicios/gimnasio.jpg',
+    src: '/img/puerto-hamlet/servicios/gimnasio.jpg',
     alt: 'Gimnasio de Puerto Hamlet',
     badge: 'Uso libre',
     title: 'GIMNASIO',
@@ -54,7 +54,7 @@ const SERVICES = [
     features: [{ icon: Dumbbell, text: 'Equipamiento profesional' }],
   },
   {
-    src: '/img/hamlet/servicios/club-de-chicos.jpg',
+    src: '/img/puerto-hamlet/servicios/club-de-chicos.jpg',
     alt: 'Sala de juegos del Club de chicos de Puerto Hamlet',
     badge: '3 a 13 años · 10 a 18hs',
     title: 'CLUB DE CHICOS',
@@ -88,7 +88,7 @@ export default function HamletServiciosPage() {
       <div className="mx-auto flex max-w-[1100px] flex-col gap-16 px-6 pb-10 md:gap-24 md:px-8 md:pb-16">
         {SERVICES.map((service, index) => (
           <RevealSection key={service.title}>
-            <ServiceRow {...service} href="/hamlet/contacto" ctaLabel="Consultar" imageSide={index % 2 === 0 ? 'left' : 'right'} />
+            <ServiceRow {...service} href="/puerto-hamlet/contacto" ctaLabel="Consultar" imageSide={index % 2 === 0 ? 'left' : 'right'} />
           </RevealSection>
         ))}
       </div>

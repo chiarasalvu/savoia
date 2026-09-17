@@ -7,7 +7,7 @@ export const metadata = { title: 'Hoteles Savoia | Puerto Hamlet — Cabañas' }
 
 const UNITS = [
   {
-    src: '/img/hamlet/cabanas/real-1.jpg',
+    src: '/img/puerto-hamlet/cabanas/real-1.jpg',
     alt: 'Cabaña de Puerto Hamlet entre los pinos',
     badge: '2 personas · 28m²',
     title: 'MONOAMBIENTE',
@@ -19,7 +19,7 @@ const UNITS = [
     ],
   },
   {
-    src: '/img/hamlet/cabanas/real-2.jpg',
+    src: '/img/puerto-hamlet/cabanas/real-2.jpg',
     alt: 'Dormitorio de una cabaña de Puerto Hamlet',
     badge: '2 a 3 personas · 35m²',
     title: 'MONOAMBIENTE FULL',
@@ -31,7 +31,7 @@ const UNITS = [
     ],
   },
   {
-    src: '/img/hamlet/cabanas/real-3.jpg',
+    src: '/img/puerto-hamlet/cabanas/real-3.jpg',
     alt: 'Senderos y cabañas de Puerto Hamlet entre los pinos',
     badge: '3 a 4 personas · 45m²',
     title: 'DOS AMBIENTES',
@@ -43,7 +43,7 @@ const UNITS = [
     ],
   },
   {
-    src: '/img/hamlet/cabanas/real-2.jpg',
+    src: '/img/puerto-hamlet/cabanas/real-2.jpg',
     alt: 'Dormitorio de una cabaña de Puerto Hamlet',
     badge: '5 a 6 personas · 75m²',
     title: 'TRES AMBIENTES',

@@ -9,7 +9,7 @@ export default function HamletGruposEventosPage() {
   return (
     <main>
       <HamletPageHero
-        image="/img/hamlet/grupos-eventos/hero.jpg"
+        image="/img/puerto-hamlet/grupos-eventos/hero.jpg"
         alt="Terraza elevada de Puerto Hamlet con baranda de madera y sombrilla, entre los pinos"
         title="GRUPOS & EVENTOS"
         subtitle="Grupos, convenciones, conferencias — un lugar distinto y confortable para tus reuniones y eventos."
@@ -30,7 +30,7 @@ export default function HamletGruposEventosPage() {
         </div>
         <div className="relative h-[280px] w-full overflow-hidden rounded-2xl md:h-[360px]">
           <Image
-            src="/img/hamlet/servicios/club-house.jpg"
+            src="/img/puerto-hamlet/servicios/club-house.jpg"
             alt="Espacio del Club House de Puerto Hamlet, disponible para reuniones y eventos"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"

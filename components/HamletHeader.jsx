@@ -8,12 +8,12 @@ import { Menu, X } from 'lucide-react';
 
 const NAV_LINKS = [
   { href: 'https://www.hotelessavoia.com', label: 'INICIO', external: true },
-  { href: '/hamlet/cabanas', label: 'CABAÑAS' },
-  { href: '/hamlet/servicios', label: 'SERVICIOS' },
+  { href: '/puerto-hamlet/cabanas', label: 'CABAÑAS' },
+  { href: '/puerto-hamlet/servicios', label: 'SERVICIOS' },
   // Grupos & Eventos: oculto del nav por pedido del cliente, la página sigue
-  // existiendo en /hamlet/grupos-eventos.
-  { href: '/hamlet/sustentabilidad', label: 'SUSTENTABILIDAD' },
-  { href: '/hamlet/contacto', label: 'CONTACTO' },
+  // existiendo en /puerto-hamlet/grupos-eventos.
+  { href: '/puerto-hamlet/sustentabilidad', label: 'SUSTENTABILIDAD' },
+  { href: '/puerto-hamlet/contacto', label: 'CONTACTO' },
 ];
 
 export default function HamletHeader() {
@@ -23,9 +23,9 @@ export default function HamletHeader() {
   return (
     <header className="bg-savoia-sand">
       <nav className="mx-auto flex max-w-[1100px] items-center justify-between px-6 md:px-8">
-        <Link href="/hamlet" className="py-4">
+        <Link href="/puerto-hamlet" className="py-4">
           <Image
-            src="/img/hamlet/logo-hamlet.png"
+            src="/img/puerto-hamlet/logo-hamlet.png"
             alt="Puerto Hamlet — Hoteles Savoia"
             width={200}
             height={63}
