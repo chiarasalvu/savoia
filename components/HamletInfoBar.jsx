@@ -8,8 +8,8 @@ export default function HamletInfoBar({
   locationText = 'Cerezo y Avutarda - Cariló',
   phoneHref = 'tel:02254570623',
   phoneText = '(02254) 57-0623 / 57-1623',
-  emailHref = 'mailto:reservas@puertohamlet.com',
-  emailText = 'reservas@puertohamlet.com',
+  emailHref = 'mailto:reservas@hotelessavoia.com',
+  emailText = 'reservas@hotelessavoia.com',
 }) {
   const items = [
     { Icon: Hotel, title: 'Ubicación', href: locationHref, text: locationText },
