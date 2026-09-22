@@ -161,19 +161,21 @@ export default function HomePage() {
       <RevealSection id="historia" className="mx-auto max-w-[1400px] px-6 py-10 md:px-8 md:py-14">
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1.2fr_1fr] md:gap-16">
           <div className="text-left">
-            <h1 className="text-2xl font-medium tracking-tight md:text-3xl">85 AÑOS DE EXPERIENCIA</h1>
+            <h1 className="text-2xl font-medium tracking-tight md:text-3xl">85 AÑOS DE TRAYECTORIA</h1>
             <p className="mt-6 text-savoia-taupe-text">
-              Desde 1941 especializándonos en Administración de Hoteles y Gastronomía en general.
+              Desde 1941, nos dedicamos a la Administración Hotelera y Gastronómica con un compromiso constante
+              hacia la excelencia.
             </p>
             <p className="mt-4 text-savoia-taupe-text">
-              Todo empezó con Don José Salvucci, que se dedicaba al transporte hacia la costa. En esos viajes se
-              enamoró de San Clemente, y de ese cariño por el lugar nació la idea de dar el primer paso en la
-              hotelería.
+              Nuestra historia comienza con Don José Salvucci, quien se dedicaba al transporte hacia la costa
+              bonaerense. Fue en esos viajes donde descubrió y se enamoró de San Clemente, un vínculo que sentó las
+              bases para dar sus primeros pasos en la actividad hotelera.
             </p>
             <p className="mt-4 text-savoia-taupe-text">
-              Hoy nuestra hotelería es reconocida por su exquisita y variada oferta gastronómica, elaborada en cada
-              establecimiento con materia prima de primera calidad, logrando sabores propios de la mejor cocina
-              casera.
+              A lo largo de más de ocho décadas, hemos consolidado una propuesta gastronómica reconocida por su
+              calidad y variedad, elaborada en cada uno de nuestros establecimientos con insumos de primer nivel.
+              El resultado es una cocina que honra las raíces de la mejor tradición casera, ofrecida con los
+              estándares de excelencia que nos caracterizan.
             </p>
           </div>
           <div className="relative aspect-[3/2] w-full overflow-hidden">
