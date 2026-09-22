@@ -1,31 +1,49 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette matched to the live site (sitio-viejo/css/style.css) — white +
-     light gray, cool dark blue-gray for dark sections, peach only as the
-     site's own .text-primary accent. */
-  --color-savoia-sand: #FFFFFF;
-  --color-savoia-stone: #F4F4F4;
+  /* 2026 redesign palette (client-provided PDF brief). "Landing" neutrals
+     are the sitewide base; savoia-charcoal now carries the exact navy from
+     the brief. savoia-accent-red and the hamlet-* tokens are reserved for
+     the Savoia- and Hamlet-specific accents called out in the brief —
+     not yet wired into components, pending a design pass on exactly where
+     each shows up. */
+  --color-savoia-sand: #F8F6F3;
+  --color-savoia-stone: #EBE7E0;
+  --color-savoia-body: #EBE7E0;
   --color-savoia-charcoal: #222222;
   --color-savoia-taupe: #808080;
   --color-savoia-taupe-text: #808080;
   --color-savoia-accent: #F7C08A;
-  --color-savoia-nav-hover: #ECE9E3;
+  --color-savoia-accent-red: #C62445;
+  --color-savoia-nav-hover: #D9D9D9;
 
   /* Legacy token names kept as aliases so the 19 pages not yet migrated in
      this phase automatically pick up the new palette with zero code changes. */
   --color-savoia-dark: #373F47;
   --color-savoia-footer: #333C46;
-  --color-savoia-light: #F4F4F4;
+  --color-savoia-light: #EBE7E0;
 
   --color-whatsapp-green: #25D366;
   --font-sans: "Gill Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* "Todo cuadrado" — the redesign brief calls for square corners
+     everywhere. Zeroing the radius scale here squares every rounded-*
+     utility sitewide with no per-component edits. WhatsAppFloat is the one
+     deliberate exception (kept as a literal rounded-[9999px] so the
+     brand's round bubble survives this). */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-full: 0px;
 }
 
 body {
   margin: 0;
-  background: #FFFFFF;
+  background: var(--color-savoia-sand);
 }
 
 /* The Ostende sub-brand uses navy on the live site — not just body text, but
@@ -39,6 +57,30 @@ body {
   --color-savoia-charcoal: #00244D;
   --color-savoia-dark: #00244D;
   --color-savoia-footer: #001F41;
+}
+
+/* PropertyHeader colors. Default = solid (pages without a hero); over a
+   #property-hero, the not-yet-scrolled state goes transparent with white
+   text. Kept in CSS so the right state paints before hydration. */
+header.ph {
+  --ph-bg: var(--color-savoia-body);
+  --ph-fg: var(--color-savoia-charcoal);
+  --ph-fg-soft: var(--color-savoia-taupe-text);
+  --ph-logo-filter: none;
+  --ph-btn-bg: var(--color-savoia-charcoal);
+  --ph-btn-fg: #fff;
+  --ph-bar2-bg: var(--color-savoia-stone);
+  --ph-bar2-border: rgba(0, 0, 0, 0.1);
+}
+body:has(#property-hero) header.ph[data-top="true"] {
+  --ph-bg: transparent;
+  --ph-fg: #fff;
+  --ph-fg-soft: rgba(255, 255, 255, 0.8);
+  --ph-logo-filter: brightness(0) invert(1);
+  --ph-btn-bg: rgba(255, 255, 255, 0.95);
+  --ph-btn-fg: var(--color-savoia-charcoal);
+  --ph-bar2-bg: rgba(0, 0, 0, 0.35);
+  --ph-bar2-border: rgba(255, 255, 255, 0.2);
 }
 
 /* Browser autofill (and the text-selection highlight it leaves behind while

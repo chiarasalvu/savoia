@@ -9,7 +9,10 @@ import FormField from '@/components/FormField';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/myzgqqrl';
 
-export default function PuertoHamletContactForm() {
+export default function PuertoHamletContactForm({
+  title = 'RESERVÁ TU ESTADÍA',
+  subtitle = 'Contactanos y viví una experiencia inolvidable en Cariló',
+}) {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(false);
@@ -37,10 +40,10 @@ export default function PuertoHamletContactForm() {
   }
 
   return (
-    <section id="contacto" className="bg-savoia-stone py-16 text-center md:py-24">
+    <section id="contacto" className="pb-16 pt-24 text-center md:pb-24 md:pt-32">
       <div className="mx-auto max-w-[1100px] px-6 md:px-8">
-        <h2 className="text-3xl font-medium tracking-tight md:text-4xl">RESERVÁ TU ESTADÍA</h2>
-        <h3 className="mt-4 text-lg text-savoia-taupe-text">Contactanos y viví una experiencia inolvidable en Cariló</h3>
+        <h2 className="text-3xl font-medium tracking-tight md:text-4xl">{title}</h2>
+        <h3 className="mt-4 text-lg text-savoia-taupe-text">{subtitle}</h3>
 
         {submitted ? (
           <div className="mx-auto mt-10 max-w-[600px] rounded-2xl border border-savoia-taupe/30 bg-white px-8 py-14">

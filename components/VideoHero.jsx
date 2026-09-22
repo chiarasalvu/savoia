@@ -1,6 +1,6 @@
 export default function VideoHero({ src, poster }) {
   return (
-    <div className="relative h-[50vh] w-full overflow-hidden md:h-[80vh]">
+    <div id="property-hero" className="relative h-screen w-full overflow-hidden">
       <video
         autoPlay
         muted

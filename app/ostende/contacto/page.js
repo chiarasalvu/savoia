@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { User, Mail, MessageSquare, CheckCircle2, AlertCircle } from 'lucide-react';
 import GuestCounter from '@/components/GuestCounter';
 import DatePicker from '@/components/DatePicker';
-import ContactInfoBar from '@/components/ContactInfoBar';
 import FormField from '@/components/FormField';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xldryqnw';
@@ -38,9 +37,9 @@ export default function OstendeContactoPage() {
 
   return (
     <main>
-      <section className="bg-savoia-stone py-16 text-center md:py-24">
+      <section className="pb-16 pt-24 text-center md:pb-24 md:pt-32">
         <div className="mx-auto max-w-[1100px] px-6 md:px-8">
-          <h1 className="text-3xl font-medium tracking-tight md:text-4xl">CONTACTO</h1>
+          <h1 className="text-3xl font-medium tracking-tight md:text-4xl">RESERVÁ TU ESTADÍA</h1>
           <h3 className="mt-4 text-lg text-savoia-taupe-text">¡Contactanos y viví una experiencia inolvidable!</h3>
 
           {submitted ? (
@@ -84,12 +83,18 @@ export default function OstendeContactoPage() {
         </div>
       </section>
 
-      <ContactInfoBar
-        locationHref="https://maps.app.goo.gl/7KvrAK9TjD1MjuA89"
-        locationText="Biarritz 184 e/ Defensa y Progreso - Ostende, Pinamar"
-        phoneHref="tel:02254496600"
-        phoneText="(02254) 49-6600"
-      />
+      <div className="h-[500px] w-full">
+        <iframe
+          title="Ubicación Hotel Savoia Ostende"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12723.625231051108!2d-56.8684199!3d-37.131144!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959c9cf89da86d41%3A0x5b77ff8c0445755d!2shotel%20savoia!5e0!3m2!1ses!2sar!4v1708469455151!5m2!1ses!2sar"
+          width="100%"
+          height="100%"
+          style={{ border: 0, display: 'block' }}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          allowFullScreen
+        />
+      </div>
     </main>
   );
 }

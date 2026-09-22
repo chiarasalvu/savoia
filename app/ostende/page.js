@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import VideoHero from '@/components/VideoHero';
-import PhotoRevealCard from '@/components/PhotoRevealCard';
+import CenterCarousel from '@/components/CenterCarousel';
+import RoomCard from '@/components/RoomCard';
+import { CATEGORIES } from '@/lib/ostendeRooms';
 import SplitContent from '@/components/SplitContent';
-import ContactInfoBar from '@/components/ContactInfoBar';
 import RevealSection from '@/components/RevealSection';
 
 export const metadata = { title: 'Hoteles Savoia | Bienvenidos' };
@@ -11,33 +12,23 @@ const HIGHLIGHTS = [
   {
     src: '/img/ostende/home/mar-ostende.jpeg',
     alt: 'A metros de la playa',
-    headline: 'A METROS DE LA PLAYA',
-    infoLines: ['Ubicados en primera línea de playa con vistas al mar.'],
+    title: 'A metros de la playa',
+    text: 'Ubicados en primera línea de playa con vistas al mar.',
   },
   {
     src: '/img/ostende/pile-home.jpg',
     alt: 'Piscina climatizada',
-    headline: 'PISCINA CLIMATIZADA',
-    infoLines: [
-      'Piscina exterior climatizada con sector especial para niños junto a nuestro exclusivo bar de piscina. Solarium, sauna y gimnasio.',
-    ],
+    title: 'Piscina climatizada',
+    text: 'Piscina exterior climatizada, con sector para niños y bar de piscina.',
     href: '/ostende/pileta',
   },
   {
     src: '/img/ostende/desayuno/desayuno-1.jpg',
     alt: 'Gastronomía Savoia',
-    headline: 'GASTRONOMÍA SAVOIA',
-    infoLines: [
-      'Una propuesta gastronómica única, todas elaboradas en el hotel. Un exquisito desayuno BUFFET estilo americano y cenas imperdibles.',
-    ],
+    title: 'Gastronomía Savoia',
+    text: 'Desayuno buffet estilo americano y cenas con menús temáticos cada noche.',
     href: '/ostende/gastronomia-savoia',
   },
-];
-
-const ROOM_CATEGORIES = [
-  { src: '/img/ostende/home/habitacion-superior.webp', alt: 'Categoría Superior', headline: 'CATEGORÍA SUPERIOR', href: '/ostende/categoria-superior' },
-  { src: '/img/ostende/home/habitacion-ejecutiva.webp', alt: 'Categoría Ejecutiva', headline: 'CATEGORÍA EJECUTIVA', href: '/ostende/categoria-ejecutiva' },
-  { src: '/img/ostende/home/habitacion-estandar.webp', alt: 'Categoría Estandar', headline: 'CATEGORÍA ESTANDAR', href: '/ostende/categoria-standard' },
 ];
 
 export default function OstendeHomePage() {
@@ -45,12 +36,12 @@ export default function OstendeHomePage() {
     <main>
       <VideoHero src="/img/ostende/home/video-savoia.mp4" poster="/img/ostende/home/video-savoia-poster.jpg" />
 
-      <h1 className="mt-16 text-center text-3xl font-medium md:mt-24 md:text-4xl">VIVÍ UNA EXPERIENCIA ÚNICA</h1>
+      <h1 className="mx-auto mt-16 max-w-[1400px] px-6 text-2xl font-medium tracking-tight md:mt-24 md:px-8 md:text-3xl">
+        VIVÍ UNA EXPERIENCIA ÚNICA
+      </h1>
 
-      <RevealSection className="flex flex-wrap justify-center py-6">
-        {HIGHLIGHTS.map((card) => (
-          <PhotoRevealCard key={card.src} {...card} />
-        ))}
+      <RevealSection className="py-10 md:py-14">
+        <CenterCarousel items={HIGHLIGHTS} initialActive={1} />
       </RevealSection>
 
       <div className="relative mx-auto my-6 h-[300px] w-full max-w-[1200px] md:h-[550px]">
@@ -63,13 +54,17 @@ export default function OstendeHomePage() {
         />
       </div>
 
-      <h3 className="mt-16 text-center text-xl md:mt-24">DESCANSÁ Y RENOVÁ TUS ENERGÍAS CON NOSOTROS</h3>
-      <h2 className="mb-6 text-center text-3xl font-medium md:text-4xl">HABITACIONES</h2>
+      <div className="mx-auto mt-16 max-w-[1400px] px-6 md:mt-24 md:px-8">
+        <p className="text-sm uppercase tracking-wide text-savoia-taupe-text">Descansá y renová tus energías con nosotros</p>
+        <h2 className="mt-1 text-2xl font-medium tracking-tight md:text-3xl">HABITACIONES</h2>
+      </div>
 
-      <RevealSection className="flex flex-wrap justify-center py-6">
-        {ROOM_CATEGORIES.map((card) => (
-          <PhotoRevealCard key={card.src} {...card} />
-        ))}
+      <RevealSection className="mx-auto max-w-[1400px] px-6 py-10 md:px-8 md:py-14">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+          {CATEGORIES.map((room) => (
+            <RoomCard key={room.href} {...room} />
+          ))}
+        </div>
       </RevealSection>
 
       <div className="mt-0 md:mt-24">
@@ -86,7 +81,7 @@ export default function OstendeHomePage() {
         />
       </div>
 
-      <div className="mt-0 md:mt-24">
+      <div className="mb-16 mt-0 md:mb-24 md:mt-24">
         <SplitContent
           imageSrc="/img/ostende/home/collage-gastronomia.jpg"
           imageAlt="Comida"
@@ -99,12 +94,6 @@ export default function OstendeHomePage() {
         />
       </div>
 
-      <ContactInfoBar
-        locationHref="https://maps.app.goo.gl/7KvrAK9TjD1MjuA89"
-        locationText="Biarritz 184 e/ Defensa y Progreso - Ostende, Pinamar (C.P. 7167)"
-        phoneHref="tel:02254496600"
-        phoneText="(02254) 49-6600"
-      />
     </main>
   );
 }

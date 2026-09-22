@@ -37,7 +37,7 @@ export default function MendozaContactForm() {
   }
 
   return (
-    <section id="contacto" className="bg-savoia-stone py-16 text-center md:py-24">
+    <section id="contacto" className="pb-16 pt-24 text-center md:pb-24 md:pt-32">
       <div className="mx-auto max-w-[1100px] px-6 md:px-8">
         <h2 className="text-3xl font-medium tracking-tight md:text-4xl">RESERVÁ TU ESTADÍA</h2>
         <h3 className="mt-4 text-lg text-savoia-taupe-text">Contactanos y viví una experiencia inolvidable en Mendoza</h3>

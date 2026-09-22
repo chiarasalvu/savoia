@@ -1,40 +1,35 @@
-import HeroBand from '@/components/HeroBand';
-import AmenityDetail from '@/components/AmenityDetail';
-import ContactInfoBar from '@/components/ContactInfoBar';
+import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Habitaciones' };
+export const metadata = { title: 'Hoteles Savoia | Categoría Ejecutiva' };
 
 const IMAGES = [
+  { src: '/img/ostende/habitaciones2/piso4/portada-ejecutiva.jpg', alt: 'Categoría Ejecutiva' },
   { src: '/img/ostende/habitaciones2/piso4/p404.jpg', alt: 'Categoría Ejecutiva' },
   { src: '/img/ostende/habitaciones2/piso4/ejecutiva2.jpg', alt: 'Categoría Ejecutiva' },
   { src: '/img/ostende/habitaciones2/piso4/p407.jpg', alt: 'Categoría Ejecutiva' },
 ];
 
-const DETAILS = [
-  {
-    label: 'Camas',
-    text: 'Habitaciones dobles que se pueden colocar camas adicionales para convertirlas en triples; contamos con habitaciónes comunicadas para 4/5 personas',
-  },
-  {
-    label: 'Tamaño',
-    text: 'Las habitaciones en Categoría ejecutiva cuentan con una superficie de 20 m2 y una fabulosa vista al Mar.',
-  },
-  {
-    label: 'Detalles',
-    text: 'Las mismas están equipadas con cerraduras magnéticas (Hotel Locking System), confortables camas tamaño Queen size (matrimonial) o Twins de 1 plaza, Frigobar, LCD 32 pulgadas, aire acondicionado, ventilador de techo, secador de cabello, caja de seguridad y baño con bañera.',
-  },
+const AMENITIES = [
+  'Cerraduras magnéticas (Hotel Locking System)',
+  'Camas tamaño King size (matrimonial) o Twins de 1 plaza',
+  'Frigobar',
+  'LCD 32 pulgadas',
+  'Aire acondicionado',
+  'Ventilador de techo',
+  'Secador de cabello',
+  'Caja de seguridad',
+  'Baño con bañera',
 ];
 
 export default function CategoriaEjecutivaPage() {
   return (
     <main>
-      <HeroBand imageSrc="/img/ostende/habitaciones2/piso4/portada-ejecutiva.jpg" imageAlt="Categoría Ejecutiva" title="CATEGORÍA EJECUTIVA" />
-      <AmenityDetail images={IMAGES} title="DESCRIPCIÓN" detailLines={DETAILS} />
-      <ContactInfoBar
-        locationHref="https://maps.app.goo.gl/7KvrAK9TjD1MjuA89"
-        locationText="Biarritz 184 e/ Defensa y Progreso - Ostende, Pinamar"
-        phoneHref="tel:02254496600"
-        phoneText="(02254) 49-6600"
+      <RoomDetail
+        title="Categoría Ejecutiva"
+        description="Habitaciones dobles de 20 m² con una fabulosa vista al mar. Se pueden agregar camas adicionales para convertirlas en triples, y contamos con habitaciones comunicadas para 4/5 personas."
+        images={IMAGES}
+        maxCapacity="2 adultos (hasta 3 con cama adicional)"
+        amenities={AMENITIES}
       />
     </main>
   );
