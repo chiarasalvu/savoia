@@ -140,7 +140,7 @@ export default function PropertyHeader({ propertyName, homeHref, logoSrc, logoAl
         {collapsed ? (
           <nav className="hidden items-center justify-center gap-5 md:flex lg:gap-8">
             <Link
-              href="/"
+              href={homeHref}
               className="whitespace-nowrap text-xs uppercase tracking-widest text-savoia-taupe-text transition-colors hover:text-savoia-charcoal"
             >
               Inicio
@@ -193,7 +193,7 @@ export default function PropertyHeader({ propertyName, homeHref, logoSrc, logoAl
           <Link href={homeHref} className="text-xs font-medium uppercase tracking-widest text-[var(--ph-fg)] transition-opacity hover:opacity-70">{propertyName}</Link>
           <nav className="flex items-center gap-6">
             <Link
-              href="/"
+              href={homeHref}
               className="text-xs uppercase tracking-widest text-[var(--ph-fg-soft)] transition-colors hover:text-[var(--ph-fg)]"
             >
               Inicio
@@ -239,7 +239,7 @@ export default function PropertyHeader({ propertyName, homeHref, logoSrc, logoAl
         </button>
         <ul className="mt-16 flex flex-col gap-6">
           <li>
-            <Link href="/" onClick={() => setMenuOpen(false)} className="text-lg tracking-wide text-savoia-charcoal">
+            <Link href={homeHref} onClick={() => setMenuOpen(false)} className="text-lg tracking-wide text-savoia-charcoal">
               Inicio
             </Link>
           </li>

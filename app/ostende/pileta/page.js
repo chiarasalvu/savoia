@@ -7,6 +7,7 @@ const IMAGES = [
   { src: '/img/ostende/pileta-exteriores/pileta1.jpg', alt: 'Pileta & Bar Naples' },
   { src: '/img/ostende/pileta-exteriores/pileta4.jpg', alt: 'Pileta & Bar Naples' },
   { src: '/img/ostende/pileta-exteriores/pileta3.jpg', alt: 'Pileta & Bar Naples' },
+  { src: '/img/ostende/pileta-exteriores/pileta5.jpg', alt: 'Pileta & Bar Naples' },
 ];
 
 const DETAILS = [

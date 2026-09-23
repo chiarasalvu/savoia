@@ -49,10 +49,6 @@ export default function HamletServiciosPage() {
     <main>
       <RevealSection className="mx-auto max-w-[1400px] px-6 pb-16 pt-24 md:px-8 md:pb-24 md:pt-32">
         <h1 className="text-2xl font-medium text-savoia-charcoal md:text-3xl">Servicios</h1>
-        <p className="mt-4 max-w-[640px] text-savoia-taupe-text">
-          Atentos al entusiasmo y las necesidades de quienes nos visitan, con la más amplia libertad de horarios
-          para disfrutar todos nuestros servicios.
-        </p>
         <div className="mt-10">
           <ServiceGrid services={SERVICES} />
         </div>

@@ -52,7 +52,7 @@ export default function HamletSustentabilidadPage() {
         <h1 className="text-3xl font-medium leading-tight text-savoia-charcoal md:text-4xl">
           Cuidamos el medio ambiente
           <br />
-          <span className="font-bold">y a la comunidad de Cariló</span>
+          y a la comunidad de Cariló
         </h1>
         <div>
           <p className="text-savoia-taupe-text">
@@ -108,36 +108,25 @@ export default function HamletSustentabilidadPage() {
         </div>
       </RevealSection>
 
-      <RevealSection className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-10 px-6 pb-14 md:grid-cols-2 md:gap-16 md:px-8 md:pb-20">
-        <div className="relative aspect-[3/2] w-full overflow-hidden">
-          <Image
-            src="/img/puerto-hamlet/sustentabilidad/certificacion-bronce.jpg"
-            alt="Certificación Bronce Hoteles Más Verdes de Puerto Hamlet"
-            fill
-            sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover"
-          />
-        </div>
-        <div>
-          <h2 className="text-xs font-medium uppercase tracking-widest text-savoia-charcoal">Certificaciones</h2>
-          <div className="mt-6 flex flex-wrap items-center gap-8">
-            {CERTIFICACIONES.map((cert) => (
-              <div key={cert.src} className="flex h-20 items-center">
-                <Image
-                  src={cert.src}
-                  alt={cert.alt}
-                  width={cert.width}
-                  height={cert.height}
-                  className="h-20 w-auto max-w-[220px] object-contain"
-                />
-              </div>
-            ))}
-          </div>
+      <RevealSection className="mx-auto max-w-[1400px] px-6 pb-14 text-center md:px-8 md:pb-20">
+        <h2 className="text-xs font-medium uppercase tracking-widest text-savoia-charcoal">Certificaciones</h2>
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-8">
+          {CERTIFICACIONES.map((cert) => (
+            <div key={cert.src} className="flex h-20 items-center">
+              <Image
+                src={cert.src}
+                alt={cert.alt}
+                width={cert.width}
+                height={cert.height}
+                className="h-20 w-auto max-w-[220px] object-contain"
+              />
+            </div>
+          ))}
         </div>
       </RevealSection>
 
       <RevealSection className="mx-auto max-w-[900px] px-6 pb-16 text-center md:px-8 md:pb-24">
-        <p className="font-sans text-2xl font-bold leading-tight tracking-tight text-savoia-charcoal md:text-3xl">
+        <p className="font-sans text-xl font-medium leading-snug tracking-tight text-savoia-charcoal md:text-2xl">
           Puerto Hamlet no es sólo un lugar de descanso para quienes visitan Cariló. Es también patrimonio natural de
           todos sus habitantes, de hoy y de mañana.
         </p>
