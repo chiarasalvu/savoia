@@ -18,7 +18,6 @@ export default function OstendeLayout({ children }) {
         logoHeight={38}
         logoAlt="Hotel Savoia Ostende"
         navLinks={NAV_LINKS}
-        bookHref="/ostende/contacto"
       />
       {children}
       <Footer />

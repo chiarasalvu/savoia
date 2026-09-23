@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
-const HEADER_DOCK_CENTER = 44; // matches Header's h-[88px]
+const HEADER_DOCK_CENTER = 32; // matches Header's collapsed h-16
 // How much scroll it takes for the logo to finish rising into the header —
 // short on purpose, a quick snap near the top rather than a slow crawl
 // across the whole hero (Casa Cook's own hero is much taller than its

@@ -10,7 +10,7 @@ const IMAGES = [
 
 const DETAILS = [
   { label: 'Horarios', text: 'De 9:00 a 19:00hs' },
-  { label: 'Información', text: 'Menores de 12 años requieren la presencia de un adulto.' },
+  { label: 'Información', text: 'Los menores de 12 años deben estar siempre acompañados por un adulto responsable.' },
 ];
 
 export default function MiniclubPage() {
@@ -18,7 +18,7 @@ export default function MiniclubPage() {
     <main>
       <RoomDetail
         title="Sala de recreación"
-        description='Actividades recreativas organizadas por el área de recreación, con juegos habilitados durante todo el día.'
+        description='Actividades recreativas organizadas por nuestro equipo de recreación, con juegos habilitados durante todo el día.'
         images={IMAGES}
         details={DETAILS}
       />

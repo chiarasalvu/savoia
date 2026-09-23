@@ -19,7 +19,6 @@ export default function HamletLayout({ children }) {
         logoHeight={26}
         logoAlt="Puerto Hamlet — Hoteles Savoia"
         navLinks={NAV_LINKS}
-        bookHref="/puerto-hamlet/contacto"
       />
       {children}
       <Footer />

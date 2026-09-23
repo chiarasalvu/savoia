@@ -40,7 +40,7 @@ export default function RoomCard({ href, src, alt, title, size, capacity, view, 
 
       <Link
         href={href}
-        className="mt-2 inline-block text-xs font-medium uppercase tracking-wide text-savoia-charcoal underline underline-offset-4 hover:opacity-70"
+        className="mt-4 inline-block text-xs font-medium uppercase tracking-wide text-savoia-charcoal underline underline-offset-4 hover:opacity-70"
       >
         Ver más
       </Link>

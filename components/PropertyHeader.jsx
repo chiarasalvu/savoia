@@ -24,7 +24,9 @@ const HOTELS = [
 // Expanded state only: hamburger + "HOTELES" dropdown on the left, so a property page can jump back to the
 // landing or across to another property. Collapsed keeps the hamburger on
 // mobile only, where the inline nav is hidden.
-export default function PropertyHeader({ propertyName, homeHref, logoSrc, logoAlt, logoHeight = 34, navLinks, bookHref = '#contacto' }) {
+const WHATSAPP_HREF = 'https://wa.me/5491158958380?text=Hola!%20Quiero%20consultar%20sobre%20una%20reserva.';
+
+export default function PropertyHeader({ propertyName, homeHref, logoSrc, logoAlt, logoHeight = 34, navLinks }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [hotelsOpen, setHotelsOpen] = useState(false);
@@ -80,7 +82,7 @@ export default function PropertyHeader({ propertyName, homeHref, logoSrc, logoAl
     >
       <div
         className={`mx-auto grid max-w-[1400px] grid-cols-[1fr_auto_1fr] items-center px-6 transition-[height] duration-300 md:px-8 ${
-          collapsed ? 'h-[72px]' : 'h-24'
+          collapsed ? 'h-16' : 'h-20'
         }`}
       >
         {collapsed ? (
@@ -137,6 +139,12 @@ export default function PropertyHeader({ propertyName, homeHref, logoSrc, logoAl
 
         {collapsed ? (
           <nav className="hidden items-center justify-center gap-5 md:flex lg:gap-8">
+            <Link
+              href="/"
+              className="whitespace-nowrap text-xs uppercase tracking-widest text-savoia-taupe-text transition-colors hover:text-savoia-charcoal"
+            >
+              Inicio
+            </Link>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -165,7 +173,9 @@ export default function PropertyHeader({ propertyName, homeHref, logoSrc, logoAl
 
         <div className="flex justify-end">
           <Link
-            href={bookHref}
+            href={WHATSAPP_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden bg-[var(--ph-btn-bg)] px-5 py-2 text-xs font-medium uppercase tracking-widest text-[var(--ph-btn-fg)] transition-opacity hover:opacity-90 sm:block"
           >
             Reservar
@@ -180,8 +190,14 @@ export default function PropertyHeader({ propertyName, homeHref, logoSrc, logoAl
         }`}
       >
         <div className="mx-auto flex h-12 max-w-[1400px] items-center justify-between px-6 md:px-8">
-          <span className="text-xs font-medium uppercase tracking-widest text-[var(--ph-fg)]">{propertyName}</span>
+          <Link href={homeHref} className="text-xs font-medium uppercase tracking-widest text-[var(--ph-fg)] transition-opacity hover:opacity-70">{propertyName}</Link>
           <nav className="flex items-center gap-6">
+            <Link
+              href="/"
+              className="text-xs uppercase tracking-widest text-[var(--ph-fg-soft)] transition-colors hover:text-[var(--ph-fg)]"
+            >
+              Inicio
+            </Link>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -266,7 +282,7 @@ export default function PropertyHeader({ propertyName, homeHref, logoSrc, logoAl
     {/* Pages without a hero start below the tall top state: the fixed header
         is 72px taller expanded than collapsed, and page content is only
         padded for the collapsed height. */}
-    <div aria-hidden="true" className="hidden h-6 md:h-[72px] [body:not(:has(#property-hero))_&]:block" />
+    <div aria-hidden="true" className="hidden h-6 md:h-16 [body:not(:has(#property-hero))_&]:block" />
     </>
   );
 }

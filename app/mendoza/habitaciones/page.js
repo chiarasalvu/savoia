@@ -14,7 +14,12 @@ const AMENITIES = [
 export default function HabitacionesPage() {
   return (
     <main>
-      <RoomDetail title="Habitaciones" description={'Habitaciones cómodas y equipadas para que disfrutes de un descanso placentero durante tu estadía.'} images={IMAGES} amenities={AMENITIES} />
+      <RoomDetail
+        title="Habitaciones"
+        description="Hotel Savoia Mendoza cuenta con 103 habitaciones entre dobles, triples y departamentos, pensadas para que disfrute de un descanso placentero durante toda su estadía."
+        images={IMAGES}
+        amenities={AMENITIES}
+      />
     </main>
   );
 }

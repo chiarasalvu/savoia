@@ -26,7 +26,7 @@ export default function CategoriaEjecutivaPage() {
     <main>
       <RoomDetail
         title="Categoría Ejecutiva"
-        description="Habitaciones dobles de 20 m² con una fabulosa vista al mar. Se pueden agregar camas adicionales para convertirlas en triples, y contamos con habitaciones comunicadas para 4/5 personas."
+        description="Habitaciones dobles de 20 m² con una fabulosa vista al mar. Al igual que en el resto de nuestras categorías, podés sumar una cama adicional para convertirlas en triples, o combinarlas como habitaciones comunicadas para 4 o 5 personas."
         images={IMAGES}
         maxCapacity="2 adultos (hasta 3 con cama adicional)"
         amenities={AMENITIES}

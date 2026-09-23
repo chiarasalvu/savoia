@@ -6,15 +6,17 @@ const IMAGES = [
   { src: '/img/san-bernardo/habitacion.jpg', alt: 'Habitación Hotel Savoia San Bernardo' },
 ];
 
-const AMENITIES = [
-  'Camas dobles y triples',
-  'Baño privado',
-];
+const AMENITIES = ['Wifi', 'Aire acondicionado', 'TV'];
 
 export default function HabitacionesPage() {
   return (
     <main>
-      <RoomDetail title="Habitaciones" description={'Habitaciones cómodas y equipadas para que disfrutes de un descanso placentero después de un día de playa.'} images={IMAGES} amenities={AMENITIES} />
+      <RoomDetail
+        title="Habitaciones"
+        description="Dobles y triples, equipadas para un descanso placentero."
+        images={IMAGES}
+        amenities={AMENITIES}
+      />
     </main>
   );
 }

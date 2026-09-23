@@ -24,7 +24,7 @@ export default function CategoriaSuperiorPage() {
     <main>
       <RoomDetail
         title="Categoría Superior"
-        description="Habitaciones dobles de 28 a 30 m² aproximadamente, con una vista franca e imponente al mar y al entorno natural. Se pueden agregar camas adicionales para convertirlas en triples, y contamos con habitaciones comunicadas para 4/5 personas."
+        description="Habitaciones dobles de 28 a 30 m² aproximadamente, con una vista franca e imponente al mar y al entorno natural. Admiten camas adicionales para convertirse en triples, y también contamos con habitaciones comunicadas para grupos de 4 a 5 personas."
         images={IMAGES}
         maxCapacity="2 adultos (hasta 3 con cama adicional)"
         amenities={AMENITIES}

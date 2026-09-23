@@ -3,7 +3,7 @@
 // shows until /videos/hero-landing.mp4 exists / finishes loading.
 export default function LandingHero() {
   return (
-    <section id="home-hero" className="relative h-[calc(100vh-88px)] w-full overflow-hidden bg-savoia-charcoal">
+    <section id="home-hero" className="relative h-screen w-full overflow-hidden bg-savoia-charcoal">
       <video
         autoPlay
         muted

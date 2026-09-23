@@ -24,7 +24,7 @@ export default function CategoriaStandardPage() {
     <main>
       <RoomDetail
         title="Categoría Estándar"
-        description="Habitaciones dobles de 20 m². Se pueden agregar camas adicionales para convertirlas en triples, y contamos con habitaciones comunicadas para 4/5 personas."
+        description="Habitaciones dobles de 20 m², ideales para una estadía cómoda y funcional. También ofrecen la posibilidad de agregar cama adicional para uso triple, o combinarse como habitaciones comunicadas para 4/5 personas."
         images={IMAGES}
         maxCapacity="2 adultos (hasta 3 con cama adicional)"
         amenities={AMENITIES}

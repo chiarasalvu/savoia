@@ -27,9 +27,9 @@ const SERVICES = [
   },
   {
     src: '/img/ostende/servicios/pileta-ostende.jpg',
-    alt: 'Piscina climatizada',
-    title: 'Piscina climatizada',
-    description: 'Sector especial para niños, solárium y actividades recreativas guiadas.',
+    alt: 'Pileta & Bar Naples',
+    title: 'Pileta & Bar Naples',
+    description: 'Sector para niños y adultos, con el Bar Naples al lado para comer y beber todo el día.',
     href: '/ostende/pileta',
   },
   {

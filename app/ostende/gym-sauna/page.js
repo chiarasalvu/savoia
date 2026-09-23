@@ -11,7 +11,7 @@ const IMAGES = [
 
 const DETAILS = [
   { label: 'Horario gimnasio', text: 'De 7:00 a 22:00hs' },
-  { label: 'Información', text: 'Menores de 18 años deben estar acompañados por un adulto responsable.' },
+  { label: 'Información', text: 'Los menores de 18 años deben estar siempre acompañados por un adulto responsable.' },
 ];
 
 export default function GymSaunaPage() {
@@ -19,7 +19,7 @@ export default function GymSaunaPage() {
     <main>
       <RoomDetail
         title="Gimnasio y sauna"
-        description='Gimnasio equipado y sauna. Para usar el sauna, pedí turno en recepción para que lo habiliten y consultá los días disponibles.'
+        description='Contamos con gimnasio equipado y sauna. Para utilizar el sauna es necesario solicitar turno en recepción y consultar los días disponibles.'
         images={IMAGES}
         details={DETAILS}
       />

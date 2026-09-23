@@ -10,7 +10,7 @@ import FormField from '@/components/FormField';
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/myzgqqrl';
 
 export default function PuertoHamletContactForm({
-  title = 'RESERVÁ TU ESTADÍA',
+  title = 'GESTIONÁ TU RESERVA',
   subtitle = 'Contactanos y viví una experiencia inolvidable en Cariló',
 }) {
   const [submitted, setSubmitted] = useState(false);

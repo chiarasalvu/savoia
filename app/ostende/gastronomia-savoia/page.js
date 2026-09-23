@@ -11,8 +11,8 @@ const DESAYUNO_IMAGES = [
 
 const DESAYUNO_DETAILS = [
   { label: 'Horarios', text: 'De 8:00 a 11:00hs' },
-  { label: 'Información', text: 'Menores deben estar acompañados por un adulto responsable.' },
-  { label: 'Importante', text: 'Contamos con alimentos aptos celíacos avisar en recepción y a la hora de realizar la reserva.' },
+  { label: 'Información', text: 'Los menores de 12 años deben estar siempre acompañados por un adulto responsable.' },
+  { label: 'Importante', text: 'Contamos con alimentos aptos para celíacos. Por favor, avisar en recepción o al momento de realizar la reserva.' },
 ];
 
 const CENA_IMAGES = [
@@ -26,8 +26,8 @@ const CENA_IMAGES = [
 
 const CENA_DETAILS = [
   { label: 'Horarios', text: 'De 20:30 a 22:30hs' },
-  { label: 'Costo adicional', text: 'Consultar acerca de este servicio antes de reservar ya que es un servicio adicional.' },
-  { label: 'Importante', text: 'Contamos con alimentos aptos celíacos avisar en recepción y a la hora de realizar la reserva.' },
+  { label: 'Costo adicional', text: 'Este es un servicio adicional. Te recomendamos consultar por su disponibilidad y costo antes de realizar la reserva.' },
+  { label: 'Importante', text: 'Contamos con alimentos aptos para celíacos. Por favor, avisar en recepción o al momento de realizar la reserva.' },
 ];
 
 export default function GastronomiaSavoiaPage() {
@@ -35,15 +35,16 @@ export default function GastronomiaSavoiaPage() {
     <main>
       <RoomDetail
         title="Desayuno Savoia"
-        description="Durante las mañanas, podrá disfrutar de un exquisito desayuno buffet estilo americano."
+        description="Cada mañana podrá disfrutar de un desayuno buffet estilo americano, con una variada selección de opciones dulces y saladas."
         images={DESAYUNO_IMAGES}
         details={DESAYUNO_DETAILS}
       />
       <RoomDetail
         compact
+        reverse
         headingTag="h2"
         title="Cena Savoia"
-        description="Todas las noches nuestro chef ejecutivo elabora distintas variedades de platos calientes servidas a la minuta para lograr el verdadero sabor de la comida hogareña. Además se sirven menús temáticos: la noche Mexicana con tacos y nachos, la noche Española con su tradicional Paella Savoia, la noche Oriental con variedad de sushi, la noche Argentina con la pata de ternera fileteada por el propio chef en el salón y la noche Italiana con su incomparable festival de pastas."
+        description="Todas las noches, nuestro chef ejecutivo elabora una variedad de platos calientes servidos a la minuta, buscando el verdadero sabor de la comida hogareña. Además, ofrecemos menús temáticos especiales: la noche Mexicana, con tacos y nachos; la noche Española, con nuestra tradicional Paella Savoia; la noche Oriental, con variedad de sushi; la noche Argentina, con la pata de ternera fileteada por el propio chef en el salón; y la noche Italiana, con su incomparable festival de pastas."
         images={CENA_IMAGES}
         details={CENA_DETAILS}
       />

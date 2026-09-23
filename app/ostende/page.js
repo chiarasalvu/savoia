@@ -17,9 +17,9 @@ const HIGHLIGHTS = [
   },
   {
     src: '/img/ostende/pile-home.jpg',
-    alt: 'Piscina climatizada',
-    title: 'Piscina climatizada',
-    text: 'Piscina exterior climatizada, con sector para niños y bar de piscina.',
+    alt: 'Pileta & Bar Naples',
+    title: 'Pileta & Bar Naples',
+    text: 'Sector para niños y adultos, con el Bar Naples al lado para comer y beber todo el día.',
     href: '/ostende/pileta',
   },
   {
@@ -46,8 +46,8 @@ export default function OstendeHomePage() {
 
       <div className="relative mx-auto my-6 h-[300px] w-full max-w-[1200px] md:h-[550px]">
         <Image
-          src="/img/ostende/home/lobby-ostende.webp"
-          alt="Lobby Hotel Savoia Ostende"
+          src="/img/ostende/home/pileta-savoia.jpg"
+          alt="Pileta del Hotel Savoia Ostende"
           fill
           sizes="(min-width: 1200px) 1200px, 100vw"
           className="object-cover"
@@ -76,7 +76,7 @@ export default function OstendeHomePage() {
           subtitle="Descubrí todo lo que tenemos para ofrecerte"
           paragraphs={[
             'Ubicados frente al mar, le ofrecemos la combinación perfecta de hotelería con máximo confort y una exquisita gastronomía gourmet.',
-            'Disponemos habitaciones, suites y departamentos equipados para tus vacaciones y escapadas. En el Hotel Savoia encontrará un cordial ambiente familiar, tranquilidad, distensión y toda una organización dispuesta a asesorarlo para que sus días de vacaciones sean inolvidables.',
+            'Disponemos de habitaciones, suites y departamentos equipados para sus vacaciones y escapadas. En el Hotel Savoia encontrará un ambiente cordial y familiar, tranquilidad, distensión, y una organización dispuesta a asesorarlo para que sus días de vacaciones sean inolvidables.',
           ]}
         />
       </div>
@@ -89,11 +89,19 @@ export default function OstendeHomePage() {
           title="GASTRONOMÍA"
           subtitle="Desayuno, brunch y cena frente al mar"
           paragraphs={[
-            'Durante las mañanas, podrá disfrutar de un exquisito desayuno BUFFET estilo americano. Un almuerzo a la carta en el bar de piscina o en el de planta baja. Por la noche, podra deleitarse con una propuesta única: variedad de platos disponibles en el buffet Froid, minutas elaboradas por el chef ejecutivo y un menú temático por noche.',
+            'Durante las mañanas, podrá disfrutar de un exquisito desayuno buffet estilo americano. Al mediodía, podrá almorzar a la carta en el bar de la pileta o en el del salón de planta baja. Por la noche, lo espera una propuesta única: variedad de platos en el buffet frío, minutas elaboradas por el chef ejecutivo y un menú temático diferente cada noche.',
           ]}
         />
       </div>
 
+      <RevealSection className="mx-auto max-w-[1400px] px-6 pb-16 text-center md:px-8 md:pb-24">
+        <a
+          href="/ostende/servicios"
+          className="inline-block border border-[#00244D] bg-[#00244D] px-6 py-3 text-xs font-medium uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-[#00244D]"
+        >
+          Ver todos los servicios
+        </a>
+      </RevealSection>
     </main>
   );
 }

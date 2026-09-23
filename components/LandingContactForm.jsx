@@ -40,7 +40,7 @@ export default function LandingContactForm() {
     <section id="contacto">
       <div className="py-10 text-center md:py-14">
         <div className="mx-auto max-w-[1100px] px-6 md:px-8">
-          <h2 className="text-2xl font-medium tracking-tight md:text-3xl">RESERVÁ TU ESTADÍA</h2>
+          <h2 className="text-2xl font-medium tracking-tight md:text-3xl">GESTIONÁ TU RESERVA</h2>
           <h3 className="mt-4 text-lg text-savoia-taupe-text">¡Contactanos y viví una experiencia inolvidable!</h3>
 
           {submitted ? (

@@ -11,7 +11,7 @@ const IMAGES = [
 
 const DETAILS = [
   { label: 'Horarios', text: 'De 10:00 a 00:00hs' },
-  { label: 'Información', text: 'Menores de 12 años deben estar acompañados por un adulto responsable.' },
+  { label: 'Información', text: 'Los menores de 12 años deben estar siempre acompañados por un adulto responsable.' },
 ];
 
 export default function BarWoodstockPage() {
@@ -19,7 +19,7 @@ export default function BarWoodstockPage() {
     <main>
       <RoomDetail
         title="Bar Woodstock"
-        description='Comida y coctelería en planta baja, con actividades recreativas como karaoke, bingo y bingo musical, entre otras.'
+        description='Comida y coctelería en planta baja, con actividades recreativas a cargo de nuestro equipo de recreación (karaoke, bingo, truco, entre otras).'
         images={IMAGES}
         details={DETAILS}
       />

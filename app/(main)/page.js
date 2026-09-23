@@ -10,7 +10,7 @@ export const metadata = { title: 'Hoteles Savoia | Bienvenidos' };
 
 const LOCATIONS = [
   {
-    src: '/img/home/portada.jpg',
+    src: '/img/home/portada-ostende-cartel.jpg',
     alt: 'Hotel Savoia Ostende',
     name: 'HOTEL SAVOIA OSTENDE',
     location: 'Pinamar, Buenos Aires',

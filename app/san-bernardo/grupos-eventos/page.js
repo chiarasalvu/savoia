@@ -1,7 +1,10 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import RevealSection from '@/components/RevealSection';
 
 export const metadata = { title: 'Hoteles Savoia | Grupos & Eventos' };
+
+const WHATSAPP_HREF = 'https://wa.me/5491158958380?text=Hola!%20Quiero%20consultar%20por%20grupos%20y%20eventos%20en%20San%20Bernardo.';
 
 export default function SanBernardoGruposEventosPage() {
   return (
@@ -13,20 +16,26 @@ export default function SanBernardoGruposEventosPage() {
       <RevealSection className="mx-auto grid max-w-[1100px] grid-cols-1 items-center gap-10 px-6 pb-16 md:grid-cols-2 md:gap-16 md:px-8 md:pb-24">
         <div>
           <p className="text-savoia-taupe-text">
-            Ponemos todos nuestros hoteles a disposición de grupos y eventos: reuniones empresariales,
-            convenciones, celebraciones o estadías grupales. En el corazón de la costa, a metros de la playa,
-            Hotel Savoia San Bernardo ofrece el espacio y la organización necesarios para que tu evento salga
-            como lo imaginaste.
+            A metros de la playa, Hotel Savoia San Bernardo ofrece el espacio y la organización necesarios para
+            que su evento salga tal como lo imaginó.
           </p>
           <p className="mt-4 text-savoia-taupe-text">
-            Contános qué necesitás y te ayudamos a planificarlo, desde la logística hasta el alojamiento del
+            Cuéntenos qué necesita y lo ayudamos a planificarlo, desde la logística hasta el alojamiento del
             grupo.
           </p>
+          <Link
+            href={WHATSAPP_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-block border border-savoia-charcoal px-5 py-2 text-xs font-medium tracking-wide text-savoia-charcoal transition-colors hover:bg-savoia-charcoal hover:text-white"
+          >
+            CONSULTANOS POR WHATSAPP
+          </Link>
         </div>
         <div className="relative h-[280px] w-full overflow-hidden md:h-[360px]">
           <Image
-            src="/img/san-bernardo/comedor.jpg"
-            alt="Comedor del Hotel Savoia San Bernardo"
+            src="/img/san-bernardo/san-bernardo-7.jpg"
+            alt="Hotel Savoia San Bernardo"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"

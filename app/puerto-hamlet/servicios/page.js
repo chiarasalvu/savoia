@@ -20,7 +20,7 @@ const SERVICES = [
     src: '/img/puerto-hamlet/servicios/club-house.jpg',
     alt: 'Salón de desayuno del Club House de Puerto Hamlet',
     title: 'Club house',
-    description: 'Desayuno buffet, dos TV con cable digital, hogar a leños, rincón de lectura, pool y pantalla gigante para eventos deportivos.',
+    description: 'Desayuno buffet, dos TV con cable digital, hogar a leña, rincón de lectura, mesa de pool y pantalla gigante para eventos deportivos.',
   },
   {
     src: '/img/puerto-hamlet/servicios/gimnasio.jpg',
@@ -41,8 +41,6 @@ const INCLUYE = [
   'Recreación para niños a partir de los 3 años.',
   'Uso del gimnasio y sectores comunes.',
   'Mucama, ropa blanca y lavado de vajilla.',
-  'Amplia DVDteca para disfrutar en su cabaña.',
-  'Sombrilla y reposeras para llevar a la playa.',
   'Servicio de sombrilla en Balneario Hemingwey con costo adicional (en Temporada Alta).',
 ];
 

@@ -1,12 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const HOTELS = [
-  { href: '/ostende/grupos-eventos', label: 'Hotel Savoia Ostende' },
-  { href: '/puerto-hamlet/grupos-eventos', label: 'Puerto Hamlet' },
-  { href: '/mendoza/grupos-eventos', label: 'Hotel Savoia Mendoza' },
-  { href: '/san-bernardo/grupos-eventos', label: 'Hotel Savoia San Bernardo' },
-];
+const WHATSAPP_HREF = 'https://wa.me/5491158958380?text=Hola!%20Quiero%20consultar%20por%20grupos%20y%20eventos.';
 
 export default function GruposEventosSection() {
   return (
@@ -14,36 +9,30 @@ export default function GruposEventosSection() {
       <div>
         <h2 className="text-2xl font-medium tracking-tight md:text-3xl">GRUPOS Y EVENTOS</h2>
         <p className="mt-6 max-w-[480px] text-savoia-taupe-text">
-          Nuestros hoteles reciben grupos y eventos: reuniones, celebraciones y estadías grupales.
+          Ponemos todos nuestros hoteles a disposición de grupos y eventos: reuniones empresariales, convenciones,
+          celebraciones y estadías grupales.
+        </p>
+        <p className="mt-4 max-w-[480px] text-savoia-taupe-text">
+          Cada uno de nuestros espacios ofrece la infraestructura y el acompañamiento necesarios para que su
+          evento salga tal como lo imaginó.
+        </p>
+        <p className="mt-4 max-w-[480px] text-savoia-taupe-text">
+          Cuéntenos qué necesita y lo ayudamos a planificarlo, desde la logística hasta el alojamiento del grupo.
         </p>
 
-        <ul className="mt-6 flex max-w-[480px] flex-col divide-y divide-savoia-taupe/20 border-y border-savoia-taupe/20">
-          {HOTELS.map((hotel) => (
-            <li key={hotel.href}>
-              <Link
-                href={hotel.href}
-                className="group flex items-center justify-between py-3 text-sm text-savoia-charcoal transition-colors hover:text-savoia-taupe-text"
-              >
-                {hotel.label}
-                <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
-                  →
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-
         <Link
-          href="/#contacto"
+          href={WHATSAPP_HREF}
+          target="_blank"
+          rel="noopener noreferrer"
           className="mt-8 inline-block border border-savoia-charcoal px-5 py-2 text-xs font-medium tracking-wide text-savoia-charcoal transition-colors hover:bg-savoia-charcoal hover:text-white"
         >
-          CONSULTANOS
+          CONSULTANOS POR WHATSAPP
         </Link>
       </div>
 
       <div className="relative aspect-[4/3] w-full overflow-hidden">
         <Image
-          src="/img/grupos-eventos.webp"
+          src="/img/grupos-eventos-savoia.jpg"
           alt="Grupos y eventos en Hoteles Savoia"
           fill
           sizes="(min-width: 768px) 50vw, 100vw"

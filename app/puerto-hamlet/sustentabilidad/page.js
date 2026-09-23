@@ -50,7 +50,9 @@ export default function HamletSustentabilidadPage() {
     <main>
       <RevealSection className="mx-auto grid max-w-[1400px] grid-cols-1 gap-8 px-6 pb-14 pt-24 md:grid-cols-[1fr_1.2fr] md:gap-16 md:px-8 md:pb-20 md:pt-32">
         <h1 className="text-3xl font-medium leading-tight text-savoia-charcoal md:text-4xl">
-          Cuidamos el ambiente y a la comunidad de Cariló
+          Cuidamos el medio ambiente
+          <br />
+          <span className="font-bold">y a la comunidad de Cariló</span>
         </h1>
         <div>
           <p className="text-savoia-taupe-text">
@@ -74,17 +76,7 @@ export default function HamletSustentabilidadPage() {
         </div>
       </div>
 
-      <RevealSection className="mx-auto grid max-w-[1400px] grid-cols-1 gap-10 px-6 pb-14 md:grid-cols-[0.8fr_1.6fr] md:gap-16 md:px-8 md:pb-20">
-        <div className="relative aspect-[4/5] w-full overflow-hidden md:sticky md:top-32 md:self-start">
-          <Image
-            src="/img/puerto-hamlet/sustentabilidad/hero.jpg"
-            alt="Cartel informativo entre la vegetación del parque de Puerto Hamlet"
-            fill
-            sizes="(min-width: 768px) 30vw, 100vw"
-            className="object-cover"
-          />
-        </div>
-
+      <RevealSection className="mx-auto max-w-[1400px] px-6 pb-14 md:px-8 md:pb-20">
         <div>
           <h2 className="text-xs font-medium uppercase tracking-widest text-savoia-charcoal">Nuestros compromisos</h2>
           <ol className="mt-6 border-t border-savoia-taupe/20">
@@ -145,7 +137,7 @@ export default function HamletSustentabilidadPage() {
       </RevealSection>
 
       <RevealSection className="mx-auto max-w-[900px] px-6 pb-16 text-center md:px-8 md:pb-24">
-        <p className="text-xl font-light leading-relaxed text-savoia-charcoal md:text-2xl">
+        <p className="font-sans text-2xl font-bold leading-tight tracking-tight text-savoia-charcoal md:text-3xl">
           Puerto Hamlet no es sólo un lugar de descanso para quienes visitan Cariló. Es también patrimonio natural de
           todos sus habitantes, de hoy y de mañana.
         </p>

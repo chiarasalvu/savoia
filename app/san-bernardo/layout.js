@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 const NAV_LINKS = [
   { href: '/san-bernardo/servicios', label: 'Servicios' },
   { href: '/san-bernardo/grupos-eventos', label: 'Grupos & Eventos' },
-  { href: '/san-bernardo#contacto', label: 'Contacto' },
+  { href: '/san-bernardo/contacto', label: 'Contacto' },
 ];
 
 export default function SanBernardoLayout({ children }) {
@@ -17,7 +17,6 @@ export default function SanBernardoLayout({ children }) {
         logoHeight={30}
         logoAlt="Hotel Savoia San Bernardo"
         navLinks={NAV_LINKS}
-        bookHref="/san-bernardo#contacto"
       />
       {children}
       <Footer />

@@ -1,14 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
-const NAV_LINKS = [
-  { href: '/', label: 'INICIO' },
-  { href: '/#historia', label: 'NOSOTROS' },
-  { href: '/#contacto', label: 'CONTACTO' },
-];
 
 const HOTELS = [
   { href: '/ostende', label: 'HOTEL SAVOIA OSTENDE', src: '/img/home/portada.jpg' },
@@ -17,29 +11,63 @@ const HOTELS = [
   { href: '/san-bernardo', label: 'HOTEL SAVOIA SAN BERNARDO', src: '/img/hoteles/san-bernardo.jpeg' },
 ];
 
+const WHATSAPP_HREF = 'https://wa.me/5491158958380?text=Hola!%20Quiero%20consultar%20sobre%20una%20reserva.';
+const SCROLL_THRESHOLD = 90;
+
 // OKU-style header: hamburger + "HOTELS" label on the left (the label opens
 // its own small dropdown right in the header, independent of the full side
 // menu), the logo docks here once ScrollLogo finishes rising out of the
-// hero, and a CTA on the right. The side panel opens from the left, with
-// HOTELS repeated there as an expandable accordion — both places to reach
-// the four properties, per the brief.
+// hero, and a CTA on the right. `fixed` (not sticky) and transparent while
+// over the hero, so it floats over the video instead of pushing it down;
+// past SCROLL_THRESHOLD it collapses into a solid bar, same pattern as
+// PropertyHeader. The side panel opens from the left, with HOTELS repeated
+// there as an expandable accordion — both places to reach the four
+// properties, per the brief.
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hotelsOpen, setHotelsOpen] = useState(false);
   const [accordionOpen, setAccordionOpen] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
+  const rafRef = useRef(null);
+
+  useEffect(() => {
+    function measure() {
+      setScrolled(window.scrollY > SCROLL_THRESHOLD);
+    }
+    function onScroll() {
+      if (rafRef.current) return;
+      rafRef.current = requestAnimationFrame(() => {
+        measure();
+        rafRef.current = null;
+      });
+    }
+    measure();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
+
+  const fg = scrolled ? 'text-savoia-charcoal' : 'text-white';
+  const bar = scrolled ? 'bg-savoia-charcoal' : 'bg-white';
 
   return (
     // Backdrop + slide-in panel live OUTSIDE <header> on purpose (see below):
     // header stays z-30 so ScrollLogo (z-40) can dock visibly on top of its
-    // plain background, but header is `sticky`, which opens its own
-    // stacking context — anything nested inside it would get capped at
-    // header's z-30 for comparisons against page siblings like ScrollLogo,
-    // no matter what z-index it declares internally. Keeping the panel a
-    // sibling of <header> (and of ScrollLogo) instead lets it use z-50 for
-    // real, above both the plain header and the docked logo.
+    // background, but header is `fixed`, which opens its own stacking
+    // context — anything nested inside it would get capped at header's z-30
+    // for comparisons against page siblings like ScrollLogo, no matter what
+    // z-index it declares internally. Keeping the panel a sibling of
+    // <header> (and of ScrollLogo) instead lets it use z-50 for real, above
+    // both the header and the docked logo.
     <>
-    <header className="sticky top-0 z-30 border-b border-savoia-taupe/20 bg-savoia-body">
-      <nav className="relative mx-auto flex h-[88px] max-w-[1400px] items-center justify-between px-6 md:px-8">
+    <header
+      className={`fixed inset-x-0 top-0 z-30 transition-colors duration-300 ${
+        scrolled ? 'border-b border-savoia-taupe/20 bg-savoia-body' : 'bg-transparent'
+      }`}
+    >
+      <nav className={`relative mx-auto flex max-w-[1400px] items-center justify-between px-6 transition-[height] duration-300 md:px-8 ${scrolled ? 'h-16' : 'h-20'}`}>
         <div className="flex items-center gap-4">
           <button
             type="button"
@@ -48,9 +76,9 @@ export default function Header() {
             onMouseEnter={() => setMenuOpen(true)}
             onClick={() => setMenuOpen(true)}
           >
-            <span className="block h-[2px] w-6 bg-savoia-charcoal" />
-            <span className="block h-[2px] w-6 bg-savoia-charcoal" />
-            <span className="block h-[2px] w-6 bg-savoia-charcoal" />
+            <span className={`block h-[2px] w-6 transition-colors duration-300 ${bar}`} />
+            <span className={`block h-[2px] w-6 transition-colors duration-300 ${bar}`} />
+            <span className={`block h-[2px] w-6 transition-colors duration-300 ${bar}`} />
           </button>
 
           <div
@@ -60,7 +88,7 @@ export default function Header() {
           >
             <button
               type="button"
-              className="text-xs font-medium tracking-wide text-savoia-charcoal"
+              className={`text-xs font-medium tracking-wide transition-colors duration-300 ${fg}`}
               onClick={() => setHotelsOpen((v) => !v)}
             >
               HOTELES
@@ -100,10 +128,16 @@ export default function Header() {
         <div className="w-[150px]" aria-hidden="true" />
 
         <Link
-          href="/#contacto"
-          className="hidden border border-savoia-charcoal px-5 py-2 text-xs font-medium tracking-wide text-savoia-charcoal transition-colors hover:bg-savoia-charcoal hover:text-white sm:block"
+          href={WHATSAPP_HREF}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`hidden px-5 py-2 text-xs font-medium tracking-wide transition-colors sm:block ${
+            scrolled
+              ? 'bg-savoia-charcoal text-white hover:opacity-90'
+              : 'border border-white text-white hover:bg-white hover:text-savoia-charcoal'
+          }`}
         >
-          RESERVAR
+          Reservar
         </Link>
       </nav>
     </header>
@@ -163,17 +197,16 @@ export default function Header() {
               </ul>
             )}
           </li>
-          {NAV_LINKS.slice(1).map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="text-lg tracking-wide text-savoia-charcoal"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          <li>
+            <Link href="/#historia" onClick={() => setMenuOpen(false)} className="text-lg tracking-wide text-savoia-charcoal">
+              NOSOTROS
+            </Link>
+          </li>
+          <li>
+            <Link href="/#contacto" onClick={() => setMenuOpen(false)} className="text-lg tracking-wide text-savoia-charcoal">
+              CONTACTO
+            </Link>
+          </li>
         </ul>
       </div>
     </>

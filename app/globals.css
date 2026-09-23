@@ -46,6 +46,30 @@ body {
   background: var(--color-savoia-sand);
 }
 
+/* All body copy justified, no hyphen breaks — per the client's brief.
+   Scoped to the element so short UI labels (buttons, badges) that don't use
+   <p> are unaffected. Wrapped in @layer base (not left unlayered) so
+   Tailwind's own utilities — which live in @layer utilities, after base —
+   still win the cascade: an unlayered rule beats every layered one
+   regardless of specificity, which silently broke every text-center on a
+   <p> sitewide (e.g. the footer's copyright line) before this was scoped.
+
+   That fix only covers a <p> with its OWN .text-center class, though — a
+   direct rule on `p` always beats plain inheritance too, regardless of
+   layer or specificity, so a <p> centered only because a wrapping section
+   has text-center (inherited, not its own class — e.g. HamletPageHero's
+   subtitle) would still get force-justified. The two :not() clauses below
+   exclude both cases, so those paragraphs fall through to no matching rule
+   at all and correctly inherit their ancestor's alignment. */
+@layer base {
+  p:not(.text-center):not(.text-center *) {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+}
+
 /* The Ostende sub-brand uses navy on the live site — not just body text, but
    its dark sections too: ostende/css/style.css has .bg-dark at #00244D (the
    contact-info band) and #main-footer at #001F41, both distinct from the

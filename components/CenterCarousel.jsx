@@ -115,13 +115,13 @@ export default function CenterCarousel({ items, captionHeight = 150, initialActi
               </div>
               {isActive && (
                 <div className="flex flex-col items-center bg-savoia-body px-4 pt-4 text-center" style={{ height: 'var(--cap)' }}>
-                  <div>
+                  <div className="flex w-full flex-col items-center">
                     <h3 className="text-sm font-medium uppercase tracking-[0.15em] text-savoia-charcoal md:text-base">{item.title}</h3>
-                    <p className="mt-1.5 text-xs text-savoia-taupe-text md:text-sm">{item.text}</p>
+                    <p className="mt-3 max-w-[70%] text-xs text-savoia-taupe-text md:text-sm">{item.text}</p>
                     {item.href && (
                       <Link
                         href={item.href}
-                        className="mt-2.5 inline-block bg-savoia-nav-hover px-4 py-1.5 text-[10px] font-medium uppercase tracking-[0.15em] text-savoia-charcoal transition-colors hover:bg-savoia-charcoal hover:text-white md:text-xs"
+                        className="mt-3 inline-block bg-savoia-nav-hover px-4 py-1.5 text-[10px] font-medium uppercase tracking-[0.15em] text-savoia-charcoal transition-colors hover:bg-savoia-charcoal hover:text-white md:text-xs"
                       >
                         Ver más
                       </Link>

@@ -11,7 +11,7 @@ const IMAGES = [
 
 const DETAILS = [
   { label: 'Horarios', text: 'De 18:00 a 00:00hs' },
-  { label: 'Información', text: 'Menores de 12 años deben estar acompañados por un adulto responsable.' },
+  { label: 'Información', text: 'Los menores de 12 años deben estar siempre acompañados por un adulto responsable.' },
 ];
 
 export default function BarSaintJeanPage() {

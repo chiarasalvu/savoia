@@ -7,13 +7,24 @@ import Image from 'next/image';
 // on one side, title / description / capacity / amenities checklist on the
 // other. Same layout as the reference modal, just as its own page instead
 // of an overlay.
-export default function RoomDetail({ title, description, images, maxCapacity, amenities, details, amenitiesTitle = 'Comodidades', compact = false, headingTag = 'h1' }) {
+export default function RoomDetail({
+  title,
+  description,
+  images,
+  maxCapacity,
+  amenities,
+  details,
+  amenitiesTitle = 'Comodidades',
+  compact = false,
+  headingTag = 'h1',
+  reverse = false,
+}) {
   const Heading = headingTag;
   const [active, setActive] = useState(0);
 
   return (
-    <div className={`mx-auto grid max-w-[1200px] grid-cols-1 gap-10 px-6 pb-16 md:grid-cols-2 md:gap-16 md:px-8 md:pb-20 ${compact ? '' : 'pt-[136px] md:pt-[152px]'}`}>
-      <div>
+    <div className={`mx-auto grid max-w-[1200px] grid-cols-1 gap-10 px-6 pb-16 md:grid-cols-2 md:gap-16 md:px-8 md:pb-20 ${compact ? '' : 'pt-[128px] md:pt-[144px]'}`}>
+      <div className={reverse ? 'md:order-2' : ''}>
         <div className="relative aspect-[4/3] w-full overflow-hidden bg-savoia-stone">
           <Image src={images[active].src} alt={images[active].alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
         </div>
@@ -34,7 +45,7 @@ export default function RoomDetail({ title, description, images, maxCapacity, am
         )}
       </div>
 
-      <div>
+      <div className={reverse ? 'md:order-1' : ''}>
         <Heading className="text-2xl font-medium text-savoia-charcoal md:text-3xl">{title}</Heading>
         <p className="mt-4 text-savoia-taupe-text">{description}</p>
 

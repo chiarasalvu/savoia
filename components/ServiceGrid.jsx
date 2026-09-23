@@ -30,7 +30,7 @@ export default function ServiceGrid({ services }) {
             {service.href && (
               <Link
                 href={service.href}
-                className="mt-3 inline-block text-xs font-medium uppercase tracking-wide text-savoia-charcoal underline underline-offset-4 hover:opacity-70"
+                className="mt-5 inline-block text-xs font-medium uppercase tracking-wide text-savoia-charcoal underline underline-offset-4 hover:opacity-70"
               >
                 Ver más
               </Link>
