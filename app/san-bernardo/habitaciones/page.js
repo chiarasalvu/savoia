@@ -13,7 +13,7 @@ export default function HabitacionesPage() {
     <main>
       <RoomDetail
         title="Habitaciones"
-        description="Dobles, triples y departamentos para 4, 5 y 6 personas, todos con un baño, equipados para un descanso placentero."
+        description="Dobles, triples y departamentos para 4, 5 y 6 personas con un baño."
         images={IMAGES}
         amenities={AMENITIES}
       />

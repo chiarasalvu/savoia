@@ -17,7 +17,7 @@ export default function CategoriaFamiliarPage() {
     <main>
       <RoomDetail
         title="Categoría Familiar"
-        description="Pensado para grupo familiar. Contamos con habitación cuádruple con 1 baño para 4 personas, y departamentos con 2 baños para 4/5 personas."
+        description="Pensado para grupo familiar. Contamos con habitaciones cuádruples con 1 baño para 4 personas, y departamentos con 2 baños para 4/5 personas."
         images={IMAGES}
         maxCapacity="Habitación cuádruple: 4 personas · Departamento: 4 a 5 personas"
         details={DETAILS}

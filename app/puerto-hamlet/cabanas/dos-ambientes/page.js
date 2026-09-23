@@ -6,10 +6,9 @@ const IMAGES = [{ src: '/img/puerto-hamlet/cabanas/real-3.jpg', alt: 'Senderos y
 
 const AMENITIES = [
   'Baño y cocina completos',
-  'Dormitorio con LCD, reproductor de DVD y split frío/calor',
+  'Dormitorio con TV y split frío/calor',
   'Dormitorio matrimonial con sommier',
   'Living comedor con dos sofá cama de una plaza',
-  'LCD y reproductor de DVD en living',
   'Hogar a leños',
   'Horno, heladera y microondas',
   'Vajilla completa',

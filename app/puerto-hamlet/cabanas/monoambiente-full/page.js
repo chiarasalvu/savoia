@@ -6,7 +6,7 @@ const IMAGES = [{ src: '/img/puerto-hamlet/cabanas/real-2.jpg', alt: 'Dormitorio
 
 const AMENITIES = [
   'Baño y cocina completos',
-  'LCD',
+  'TV',
   'Hogar a leños',
   'Ventilador de techo',
   'Horno, heladera, microondas y tostadora',
