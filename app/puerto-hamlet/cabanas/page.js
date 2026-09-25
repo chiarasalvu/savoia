@@ -6,12 +6,12 @@ export const metadata = { title: 'Hoteles Savoia | Puerto Hamlet — Cabañas' }
 const UNITS = [
   {
     href: '/puerto-hamlet/cabanas/monoambiente',
-    src: '/img/puerto-hamlet/cabanas/real-1.jpg',
-    alt: 'Cabaña Monoambiente de Puerto Hamlet entre los pinos',
+    src: '/img/puerto-hamlet/cabanas/monoambiente-portada.jpg',
+    alt: 'Cama matrimonial de la cabaña Monoambiente de Puerto Hamlet',
     title: 'Monoambiente',
     size: '28 m²',
     capacity: '2 personas',
-    description: 'Un ambiente con placard, baño y kitchenette, con parrillas de uso compartido.',
+    description: 'Un ambiente con baño y kitchenette, con parrillas de uso compartido.',
   },
   {
     href: '/puerto-hamlet/cabanas/monoambiente-full',
@@ -20,12 +20,12 @@ const UNITS = [
     title: 'Monoambiente Full',
     size: '35 m²',
     capacity: '2 a 3 personas',
-    description: 'Un ambiente con placard, baño y cocina completos, y parrilla individual.',
+    description: 'Un ambiente con baño y cocina completos, y parrilla individual.',
   },
   {
     href: '/puerto-hamlet/cabanas/dos-ambientes',
-    src: '/img/puerto-hamlet/cabanas/real-3.jpg',
-    alt: 'Senderos y cabañas Dos Ambientes de Puerto Hamlet entre los pinos',
+    src: '/img/puerto-hamlet/cabanas/dos-ambientes-portada.jpg',
+    alt: 'Dormitorio matrimonial de la cabaña Dos Ambientes de Puerto Hamlet',
     title: 'Dos Ambientes',
     size: '45 m²',
     capacity: '3 a 4 personas',
@@ -33,12 +33,12 @@ const UNITS = [
   },
   {
     href: '/puerto-hamlet/cabanas/tres-ambientes',
-    src: '/img/puerto-hamlet/cabanas/real-2.jpg',
+    src: '/img/puerto-hamlet/cabanas/tres-ambientes-portada.jpg',
     alt: 'Dormitorio de una cabaña Tres Ambientes de Puerto Hamlet',
     title: 'Tres Ambientes',
     size: '75 m²',
     capacity: '5 a 6 personas',
-    description: 'Tres ambientes con baño y toilette, dormitorio principal y secundario.',
+    description: 'Tres ambientes con 2 baños, dos dormitorios y living comedor.',
   },
 ];
 

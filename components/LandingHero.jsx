@@ -9,7 +9,7 @@ export default function LandingHero() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         poster="/img/home/hero-poster.jpg"
         className="absolute inset-0 h-full w-full object-cover"
       >

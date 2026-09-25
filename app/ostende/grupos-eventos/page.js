@@ -1,10 +1,11 @@
 import Image from 'next/image';
+import { whatsappHref } from '@/lib/whatsapp';
 import Link from 'next/link';
 import RevealSection from '@/components/RevealSection';
 
 export const metadata = { title: 'Hoteles Savoia | Grupos & Eventos' };
 
-const WHATSAPP_HREF = 'https://wa.me/5491158958380?text=Hola!%20Quiero%20consultar%20por%20grupos%20y%20eventos%20en%20Ostende.';
+const WHATSAPP_HREF = whatsappHref('/ostende', 'Hola! Quiero consultar por grupos y eventos en Ostende.');
 
 export default function OstendeGruposEventosPage() {
   return (

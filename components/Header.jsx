@@ -82,7 +82,7 @@ export default function Header() {
           </button>
 
           <div
-            className="relative"
+            className="relative hidden md:block"
             onMouseEnter={() => setHotelsOpen(true)}
             onMouseLeave={() => setHotelsOpen(false)}
           >

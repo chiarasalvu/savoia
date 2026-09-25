@@ -4,7 +4,6 @@ export const metadata = { title: 'Hoteles Savoia | Categoría Ejecutiva' };
 
 const IMAGES = [
   { src: '/img/ostende/habitaciones2/piso4/portada-ejecutiva.jpg', alt: 'Categoría Ejecutiva' },
-  { src: '/img/ostende/habitaciones2/piso4/p404.jpg', alt: 'Categoría Ejecutiva' },
   { src: '/img/ostende/habitaciones2/piso4/ejecutiva2.jpg', alt: 'Categoría Ejecutiva' },
   { src: '/img/ostende/habitaciones2/piso4/p407.jpg', alt: 'Categoría Ejecutiva' },
 ];

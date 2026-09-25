@@ -6,8 +6,8 @@ import RevealSection from '@/components/RevealSection';
 export const metadata = { title: 'Hoteles Savoia | Puerto Hamlet' };
 
 const SERVICIOS_PHOTOS = [
-  { src: '/img/puerto-hamlet/servicios/club-de-chicos.jpg', alt: 'Sala de juegos del Club de chicos de Puerto Hamlet' },
   { src: '/img/puerto-hamlet/servicios/pileta-climatizada.jpg', alt: 'Pileta climatizada cubierta de Puerto Hamlet' },
+  { src: '/img/puerto-hamlet/servicios/club-de-chicos.jpg', alt: 'Sala de juegos del Club de chicos de Puerto Hamlet' },
   { src: '/img/puerto-hamlet/servicios/gimnasio.jpg', alt: 'Gimnasio de Puerto Hamlet' },
   { src: '/img/puerto-hamlet/servicios/club-house.jpg', alt: 'Salón de desayuno del Club House de Puerto Hamlet' },
 ];
@@ -61,7 +61,7 @@ export default function HamletHomePage() {
         />
       </div>
 
-      <div className="mt-0 md:mt-24">
+      <div className="mt-14 md:mt-24">
         <SplitContent
           imageSrc="/img/puerto-hamlet/home/bosque-pinos-v2.jpg"
           imageAlt="Sendero arbolado de Puerto Hamlet de noche"
@@ -75,7 +75,7 @@ export default function HamletHomePage() {
         />
       </div>
 
-      <div className="mb-16 mt-0 md:mb-24 md:mt-24">
+      <div className="mb-16 mt-14 md:mb-24 md:mt-24">
         <SplitContent
           images={SERVICIOS_PHOTOS}
           imageSide="right"

@@ -18,7 +18,7 @@ const LOCATIONS = [
     href: '/ostende',
   },
   {
-    src: '/img/home/entrada-hamlet.jpeg',
+    src: '/img/home/puerto-hamlet-portada.jpg',
     alt: 'Puerto Hamlet Cariló',
     name: 'PUERTO HAMLET',
     location: 'Cariló, Buenos Aires',

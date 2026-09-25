@@ -2,7 +2,11 @@ import RoomDetail from '@/components/RoomDetail';
 
 export const metadata = { title: 'Hoteles Savoia | Puerto Hamlet — Monoambiente' };
 
-const IMAGES = [{ src: '/img/puerto-hamlet/cabanas/real-1.jpg', alt: 'Cabaña Monoambiente de Puerto Hamlet entre los pinos' }];
+const IMAGES = [
+  { src: '/img/puerto-hamlet/cabanas/monoambiente-portada.jpg', alt: 'Cama matrimonial de la cabaña Monoambiente de Puerto Hamlet' },
+  { src: '/img/puerto-hamlet/cabanas/monoambiente-2.jpg', alt: 'Kitchenette con anafe y heladera de la cabaña Monoambiente de Puerto Hamlet' },
+  { src: '/img/puerto-hamlet/cabanas/monoambiente-3.jpg', alt: 'Parrilla de uso compartido de la cabaña Monoambiente de Puerto Hamlet' },
+];
 
 const AMENITIES = [
   'Baño y kitchenette',

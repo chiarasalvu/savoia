@@ -1,11 +1,12 @@
 import Image from 'next/image';
+import { whatsappHref } from '@/lib/whatsapp';
 import Link from 'next/link';
 import HamletPageHero from '@/components/HamletPageHero';
 import RevealSection from '@/components/RevealSection';
 
 export const metadata = { title: 'Hoteles Savoia | Puerto Hamlet — Grupos & Eventos' };
 
-const WHATSAPP_HREF = 'https://wa.me/5491158958380?text=Hola!%20Quiero%20consultar%20por%20grupos%20y%20eventos%20en%20Puerto%20Hamlet.';
+const WHATSAPP_HREF = whatsappHref('/puerto-hamlet', 'Hola! Quiero consultar por grupos y eventos en Puerto Hamlet.');
 
 export default function HamletGruposEventosPage() {
   return (

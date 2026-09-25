@@ -6,7 +6,7 @@ export default function VideoHero({ src, poster }) {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         poster={poster}
         className="h-full w-full object-cover"
       >

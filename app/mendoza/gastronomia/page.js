@@ -7,14 +7,16 @@ const IMAGES = [
 ];
 
 const AMENITIES = [
-  'Servicio de desayuno y cena',
+  'Servicio de desayuno',
+  'Cenas buffet (temporada alta)',
+  'Elaboración propia',
   'Ambiente familiar',
 ];
 
 export default function GastronomiaPage() {
   return (
     <main>
-      <RoomDetail title="Gastronomía Savoia" description={'Un espacio cálido para disfrutar tus comidas, con la calidez y la calidad que caracterizan a Hoteles Savoia.'} images={IMAGES} amenities={AMENITIES} />
+      <RoomDetail title="Gastronomía Savoia" description={'Nuestra hotelería es reconocida por su exquisita y variada oferta gastronómica, elaborada en cada establecimiento con materia prima de primera calidad, logrando sabores propios de la mejor cocina casera.'} images={IMAGES} amenities={AMENITIES} />
     </main>
   );
 }

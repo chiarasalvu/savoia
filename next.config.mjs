@@ -1,5 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    // Trimmed from the defaults: nothing on the site needs the 2048/3840
+    // variants, and every extra width is another cold-cache transform.
+    deviceSizes: [360, 420, 640, 828, 1080, 1280, 1600, 1920],
+    minimumCacheTTL: 31536000,
+  },
   async redirects() {
     return [
       // /nosotros, /hoteles and /contacto were folded into the landing's own

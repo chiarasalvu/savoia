@@ -2,10 +2,11 @@ import RoomDetail from '@/components/RoomDetail';
 
 export const metadata = { title: 'Hoteles Savoia | Categoría Familiar' };
 
-// TODO: reemplazar por fotos reales de la Categoría Familiar — no había
-// ninguna disponible todavía, así que usamos una foto general del hotel
-// como placeholder temporal.
-const IMAGES = [{ src: '/img/ostende/home/lobby-ostende.webp', alt: 'Hotel Savoia Ostende' }];
+const IMAGES = [
+  { src: '/img/ostende/categoria-familiar/familiar-1.webp', alt: 'Habitación Categoría Familiar del Hotel Savoia Ostende' },
+  { src: '/img/ostende/categoria-familiar/familiar-2.webp', alt: 'Habitación Categoría Familiar del Hotel Savoia Ostende' },
+  { src: '/img/ostende/categoria-familiar/familiar-3.webp', alt: 'Habitación Categoría Familiar del Hotel Savoia Ostende' },
+];
 
 const DETAILS = [
   { label: 'Comodidades — Habitaciones', text: 'Aire acondicionado, TV, frigobar, caja de seguridad, 1 baño.' },

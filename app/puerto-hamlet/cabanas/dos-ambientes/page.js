@@ -2,7 +2,12 @@ import RoomDetail from '@/components/RoomDetail';
 
 export const metadata = { title: 'Hoteles Savoia | Puerto Hamlet — Dos Ambientes' };
 
-const IMAGES = [{ src: '/img/puerto-hamlet/cabanas/real-3.jpg', alt: 'Senderos y cabañas Dos Ambientes de Puerto Hamlet entre los pinos' }];
+const IMAGES = [
+  { src: '/img/puerto-hamlet/cabanas/dos-ambientes-portada.jpg', alt: 'Dormitorio matrimonial con ventana de la cabaña Dos Ambientes de Puerto Hamlet' },
+  { src: '/img/puerto-hamlet/cabanas/dos-ambientes-cama.jpg', alt: 'Dormitorio matrimonial de la cabaña Dos Ambientes de Puerto Hamlet' },
+  { src: '/img/puerto-hamlet/cabanas/dos-ambientes-3.jpg', alt: 'Cocina y sofá cama del living de la cabaña Dos Ambientes de Puerto Hamlet' },
+  { src: '/img/puerto-hamlet/cabanas/dos-ambientes-4.jpg', alt: 'Comedor con hogar a leños de la cabaña Dos Ambientes de Puerto Hamlet' },
+];
 
 const AMENITIES = [
   'Baño y cocina completos',

@@ -8,7 +8,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const AUTOPLAY_MS = 6000;
 const DEFAULT_CLASSNAME = 'relative h-[400px] w-full overflow-hidden bg-savoia-light md:h-[650px]';
 
-export default function Carousel({ slides, className, showArrows = true }) {
+export default function Carousel({ slides, className, showArrows = true, priority = false, sizes = '(min-width: 768px) 45vw, 100vw' }) {
   const [index, setIndex] = useState(0);
 
   // Re-armed every time the slide changes — whether that change came from the
@@ -40,7 +40,8 @@ export default function Carousel({ slides, className, showArrows = true }) {
             src={slides[index].src}
             alt={slides[index].alt}
             fill
-            priority={index === 0}
+            sizes={sizes}
+            priority={priority && index === 0}
             className="object-cover"
           />
         </motion.div>

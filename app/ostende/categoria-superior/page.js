@@ -6,6 +6,7 @@ const IMAGES = [
   { src: '/img/ostende/categoria-superior/portada-superior.jpg', alt: 'Categoría Superior' },
   { src: '/img/ostende/categoria-superior/foto1-superior.jpg', alt: 'Categoría Superior' },
   { src: '/img/ostende/categoria-superior/foto2-superior.jpg', alt: 'Categoría Superior' },
+  { src: '/img/ostende/habitaciones2/piso4/p404.jpg', alt: 'Categoría Superior' },
 ];
 
 const AMENITIES = [

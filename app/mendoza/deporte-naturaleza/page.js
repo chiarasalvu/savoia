@@ -19,13 +19,21 @@ const AMENITIES = [
   'Quincho con parrillas y pileta',
 ];
 
+const DETAILS = [
+  {
+    label: 'Deportivos Savoia',
+    text: 'Para los equipos deportivos que buscan un lugar donde descansar y prepararse para sus competencias, el Hotel Savoia es la elección perfecta. Nuestras instalaciones ofrecen un equilibrio ideal entre entrenamiento y relajación: habitaciones amplias y cómodas, áreas de descanso o entrenamiento y un servicio personalizado que se adapta a las necesidades de su equipo.',
+  },
+];
+
 export default function DeporteNaturalezaPage() {
   return (
     <main>
       <RoomDetail
         title="Deporte, parques y recreación"
-        description="Un entorno único rodeado de montañas y espacios verdes, con instalaciones deportivas propias para disfrutar al aire libre."
+        description="Complejo deportivo al aire libre, ideal para quienes buscan mantenerse activos y disfrutar de un entorno natural revitalizante, rodeado de montañas y espacios verdes."
         images={IMAGES}
+        details={DETAILS}
         amenities={AMENITIES}
       />
     </main>

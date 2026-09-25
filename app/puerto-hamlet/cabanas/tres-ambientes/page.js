@@ -2,7 +2,12 @@ import RoomDetail from '@/components/RoomDetail';
 
 export const metadata = { title: 'Hoteles Savoia | Puerto Hamlet — Tres Ambientes' };
 
-const IMAGES = [{ src: '/img/puerto-hamlet/cabanas/real-2.jpg', alt: 'Dormitorio de una cabaña Tres Ambientes de Puerto Hamlet' }];
+const IMAGES = [
+  { src: '/img/puerto-hamlet/cabanas/tres-ambientes-portada.jpg', alt: 'Dormitorio con dos camas de una plaza de la cabaña Tres Ambientes de Puerto Hamlet' },
+  { src: '/img/puerto-hamlet/cabanas/tres-ambientes-dormitorio.jpg', alt: 'Dormitorio matrimonial de la cabaña Tres Ambientes de Puerto Hamlet' },
+  { src: '/img/puerto-hamlet/cabanas/tres-ambientes-4.jpg', alt: 'Baño de la cabaña Tres Ambientes de Puerto Hamlet' },
+  { src: '/img/puerto-hamlet/cabanas/tres-ambientes-6.jpg', alt: 'Cocina de la cabaña Tres Ambientes de Puerto Hamlet' },
+];
 
 const AMENITIES = [
   'Dormitorio principal con 1 baño y sommier matrimonial',

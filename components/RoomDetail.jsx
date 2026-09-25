@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // Full-page version of the OKU room-detail popup: image + thumbnail strip
 // on one side, title / description / capacity / amenities checklist on the
@@ -18,6 +19,7 @@ export default function RoomDetail({
   compact = false,
   headingTag = 'h1',
   reverse = false,
+  cta,
 }) {
   const Heading = headingTag;
   const [active, setActive] = useState(0);
@@ -77,6 +79,15 @@ export default function RoomDetail({
               ))}
             </ul>
           </div>
+        )}
+
+        {cta && (
+          <Link
+            href={cta.href}
+            className="mt-8 inline-block border border-savoia-charcoal bg-savoia-charcoal px-6 py-3 text-xs font-medium uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-savoia-charcoal"
+          >
+            {cta.label}
+          </Link>
         )}
       </div>
     </div>

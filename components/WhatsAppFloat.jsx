@@ -1,7 +1,13 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
+import { whatsappHref } from '@/lib/whatsapp';
+
 export default function WhatsAppFloat() {
+  const pathname = usePathname();
   return (
     <a
-      href="https://wa.me/5491158958380"
+      href={whatsappHref(pathname)}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escribinos por WhatsApp"

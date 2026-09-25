@@ -1,16 +1,25 @@
 import Image from 'next/image';
+import { whatsappHref } from '@/lib/whatsapp';
 import Link from 'next/link';
 import RevealSection from '@/components/RevealSection';
+import { SALONES } from '@/lib/mendozaSalones';
 
 export const metadata = { title: 'Hoteles Savoia | Grupos & Eventos' };
 
-const WHATSAPP_HREF = 'https://wa.me/5491158958380?text=Hola!%20Quiero%20consultar%20por%20grupos%20y%20eventos%20en%20Mendoza.';
+const WHATSAPP_HREF = whatsappHref('/mendoza', 'Hola! Quiero consultar por grupos y eventos en Mendoza.');
 
-const SALONES = [
-  { title: 'Salón Azul', text: 'Ideal para reuniones corporativas. Capacidad para 120 personas en formato gala y 220 en formato auditorio.' },
-  { title: 'Salón Colonial', text: 'Pensado para bodas y galas. Capacidad para 300 personas en formato gala y 550 en formato auditorio.' },
-  { title: 'Salón Comedor', text: 'Con gastronomía propia del hotel. Capacidad para 500 personas en formato gala.' },
+const EVENTOS = [
+  'Conferencias',
+  'Bautizos',
+  'Casamientos',
+  'Quince años',
+  'Graduaciones',
+  'Noches de gala',
+  'Eventos corporativos',
+  'Cumpleaños',
+  'Eventos culturales',
 ];
+
 
 export default function MendozaGruposEventosPage() {
   return (
@@ -23,7 +32,11 @@ export default function MendozaGruposEventosPage() {
         <div>
           <p className="text-savoia-taupe-text">
             En el corazón del vino y rodeado de naturaleza, Hotel Savoia Mendoza cuenta con tres salones propios,
-            pensados para reuniones empresariales, convenciones, celebraciones y todo tipo de eventos grupales.
+            pensados para reuniones empresariales, convenciones, celebraciones y todo tipo de eventos grupales:
+            el escenario perfecto, donde la tradición se encuentra con la innovación.
+          </p>
+          <p className="mt-4 text-savoia-taupe-text">
+            A diez minutos del aeropuerto y de la terminal de buses, con rápido acceso desde la ruta 7 (Acceso Este).
           </p>
 
           <ul className="mt-6 flex flex-col divide-y divide-savoia-taupe/20 border-y border-savoia-taupe/20">
@@ -31,6 +44,16 @@ export default function MendozaGruposEventosPage() {
               <li key={salon.title} className="py-4">
                 <h2 className="text-sm font-medium uppercase tracking-wide text-savoia-charcoal">{salon.title}</h2>
                 <p className="mt-1 text-sm text-savoia-taupe-text">{salon.text}</p>
+              </li>
+            ))}
+          </ul>
+
+          <h2 className="mt-8 text-xs font-medium uppercase tracking-widest text-savoia-charcoal">Eventos</h2>
+          <ul className="mt-3 grid grid-cols-2 gap-x-6 gap-y-2">
+            {EVENTOS.map((evento) => (
+              <li key={evento} className="flex items-start gap-2 text-sm text-savoia-taupe-text">
+                <span aria-hidden="true" className="mt-0.5 text-savoia-charcoal">✓</span>
+                <span>{evento}</span>
               </li>
             ))}
           </ul>

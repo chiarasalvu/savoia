@@ -67,7 +67,7 @@ export default function OstendeHomePage() {
         </div>
       </RevealSection>
 
-      <div className="mt-0 md:mt-24">
+      <div className="mt-14 md:mt-24">
         <SplitContent
           imageSrc="/img/ostende/foto-diario.jpg"
           imageAlt="Comida"
@@ -81,7 +81,7 @@ export default function OstendeHomePage() {
         />
       </div>
 
-      <div className="mb-16 mt-0 md:mb-24 md:mt-24">
+      <div className="mb-16 mt-14 md:mb-24 md:mt-24">
         <SplitContent
           imageSrc="/img/ostende/home/collage-gastronomia.jpg"
           imageAlt="Comida"

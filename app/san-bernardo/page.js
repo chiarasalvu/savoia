@@ -21,8 +21,8 @@ const HIGHLIGHTS = [
     href: '/san-bernardo/a-metros-de-la-playa',
   },
   {
-    src: '/img/ostende/desayuno/desayuno-1.jpg',
-    alt: 'Buffet de Hoteles Savoia',
+    src: '/img/ostende/cena/cena-6.jpg',
+    alt: 'Postres del buffet de Hoteles Savoia',
     title: 'Gastronomía',
     text: 'Servicio de desayuno y cena, en un espacio ideal para toda la familia.',
     href: '/san-bernardo/gastronomia',
@@ -50,7 +50,7 @@ export default function SanBernardoPage() {
         <CenterCarousel items={HIGHLIGHTS} initialActive={1} />
       </RevealSection>
 
-      <div className="mt-0 md:mt-24">
+      <div className="mt-14 md:mt-24">
         <SplitContent
           imageSrc="/img/san-bernardo/playa.jpg"
           imageAlt="Hotel Savoia San Bernardo"
@@ -63,10 +63,10 @@ export default function SanBernardoPage() {
         />
       </div>
 
-      <div className="mb-16 mt-0 md:mb-24 md:mt-24">
+      <div className="mb-16 mt-14 md:mb-24 md:mt-24">
         <SplitContent
-          imageSrc="/img/ostende/desayuno/desayuno-1.jpg"
-          imageAlt="Buffet de Hoteles Savoia"
+          imageSrc="/img/ostende/cena/cena-4.jpg"
+          imageAlt="Ensaladas del buffet de Hoteles Savoia"
           imageSide="right"
           title="GASTRONOMÍA"
           subtitle="Desayuno y cena en un ambiente familiar"

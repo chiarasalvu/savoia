@@ -44,7 +44,7 @@ export default function MendozaPage() {
         <CenterCarousel items={HIGHLIGHTS} initialActive={1} />
       </RevealSection>
 
-      <div className="mt-0 md:mt-24">
+      <div className="mt-14 md:mt-24">
         <SplitContent
           imageSrc="/img/mendoza/recepcion-mendoza.jpg"
           imageAlt="Recepción Hotel Savoia Mendoza"
@@ -57,7 +57,7 @@ export default function MendozaPage() {
         />
       </div>
 
-      <div className="mb-16 mt-0 md:mb-24 md:mt-24">
+      <div className="mb-16 mt-14 md:mb-24 md:mt-24">
         <SplitContent
           imageSrc="/img/mendoza/salon-de-fiesta.jpg"
           imageAlt="Salón de eventos"

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { whatsappHref } from '@/lib/whatsapp';
 
 const SCROLL_THRESHOLD = 90;
 
@@ -24,7 +25,7 @@ const HOTELS = [
 // Expanded state only: hamburger + "HOTELES" dropdown on the left, so a property page can jump back to the
 // landing or across to another property. Collapsed keeps the hamburger on
 // mobile only, where the inline nav is hidden.
-const WHATSAPP_HREF = 'https://wa.me/5491158958380?text=Hola!%20Quiero%20consultar%20sobre%20una%20reserva.';
+const WHATSAPP_TEXT = 'Hola! Quiero consultar sobre una reserva.';
 
 export default function PropertyHeader({ propertyName, homeHref, logoSrc, logoAlt, logoHeight = 34, navLinks }) {
   const [scrolled, setScrolled] = useState(false);
@@ -88,7 +89,7 @@ export default function PropertyHeader({ propertyName, homeHref, logoSrc, logoAl
         {collapsed ? (
           <div className="flex items-center gap-3">
             <div className="md:hidden">{hamburger}</div>
-            <Link href={homeHref} className="shrink-0">
+            <Link href={homeHref} className="hidden shrink-0 md:block">
               <Image src={logoSrc} alt={logoAlt} width={220} height={70} style={{ height: `${logoHeight}px`, width: 'auto' }} priority />
             </Link>
           </div>
@@ -138,6 +139,10 @@ export default function PropertyHeader({ propertyName, homeHref, logoSrc, logoAl
         )}
 
         {collapsed ? (
+          <div className="justify-self-center">
+          <Link href={homeHref} className="block md:hidden">
+            <Image src={logoSrc} alt={logoAlt} width={220} height={70} style={{ height: `${logoHeight}px`, width: 'auto' }} priority />
+          </Link>
           <nav className="hidden items-center justify-center gap-5 md:flex lg:gap-8">
             <Link
               href={homeHref}
@@ -157,6 +162,7 @@ export default function PropertyHeader({ propertyName, homeHref, logoSrc, logoAl
               </Link>
             ))}
           </nav>
+          </div>
         ) : (
           <Link href={homeHref} className="justify-self-center">
             <Image
@@ -173,7 +179,7 @@ export default function PropertyHeader({ propertyName, homeHref, logoSrc, logoAl
 
         <div className="flex justify-end">
           <Link
-            href={WHATSAPP_HREF}
+            href={whatsappHref(pathname, WHATSAPP_TEXT)}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden bg-[var(--ph-btn-bg)] px-5 py-2 text-xs font-medium uppercase tracking-widest text-[var(--ph-btn-fg)] transition-opacity hover:opacity-90 sm:block"
@@ -239,8 +245,8 @@ export default function PropertyHeader({ propertyName, homeHref, logoSrc, logoAl
         </button>
         <ul className="mt-16 flex flex-col gap-6">
           <li>
-            <Link href={homeHref} onClick={() => setMenuOpen(false)} className="text-lg tracking-wide text-savoia-charcoal">
-              Inicio
+            <Link href="/" onClick={() => setMenuOpen(false)} className="text-lg tracking-wide text-savoia-charcoal">
+              INICIO
             </Link>
           </li>
           <li>
@@ -249,7 +255,7 @@ export default function PropertyHeader({ propertyName, homeHref, logoSrc, logoAl
               onClick={() => setAccordionOpen((v) => !v)}
               className="flex items-center gap-2 text-lg tracking-wide text-savoia-charcoal"
             >
-              Hoteles
+              HOTELES
               <span aria-hidden="true">{accordionOpen ? '−' : '+'}</span>
             </button>
             {accordionOpen && (
@@ -269,12 +275,22 @@ export default function PropertyHeader({ propertyName, homeHref, logoSrc, logoAl
             )}
           </li>
           {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link href={link.href} onClick={() => setMenuOpen(false)} className="text-lg tracking-wide text-savoia-charcoal">
+            <li key={link.href} className="md:hidden">
+              <Link href={link.href} onClick={() => setMenuOpen(false)} className="text-lg uppercase tracking-wide text-savoia-charcoal">
                 {link.label}
               </Link>
             </li>
           ))}
+          <li className="hidden md:block">
+            <Link href="/#historia" onClick={() => setMenuOpen(false)} className="text-lg tracking-wide text-savoia-charcoal">
+              NOSOTROS
+            </Link>
+          </li>
+          <li className="hidden md:block">
+            <Link href="/#contacto" onClick={() => setMenuOpen(false)} className="text-lg tracking-wide text-savoia-charcoal">
+              CONTACTO
+            </Link>
+          </li>
         </ul>
       </div>
     </header>
