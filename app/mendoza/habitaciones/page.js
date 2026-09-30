@@ -6,10 +6,8 @@ export const metadata = {
 };
 
 const IMAGES = [
-  { src: '/img/mendoza/habitacion-doble.jpg', alt: 'Habitación doble del Hotel Savoia Mendoza' },
-  { src: '/img/mendoza/habitacion-twin.jpg', alt: 'Habitación doble con camas individuales (Twin) del Hotel Savoia Mendoza' },
-  { src: '/img/mendoza/habitacion-triple.jpg', alt: 'Habitación triple del Hotel Savoia Mendoza' },
-  { src: '/img/mendoza/bano.jpg', alt: 'Baño privado de las habitaciones del Hotel Savoia Mendoza' },
+  { src: '/img/mendoza/habitacion-doble-2.jpg', alt: 'Habitación doble del Hotel Savoia Mendoza' },
+  { src: '/img/mendoza/habitacion-twin-2.jpg', alt: 'Habitación doble con camas individuales (Twin) del Hotel Savoia Mendoza' },
 ];
 
 const DETAILS = [
