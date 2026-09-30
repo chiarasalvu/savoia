@@ -1,0 +1,38 @@
+import RoomDetail from '@/components/RoomDetail';
+
+export const metadata = {
+  title: 'Cabaña Monoambiente Full — Puerto Hamlet Cariló',
+  description: 'Un ambiente con baño y cocina completos, para 2 a 3 personas, con parrilla individual. Puerto Hamlet, Cariló.',
+};
+
+const IMAGES = [
+  { src: '/img/puerto-hamlet/cabanas/real-2.jpg', alt: 'Dormitorio de una cabaña Monoambiente Full de Puerto Hamlet' },
+  { src: '/img/puerto-hamlet/cabanas/monoambiente-full-cama.jpg', alt: 'Cama matrimonial de la cabaña Monoambiente Full de Puerto Hamlet' },
+  { src: '/img/puerto-hamlet/cabanas/monoambiente-full-3.jpg', alt: 'Cocina y comedor de la cabaña Monoambiente Full de Puerto Hamlet' },
+  { src: '/img/puerto-hamlet/cabanas/monoambiente-full-4.jpg', alt: 'Deck con sombrilla de la cabaña Monoambiente Full de Puerto Hamlet' },
+];
+
+const AMENITIES = [
+  'Baño y cocina completos',
+  'TV',
+  'Hogar a leños',
+  'Ventilador de techo',
+  'Horno, heladera, microondas y tostadora',
+  'Vajilla completa',
+  'Sommier matrimonial (convertible a dos individuales)',
+  'Parrilla individual',
+];
+
+export default function MonoambienteFullPage() {
+  return (
+    <main>
+      <RoomDetail
+        title="Monoambiente Full"
+        description="Un ambiente con baño y cocina completos, para 2 a 3 personas. Sommier matrimonial convertible a dos camas individuales y parrilla individual."
+        images={IMAGES}
+        maxCapacity="2 a 3 personas · 35 m²"
+        amenities={AMENITIES}
+      />
+    </main>
+  );
+}

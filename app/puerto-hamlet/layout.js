@@ -1,14 +1,27 @@
-import HamletHeader from '@/components/HamletHeader';
-import HamletInfoBar from '@/components/HamletInfoBar';
-import HamletFooter from '@/components/HamletFooter';
+import PropertyHeader from '@/components/PropertyHeader';
+import Footer from '@/components/Footer';
+
+const NAV_LINKS = [
+  { href: '/puerto-hamlet/cabanas', label: 'Cabañas' },
+  { href: '/puerto-hamlet/servicios', label: 'Servicios' },
+  { href: '/puerto-hamlet/sustentabilidad', label: 'Sustentabilidad' },
+  { href: '/puerto-hamlet/grupos-eventos', label: 'Grupos & Eventos' },
+  { href: '/puerto-hamlet/contacto', label: 'Contacto' },
+];
 
 export default function HamletLayout({ children }) {
   return (
     <>
-      <HamletHeader />
+      <PropertyHeader
+        propertyName="Cariló"
+        homeHref="/puerto-hamlet"
+        logoSrc="/img/puerto-hamlet/logo-hamlet-carilo.png"
+        logoHeight={26}
+        logoAlt="Puerto Hamlet — Hoteles Savoia"
+        navLinks={NAV_LINKS}
+      />
       {children}
-      <HamletInfoBar />
-      <HamletFooter />
+      <Footer />
     </>
   );
 }

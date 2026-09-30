@@ -1,14 +1,14 @@
 import PuertoHamletContactForm from '@/components/PuertoHamletContactForm';
 
-export const metadata = { title: 'Hoteles Savoia | Puerto Hamlet — Contacto' };
+export const metadata = {
+  title: 'Contacto — Puerto Hamlet Cariló',
+  description: 'Contactá a Puerto Hamlet en Cerezo 104, Cariló, para consultar disponibilidad y reservar tu cabaña entre los pinos.',
+};
 
 export default function HamletContactoPage() {
   return (
     <main>
-      <PuertoHamletContactForm
-        title="CONTACTO"
-        subtitle="¡Contactanos y viví una experiencia inolvidable!"
-      />
+      <PuertoHamletContactForm />
 
       <div className="h-[450px] w-full">
         <iframe

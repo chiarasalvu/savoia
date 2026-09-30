@@ -1,81 +1,68 @@
-import { Users, Ruler } from 'lucide-react';
-import HamletPageHero from '@/components/HamletPageHero';
-import ServiceRow from '@/components/ServiceRow';
+import RoomCard from '@/components/RoomCard';
 import RevealSection from '@/components/RevealSection';
 
-export const metadata = { title: 'Hoteles Savoia | Puerto Hamlet — Cabañas' };
+export const metadata = {
+  title: 'Cabañas — Puerto Hamlet Cariló',
+  description: '31 cabañas distribuidas en un parque de 4600 m², para 2 a 6 personas: Monoambiente, Monoambiente Full, Dos Ambientes y Tres Ambientes. Puerto Hamlet, Cariló.',
+};
 
 const UNITS = [
   {
-    src: '/img/puerto-hamlet/cabanas/real-1.jpg',
-    alt: 'Cabaña de Puerto Hamlet entre los pinos',
-    badge: '2 personas · 28m²',
-    title: 'MONOAMBIENTE',
-    description:
-      'Un ambiente con placard, baño y kitchenette. LCD, reproductor de DVD, calefactor de tiro balanceado y split frío/calor. Anafe de 2 hornallas, heladera bajo mesada, microondas, tostadora y vajilla completa. Sommier matrimonial. Parrillas de uso compartido a disposición.',
-    features: [
-      { icon: Users, text: '2 personas' },
-      { icon: Ruler, text: '28m²' },
-    ],
+    href: '/puerto-hamlet/cabanas/monoambiente',
+    src: '/img/puerto-hamlet/cabanas/monoambiente-portada.jpg',
+    alt: 'Cama matrimonial de la cabaña Monoambiente de Puerto Hamlet',
+    title: 'Monoambiente',
+    size: '28 m²',
+    capacity: '2 personas',
+    description: 'Un ambiente con baño y kitchenette, con parrillas de uso compartido.',
   },
   {
+    href: '/puerto-hamlet/cabanas/monoambiente-full',
     src: '/img/puerto-hamlet/cabanas/real-2.jpg',
-    alt: 'Dormitorio de una cabaña de Puerto Hamlet',
-    badge: '2 a 3 personas · 35m²',
-    title: 'MONOAMBIENTE FULL',
-    description:
-      'Un ambiente con placard, baño y cocina completos. LCD, reproductor de DVD, split frío/calor, ventilador de techo, hogar a leños. Cocina con horno, heladera, microondas, tostadora y vajilla completa. Sommier matrimonial (convertible a dos individuales) y parrilla individual.',
-    features: [
-      { icon: Users, text: '2 a 3 personas' },
-      { icon: Ruler, text: '35m²' },
-    ],
+    alt: 'Dormitorio de una cabaña Monoambiente Full de Puerto Hamlet',
+    title: 'Monoambiente Full',
+    size: '35 m²',
+    capacity: '2 a 3 personas',
+    description: 'Un ambiente con baño y cocina completos, y parrilla individual.',
   },
   {
-    src: '/img/puerto-hamlet/cabanas/real-3.jpg',
-    alt: 'Senderos y cabañas de Puerto Hamlet entre los pinos',
-    badge: '3 a 4 personas · 45m²',
-    title: 'DOS AMBIENTES',
-    description:
-      'Dos ambientes con baño y cocina completos. Dormitorio con LCD, split frío/calor, juego de dormitorio matrimonial con sommier, placard. Living comedor con dos sofá cama de una plaza, LCD, reproductor de DVD y hogar a leños. Cocina con horno, heladera, microondas y vajilla completa. Parrilla individual.',
-    features: [
-      { icon: Users, text: '3 a 4 personas' },
-      { icon: Ruler, text: '45m²' },
-    ],
+    href: '/puerto-hamlet/cabanas/dos-ambientes',
+    src: '/img/puerto-hamlet/cabanas/dos-ambientes-portada.jpg',
+    alt: 'Dormitorio matrimonial de la cabaña Dos Ambientes de Puerto Hamlet',
+    title: 'Dos Ambientes',
+    size: '45 m²',
+    capacity: '3 a 4 personas',
+    description: 'Dos ambientes con baño y cocina completos, living comedor con hogar a leños.',
   },
   {
-    src: '/img/puerto-hamlet/cabanas/real-2.jpg',
-    alt: 'Dormitorio de una cabaña de Puerto Hamlet',
-    badge: '5 a 6 personas · 75m²',
-    title: 'TRES AMBIENTES',
-    description:
-      'Tres ambientes con baño y toilette. Dormitorio principal con split frío/calor y sommier matrimonial. Living comedor con diván cama, reproductor de DVD y hogar a leños. Dormitorio secundario con dos camas de una plaza. Cocina con horno, heladera con freezer, microondas y vajilla completa. Parrilla individual.',
-    features: [
-      { icon: Users, text: '5 a 6 personas' },
-      { icon: Ruler, text: '75m²' },
-    ],
+    href: '/puerto-hamlet/cabanas/tres-ambientes',
+    src: '/img/puerto-hamlet/cabanas/tres-ambientes-portada.jpg',
+    alt: 'Dormitorio de una cabaña Tres Ambientes de Puerto Hamlet',
+    title: 'Tres Ambientes',
+    size: '75 m²',
+    capacity: '5 a 6 personas',
+    description: 'Tres ambientes con 2 baños, dos dormitorios y living comedor.',
   },
 ];
 
 export default function HamletCabanasPage() {
   return (
     <main>
-      <HamletPageHero
-        title="CABAÑAS"
-        subtitle="31 cabañas distribuidas alrededor de nuestro amplio parque, para 2 a 6 personas."
-      />
+      <RevealSection className="mx-auto max-w-[1400px] px-6 pb-16 pt-24 md:px-8 md:pb-24 md:pt-32">
+        <h1 className="text-2xl font-medium text-savoia-charcoal md:text-3xl">Cabañas</h1>
+        <p className="mt-4 max-w-[640px] text-savoia-taupe-text">
+          31 cabañas distribuidas alrededor de nuestro amplio parque, para 2 a 6 personas.
+        </p>
+        <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+          {UNITS.map((unit) => (
+            <RoomCard key={unit.href} {...unit} />
+          ))}
+        </div>
+      </RevealSection>
 
-      <div className="mx-auto flex max-w-[1100px] flex-col gap-16 px-6 pb-10 md:gap-24 md:px-8 md:pb-16">
-        {UNITS.map((unit, index) => (
-          <RevealSection key={unit.title}>
-            <ServiceRow {...unit} imageSide={index % 2 === 0 ? 'left' : 'right'} />
-          </RevealSection>
-        ))}
-      </div>
-
-      <RevealSection className="mx-auto mb-16 max-w-[1100px] rounded-2xl bg-savoia-stone px-6 py-8 text-center md:mb-24 md:px-8">
+      <RevealSection className="mx-auto mb-16 max-w-[1100px] rounded-2xl bg-savoia-body px-6 py-8 text-center md:mb-24 md:px-8">
         <p className="text-savoia-taupe-text">
-          Todas las unidades cuentan con mueblería de algarrobo, estacionamiento individual descubierto, caja de
-          seguridad y Wi-Fi. Consulte por cabañas combinadas para 4 y 6 pasajeros.
+          Todas las unidades cuentan con estacionamiento individual descubierto, caja de seguridad y Wi-Fi. Consulte por cabañas combinadas para 4 y 6 pasajeros.
         </p>
       </RevealSection>
     </main>

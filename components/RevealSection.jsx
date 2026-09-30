@@ -2,9 +2,10 @@
 
 import { motion } from 'framer-motion';
 
-export default function RevealSection({ children, className = '', delay = 0 }) {
+export default function RevealSection({ children, className = '', delay = 0, id }) {
   return (
     <motion.div
+      id={id}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}

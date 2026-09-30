@@ -1,27 +1,39 @@
 'use client';
 
 import { useState } from 'react';
-import { User, Mail, MessageSquare, CheckCircle2, AlertCircle } from 'lucide-react';
+import { User, Mail, Phone, MessageSquare, CheckCircle2, AlertCircle } from 'lucide-react';
 import GuestCounter from '@/components/GuestCounter';
 import LockedHotelField from '@/components/LockedHotelField';
 import DatePicker from '@/components/DatePicker';
 import FormField from '@/components/FormField';
+import { FORMSPREE_BY_HOTEL } from '@/lib/formspree';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/myzgqqrl';
+const FORMSPREE_ENDPOINT = FORMSPREE_BY_HOTEL.mendoza;
 
 export default function MendozaContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(false);
+  const [fieldErrors, setFieldErrors] = useState({});
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setSubmitting(true);
     setError(false);
+    const formData = new FormData(e.target);
+    const errors = {
+      checkin: !formData.get('fecha-entrada'),
+      checkout: !formData.get('fecha-salida'),
+    };
+    if (Object.values(errors).some(Boolean)) {
+      setFieldErrors(errors);
+      return;
+    }
+    setFieldErrors({});
+    setSubmitting(true);
     try {
       const res = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
-        body: new FormData(e.target),
+        body: formData,
         headers: { Accept: 'application/json' },
       });
       if (res.ok) {
@@ -37,9 +49,9 @@ export default function MendozaContactForm() {
   }
 
   return (
-    <section id="contacto" className="bg-savoia-stone py-16 text-center md:py-24">
+    <section id="contacto" className="pb-16 pt-24 text-center md:pb-24 md:pt-32">
       <div className="mx-auto max-w-[1100px] px-6 md:px-8">
-        <h2 className="text-3xl font-medium tracking-tight md:text-4xl">RESERVÁ TU ESTADÍA</h2>
+        <h1 className="text-3xl font-medium tracking-tight md:text-4xl">GESTIONÁ TU RESERVA</h1>
         <h3 className="mt-4 text-lg text-savoia-taupe-text">Contactanos y viví una experiencia inolvidable en Mendoza</h3>
 
         {submitted ? (
@@ -52,6 +64,7 @@ export default function MendozaContactForm() {
           <form className="mx-auto mt-10 max-w-[600px] text-left" onSubmit={handleSubmit}>
             <FormField icon={User} label="Nombre y apellido" name="name" required className="mb-6" />
             <FormField icon={Mail} label="Email" name="email" type="email" required className="mb-6" />
+            <FormField icon={Phone} label="Teléfono" name="phone" type="tel" className="mb-6" />
             <div className="mb-6">
               <LockedHotelField label="Hotel Savoia Mendoza" value="mendoza" />
             </div>
@@ -61,8 +74,8 @@ export default function MendozaContactForm() {
             </div>
 
             <div className="mb-6 flex flex-col gap-5 sm:flex-row">
-              <DatePicker label="Fecha de entrada" name="fecha-entrada" required className="flex-1" />
-              <DatePicker label="Fecha de salida" name="fecha-salida" required className="flex-1" />
+              <DatePicker label="Fecha de entrada" name="fecha-entrada" required invalid={fieldErrors.checkin} className="flex-1" />
+              <DatePicker label="Fecha de salida" name="fecha-salida" required invalid={fieldErrors.checkout} className="flex-1" />
             </div>
 
             <FormField icon={MessageSquare} label="Mensaje" name="message" as="textarea" rows={5} className="mb-6" />

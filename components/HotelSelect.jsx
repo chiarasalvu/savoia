@@ -10,7 +10,7 @@ const HOTELS = [
   { value: 'cariló', label: 'Puerto Hamlet Cariló' },
 ];
 
-export default function HotelSelect({ name = 'hotel', required, defaultValue }) {
+export default function HotelSelect({ name = 'hotel', required, defaultValue, invalid }) {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(() => HOTELS.find((h) => h.value === defaultValue) ?? null);
 
@@ -20,7 +20,7 @@ export default function HotelSelect({ name = 'hotel', required, defaultValue }) 
         type="button"
         onClick={() => setOpen((o) => !o)}
         className={`flex w-full items-center gap-3 rounded-2xl border bg-white px-5 py-4 text-left transition-colors ${
-          open ? 'border-savoia-charcoal' : 'border-savoia-taupe/30 hover:border-savoia-charcoal'
+          invalid ? 'border-red-400' : open ? 'border-savoia-charcoal' : 'border-savoia-taupe/30 hover:border-savoia-charcoal'
         }`}
       >
         <Building2 size={20} className="shrink-0 text-savoia-charcoal" />
@@ -53,6 +53,8 @@ export default function HotelSelect({ name = 'hotel', required, defaultValue }) 
           ))}
         </div>
       )}
+
+      {invalid && <p className="mt-1.5 text-left text-xs text-red-600">Seleccioná un hotel.</p>}
 
       <input type="hidden" name={name} value={selected?.value ?? ''} required={required} />
     </div>
