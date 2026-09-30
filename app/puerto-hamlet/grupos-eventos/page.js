@@ -4,7 +4,10 @@ import Link from 'next/link';
 import HamletPageHero from '@/components/HamletPageHero';
 import RevealSection from '@/components/RevealSection';
 
-export const metadata = { title: 'Hoteles Savoia | Puerto Hamlet — Grupos & Eventos' };
+export const metadata = {
+  title: 'Grupos & Eventos — Puerto Hamlet Cariló',
+  description: 'Organizá tu evento entre los pinos de Cariló. Espacios y atención personalizada para grupos en Puerto Hamlet. Consultanos por WhatsApp.',
+};
 
 const WHATSAPP_HREF = whatsappHref('/puerto-hamlet', 'Hola! Quiero consultar por grupos y eventos en Puerto Hamlet.');
 

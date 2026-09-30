@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | San Bernardo — A metros de la playa' };
+export const metadata = {
+  title: 'A Metros de la Playa — Hotel Savoia San Bernardo',
+  description: 'Recepción cálida y luminosa, con atención personalizada en un ambiente familiar y tranquilo, a metros de la playa. Hotel Savoia San Bernardo.',
+};
 
 const IMAGES = [
   { src: '/img/san-bernardo/playa.jpg', alt: 'Hotel Savoia San Bernardo' },

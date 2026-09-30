@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Mendoza — Deporte, parques y recreación' };
+export const metadata = {
+  title: 'Deporte, Parques y Recreación — Hotel Savoia Mendoza',
+  description: 'Complejo deportivo al aire libre, canchas de fútbol, básquet, vóley, tenis y pádel, rodeado de montañas. Hotel Savoia Mendoza.',
+};
 
 const IMAGES = [
   { src: '/img/mendoza/espacios-verdes-mendoza.jpg', alt: 'Espacios verdes' },

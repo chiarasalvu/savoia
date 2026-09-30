@@ -1,7 +1,10 @@
 import Image from 'next/image';
 import RevealSection from '@/components/RevealSection';
 
-export const metadata = { title: 'Hoteles Savoia | Puerto Hamlet — Sustentabilidad' };
+export const metadata = {
+  title: 'Sustentabilidad — Puerto Hamlet Cariló',
+  description: 'Nuestro compromiso con el cuidado del ambiente y la comunidad de Cariló: uso responsable de recursos, certificaciones y desarrollo local. Puerto Hamlet.',
+};
 
 const PRACTICAS = [
   'Uso racional del agua',

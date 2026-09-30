@@ -3,7 +3,10 @@ import { whatsappHref } from '@/lib/whatsapp';
 import Link from 'next/link';
 import RevealSection from '@/components/RevealSection';
 
-export const metadata = { title: 'Hoteles Savoia | Grupos & Eventos' };
+export const metadata = {
+  title: 'Grupos & Eventos — Hotel Savoia San Bernardo',
+  description: 'Espacios y atención personalizada para grupos y eventos en el Hotel Savoia San Bernardo, a metros de la playa. Consultanos por WhatsApp.',
+};
 
 const WHATSAPP_HREF = whatsappHref('/san-bernardo', 'Hola! Quiero consultar por grupos y eventos en San Bernardo.');
 

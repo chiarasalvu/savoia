@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Puerto Hamlet — Tres Ambientes' };
+export const metadata = {
+  title: 'Cabaña Tres Ambientes — Puerto Hamlet Cariló',
+  description: 'Tres ambientes con 2 dormitorios y 2 baños, para 5 a 6 personas, con living comedor. Puerto Hamlet, Cariló.',
+};
 
 const IMAGES = [
   { src: '/img/puerto-hamlet/cabanas/tres-ambientes-portada.jpg', alt: 'Dormitorio con dos camas de una plaza de la cabaña Tres Ambientes de Puerto Hamlet' },

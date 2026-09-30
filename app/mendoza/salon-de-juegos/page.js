@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Mendoza — Salón de juegos' };
+export const metadata = {
+  title: 'Salón de Juegos — Hotel Savoia Mendoza',
+  description: 'Espacio de recreación con pool y ping pong, ideal para disfrutar en familia o con amigos. Hotel Savoia Mendoza.',
+};
 
 const IMAGES = [
   { src: '/img/mendoza/salon-de-juegos.jpg', alt: 'Salón de juegos' },

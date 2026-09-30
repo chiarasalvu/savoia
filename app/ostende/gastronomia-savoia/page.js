@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Gastronomía' };
+export const metadata = {
+  title: 'Gastronomía — Hotel Savoia Ostende',
+  description: 'Desayuno buffet estilo americano por las mañanas y cenas con menús temáticos cada noche, en el Hotel Savoia Ostende, frente al mar en Pinamar.',
+};
 
 const DESAYUNO_IMAGES = [
   { src: '/img/ostende/desayuno/desayuno-1.jpg', alt: 'Masitas Desayuno Savoia' },

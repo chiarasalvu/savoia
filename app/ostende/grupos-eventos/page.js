@@ -3,7 +3,10 @@ import { whatsappHref } from '@/lib/whatsapp';
 import Link from 'next/link';
 import RevealSection from '@/components/RevealSection';
 
-export const metadata = { title: 'Hoteles Savoia | Grupos & Eventos' };
+export const metadata = {
+  title: 'Grupos & Eventos — Hotel Savoia Ostende',
+  description: 'Espacios y atención personalizada para grupos, reuniones y eventos en el Hotel Savoia Ostende, frente al mar en Pinamar. Consultanos por WhatsApp.',
+};
 
 const WHATSAPP_HREF = whatsappHref('/ostende', 'Hola! Quiero consultar por grupos y eventos en Ostende.');
 

@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Bar Saint Jean' };
+export const metadata = {
+  title: 'Bar Saint Jean — Hotel Savoia Ostende',
+  description: 'Infusiones y coctelería en el 5to piso, con vista panorámica al mar y al muelle de Pinamar. Hotel Savoia Ostende.',
+};
 
 const IMAGES = [
   { src: '/img/ostende/servicios2/bar5to/saintjean-portada.jpg', alt: 'Bar Saint Jean' },

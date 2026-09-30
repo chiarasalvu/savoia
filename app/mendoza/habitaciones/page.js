@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Mendoza — Habitaciones' };
+export const metadata = {
+  title: 'Habitaciones — Hotel Savoia Mendoza',
+  description: '103 habitaciones dobles, triples, cuádruples y departamentos, todas con baño. Hotel Savoia Mendoza.',
+};
 
 const IMAGES = [
   { src: '/img/mendoza/habitacion-doble.jpg', alt: 'Habitación doble del Hotel Savoia Mendoza' },

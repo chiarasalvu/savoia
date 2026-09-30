@@ -1,7 +1,10 @@
 import ServiceGrid from '@/components/ServiceGrid';
 import RevealSection from '@/components/RevealSection';
 
-export const metadata = { title: 'Hoteles Savoia | Servicios' };
+export const metadata = {
+  title: 'Servicios — Hotel Savoia Ostende',
+  description: 'Pileta & Bar Naples, gastronomía con desayuno buffet y cenas temáticas, Bar Woodstock, Bar Saint Jean, gimnasio, sauna y Mini Club. Hotel Savoia Ostende.',
+};
 
 const SERVICES = [
   {

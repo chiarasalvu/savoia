@@ -2,8 +2,12 @@ import Image from 'next/image';
 import CenterCarousel from '@/components/CenterCarousel';
 import SplitContent from '@/components/SplitContent';
 import RevealSection from '@/components/RevealSection';
+import HotelJsonLd from '@/components/HotelJsonLd';
 
-export const metadata = { title: 'Hoteles Savoia | Puerto Hamlet' };
+export const metadata = {
+  title: 'Puerto Hamlet — Cabañas en Cariló',
+  description: 'Cabañas entre los pinos en Cariló, a metros de la playa. Pileta climatizada, gimnasio, Club de chicos y desayuno buffet en el Club House.',
+};
 
 const SERVICIOS_PHOTOS = [
   { src: '/img/puerto-hamlet/servicios/pileta-climatizada.jpg', alt: 'Pileta climatizada cubierta de Puerto Hamlet' },
@@ -39,8 +43,9 @@ const HIGHLIGHTS = [
 export default function HamletHomePage() {
   return (
     <main>
+      <HotelJsonLd hotel="puerto-hamlet" />
       <div id="property-hero" className="relative flex h-screen w-full items-center justify-center">
-        <Image src="/img/home/entrada-hamlet.jpeg" alt="Puerto Hamlet Cariló" fill priority className="object-cover" />
+        <Image src="/img/home/entrada-hamlet.jpeg" alt="Puerto Hamlet Cariló" fill priority sizes="100vw" className="object-cover" />
       </div>
 
       <h1 className="mx-auto mt-16 max-w-[1400px] px-6 text-2xl font-medium tracking-tight md:mt-24 md:px-8 md:text-3xl">

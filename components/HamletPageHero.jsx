@@ -9,7 +9,7 @@ export default function HamletPageHero({ image, alt, title, subtitle }) {
     <>
       {image && (
         <div id="property-hero" className="relative h-[45vh] w-full">
-          <Image src={image} alt={alt} fill priority className="object-cover" />
+          <Image src={image} alt={alt} fill priority sizes="100vw" className="object-cover" />
         </div>
       )}
 

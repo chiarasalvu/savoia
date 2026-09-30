@@ -1,6 +1,9 @@
 import MendozaContactForm from '@/components/MendozaContactForm';
 
-export const metadata = { title: 'Hoteles Savoia | Mendoza — Contacto' };
+export const metadata = {
+  title: 'Contacto — Hotel Savoia Mendoza',
+  description: 'Contactá al Hotel Savoia Mendoza en Avellaneda 3653, Bermejo, para consultar disponibilidad y reservar tu estadía.',
+};
 
 export default function MendozaContactoPage() {
   return (

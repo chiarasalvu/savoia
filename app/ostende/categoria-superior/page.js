@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Categoría Superior' };
+export const metadata = {
+  title: 'Categoría Superior — Hotel Savoia Ostende',
+  description: 'Habitaciones dobles de 28 a 30 m² con vista franca e imponente al mar, camas King size y baño con bañera. Hotel Savoia Ostende, Pinamar.',
+};
 
 const IMAGES = [
   { src: '/img/ostende/categoria-superior/portada-superior.jpg', alt: 'Categoría Superior' },

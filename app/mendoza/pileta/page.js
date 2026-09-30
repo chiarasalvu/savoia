@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Mendoza — Pileta exterior' };
+export const metadata = {
+  title: 'Pileta Exterior — Hotel Savoia Mendoza',
+  description: 'Pileta olímpica exterior, rodeada de verde, ideal para disfrutar. Hotel Savoia Mendoza.',
+};
 
 const IMAGES = [
   { src: '/img/mendoza/pileta-mendoza.jpg', alt: 'Pileta olímpica exterior' },

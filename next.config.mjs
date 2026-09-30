@@ -7,6 +7,26 @@ const nextConfig = {
     deviceSizes: [360, 420, 640, 828, 1080, 1280, 1600, 1920],
     minimumCacheTTL: 31536000,
   },
+  async headers() {
+    return [
+      {
+        // Applies to every response. Doesn't include a Content-Security-Policy
+        // — the site loads scripts/iframes from several third-party origins
+        // (Google Analytics, Google Maps embeds, Formspree, the Apps Script
+        // newsletter endpoint) and a CSP written without testing each of
+        // those live is more likely to silently break one of them than to
+        // stop a real attack; add one later with real testing per page.
+        source: '/:path*',
+        headers: [
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+          { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains' },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       // /nosotros, /hoteles and /contacto were folded into the landing's own

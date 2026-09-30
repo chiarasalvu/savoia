@@ -1,6 +1,9 @@
 import SanBernardoContactForm from '@/components/SanBernardoContactForm';
 
-export const metadata = { title: 'Hoteles Savoia | San Bernardo — Contacto' };
+export const metadata = {
+  title: 'Contacto — Hotel Savoia San Bernardo',
+  description: 'Contactá al Hotel Savoia San Bernardo en Strobel 2099, San Bernardo, para consultar disponibilidad y reservar tu estadía.',
+};
 
 export default function SanBernardoContactoPage() {
   return (

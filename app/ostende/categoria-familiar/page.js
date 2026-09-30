@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Categoría Familiar' };
+export const metadata = {
+  title: 'Categoría Familiar — Hotel Savoia Ostende',
+  description: 'Departamentos con 2 baños y habitación cuádruple con 1 baño, pensados para viajar en familia. Hotel Savoia Ostende, Pinamar.',
+};
 
 const IMAGES = [
   { src: '/img/ostende/categoria-familiar/familiar-1.webp', alt: 'Habitación Categoría Familiar del Hotel Savoia Ostende' },

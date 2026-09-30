@@ -5,8 +5,12 @@ import RoomCard from '@/components/RoomCard';
 import { CATEGORIES } from '@/lib/ostendeRooms';
 import SplitContent from '@/components/SplitContent';
 import RevealSection from '@/components/RevealSection';
+import HotelJsonLd from '@/components/HotelJsonLd';
 
-export const metadata = { title: 'Hoteles Savoia | Bienvenidos' };
+export const metadata = {
+  title: 'Hotel Savoia Ostende — Frente al mar en Pinamar',
+  description: 'Hotel frente al mar en Ostende, Pinamar. Habitaciones con vista al mar, Pileta & Bar Naples, gastronomía con desayuno buffet y cenas temáticas.',
+};
 
 const HIGHLIGHTS = [
   {
@@ -34,6 +38,7 @@ const HIGHLIGHTS = [
 export default function OstendeHomePage() {
   return (
     <main>
+      <HotelJsonLd hotel="ostende" />
       <VideoHero src="/img/ostende/home/video-savoia.mp4" poster="/img/ostende/home/video-savoia-poster.jpg" />
 
       <h1 className="mx-auto mt-16 max-w-[1400px] px-6 text-2xl font-medium tracking-tight md:mt-24 md:px-8 md:text-3xl">

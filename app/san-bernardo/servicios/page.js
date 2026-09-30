@@ -2,7 +2,10 @@ import ServiceGrid from '@/components/ServiceGrid';
 import RevealSection from '@/components/RevealSection';
 import { SERVICES } from '@/lib/sanBernardoServices';
 
-export const metadata = { title: 'Hoteles Savoia | San Bernardo — Servicios' };
+export const metadata = {
+  title: 'Servicios — Hotel Savoia San Bernardo',
+  description: 'Habitaciones, gastronomía y atención personalizada a metros de la playa. Todos los servicios del Hotel Savoia San Bernardo.',
+};
 
 export default function SanBernardoServiciosPage() {
   return (

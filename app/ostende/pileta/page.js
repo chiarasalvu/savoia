@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Pileta' };
+export const metadata = {
+  title: 'Pileta & Bar Naples — Hotel Savoia Ostende',
+  description: 'Pileta con sector para niños y adultos, actividades recreativas y el Bar Naples al lado para comer y beber todo el día. Hotel Savoia Ostende, Pinamar.',
+};
 
 const IMAGES = [
   { src: '/img/ostende/pileta-exteriores/pileta-portada.jpg', alt: 'Pileta & Bar Naples' },

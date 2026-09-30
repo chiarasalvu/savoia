@@ -1,7 +1,10 @@
 import RoomDetail from '@/components/RoomDetail';
 import { SALONES } from '@/lib/mendozaSalones';
 
-export const metadata = { title: 'Hoteles Savoia | Mendoza — Salones de eventos' };
+export const metadata = {
+  title: 'Salones de Eventos — Hotel Savoia Mendoza',
+  description: 'Tres salones amplios y versátiles para reuniones, conferencias, celebraciones y eventos de todo tipo. Hotel Savoia Mendoza.',
+};
 
 const IMAGES = [
   { src: '/img/mendoza/salon-de-fiesta.jpg', alt: 'Salón de eventos del Hotel Savoia Mendoza' },

@@ -2,8 +2,12 @@ import Image from 'next/image';
 import CenterCarousel from '@/components/CenterCarousel';
 import SplitContent from '@/components/SplitContent';
 import RevealSection from '@/components/RevealSection';
+import HotelJsonLd from '@/components/HotelJsonLd';
 
-export const metadata = { title: 'Hoteles Savoia | Mendoza' };
+export const metadata = {
+  title: 'Hotel Savoia Mendoza — En el corazón del vino',
+  description: 'Hotel Savoia Mendoza, rodeado de naturaleza. Habitaciones, pileta olímpica exterior, instalaciones deportivas y salones para eventos.',
+};
 
 const HIGHLIGHTS = [
   {
@@ -32,13 +36,14 @@ const HIGHLIGHTS = [
 export default function MendozaPage() {
   return (
     <main>
+      <HotelJsonLd hotel="mendoza" />
       <div id="property-hero" className="relative flex h-screen w-full items-center justify-center">
-        <Image src="/img/home/portada-mendozaaa.jpeg" alt="Hotel Savoia Mendoza" fill priority className="object-cover" />
+        <Image src="/img/home/portada-mendozaaa.jpeg" alt="Hotel Savoia Mendoza" fill priority sizes="100vw" className="object-cover" />
       </div>
 
-      <h2 className="mx-auto mt-10 max-w-[1400px] px-6 text-2xl font-medium tracking-tight md:mt-14 md:px-8 md:text-3xl">
+      <h1 className="mx-auto mt-10 max-w-[1400px] px-6 text-2xl font-medium tracking-tight md:mt-14 md:px-8 md:text-3xl">
         VIVÍ UNA EXPERIENCIA ÚNICA
-      </h2>
+      </h1>
 
       <RevealSection className="py-10 md:py-14">
         <CenterCarousel items={HIGHLIGHTS} initialActive={1} />

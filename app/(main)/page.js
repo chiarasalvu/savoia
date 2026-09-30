@@ -6,7 +6,10 @@ import LandingHero from '@/components/LandingHero';
 import GruposEventosSection from '@/components/GruposEventosSection';
 import RevealSection from '@/components/RevealSection';
 
-export const metadata = { title: 'Hoteles Savoia | Bienvenidos' };
+export const metadata = {
+  title: 'Ostende, Cariló, Mendoza y San Bernardo',
+  description: 'Hoteles Savoia en Ostende (Pinamar), Puerto Hamlet (Cariló), Mendoza y San Bernardo. Habitaciones, cabañas entre los pinos, pileta, gastronomía y salones para grupos y eventos.',
+};
 
 const LOCATIONS = [
   {

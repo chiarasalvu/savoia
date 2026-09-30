@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Bar Woodstock' };
+export const metadata = {
+  title: 'Bar Woodstock — Hotel Savoia Ostende',
+  description: 'Comida y coctelería en planta baja, con actividades recreativas como karaoke, bingo y truco. Hotel Savoia Ostende, Pinamar.',
+};
 
 const IMAGES = [
   { src: '/img/ostende/servicios2/barPB/bar-portada.jpg', alt: 'Bar Woodstock' },

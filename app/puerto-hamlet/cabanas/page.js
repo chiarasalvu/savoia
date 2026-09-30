@@ -1,7 +1,10 @@
 import RoomCard from '@/components/RoomCard';
 import RevealSection from '@/components/RevealSection';
 
-export const metadata = { title: 'Hoteles Savoia | Puerto Hamlet — Cabañas' };
+export const metadata = {
+  title: 'Cabañas — Puerto Hamlet Cariló',
+  description: '31 cabañas distribuidas en un parque de 4600 m², para 2 a 6 personas: Monoambiente, Monoambiente Full, Dos Ambientes y Tres Ambientes. Puerto Hamlet, Cariló.',
+};
 
 const UNITS = [
   {

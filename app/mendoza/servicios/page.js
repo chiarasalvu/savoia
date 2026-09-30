@@ -2,7 +2,10 @@ import ServiceGrid from '@/components/ServiceGrid';
 import RevealSection from '@/components/RevealSection';
 import { SERVICIOS } from '@/lib/mendozaServices';
 
-export const metadata = { title: 'Hoteles Savoia | Mendoza — Servicios' };
+export const metadata = {
+  title: 'Servicios — Hotel Savoia Mendoza',
+  description: 'Pileta olímpica exterior, deporte y recreación, salones de eventos, gastronomía y salón de juegos. Hotel Savoia Mendoza.',
+};
 
 export default function MendozaServiciosPage() {
   return (

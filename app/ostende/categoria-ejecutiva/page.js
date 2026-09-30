@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Categoría Ejecutiva' };
+export const metadata = {
+  title: 'Categoría Ejecutiva — Hotel Savoia Ostende',
+  description: 'Habitaciones dobles de 20 m² con fabulosa vista al mar, camas King size o Twins y baño con bañera. Hotel Savoia Ostende, Pinamar.',
+};
 
 const IMAGES = [
   { src: '/img/ostende/habitaciones2/piso4/portada-ejecutiva.jpg', alt: 'Categoría Ejecutiva' },

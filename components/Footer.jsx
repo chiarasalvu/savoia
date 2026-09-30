@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { DEFAULT_CONTACT, contactForPath } from '@/lib/hotelContacts';
+import { NEWSLETTER_ENDPOINT, NEWSLETTER_HOTEL_SLUG } from '@/lib/newsletter';
 
 // lucide-react doesn't ship brand icons — small inline outline SVGs instead
 // of pulling in a whole extra icon package for two glyphs.
@@ -38,6 +39,7 @@ const HOTELS = [
 export default function Footer() {
   const pathname = usePathname();
   const contact = contactForPath(pathname);
+  const hotelSlug = NEWSLETTER_HOTEL_SLUG[contact.prefix] ?? 'general';
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
@@ -45,12 +47,26 @@ export default function Footer() {
     e.preventDefault();
     setSubmitting(true);
     try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        body: new FormData(e.target),
-        headers: { Accept: 'application/json' },
-      });
-      if (res.ok) setSubmitted(true);
+      if (NEWSLETTER_ENDPOINT) {
+        // Apps Script Web Apps don't send back CORS headers, so the browser
+        // blocks reading the response — mode: 'no-cors' still delivers the
+        // POST (confirmed server-side by the sheet gaining a row), it just
+        // can't report failures back to the page the way Formspree's res.ok
+        // does below.
+        await fetch(NEWSLETTER_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: new FormData(e.target),
+        });
+        setSubmitted(true);
+      } else {
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          body: new FormData(e.target),
+          headers: { Accept: 'application/json' },
+        });
+        if (res.ok) setSubmitted(true);
+      }
     } finally {
       setSubmitting(false);
     }
@@ -133,10 +149,12 @@ export default function Footer() {
           ) : (
             <form className="mt-4 flex flex-col gap-3" onSubmit={handleSubmit}>
               <input type="hidden" name="motivo" value="Suscripción newsletter" />
+              <input type="hidden" name="hotel" value={hotelSlug} />
               <div className="flex gap-3">
                 <input
                   type="text"
                   name="name"
+                  required
                   placeholder="Nombre"
                   aria-label="Nombre"
                   className="w-full border border-savoia-taupe/40 bg-white px-4 py-2.5 text-sm text-savoia-charcoal outline-none placeholder:text-savoia-taupe-text focus:border-savoia-charcoal"
@@ -144,6 +162,7 @@ export default function Footer() {
                 <input
                   type="text"
                   name="lastname"
+                  required
                   placeholder="Apellido"
                   aria-label="Apellido"
                   className="w-full border border-savoia-taupe/40 bg-white px-4 py-2.5 text-sm text-savoia-charcoal outline-none placeholder:text-savoia-taupe-text focus:border-savoia-charcoal"

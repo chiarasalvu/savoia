@@ -1,27 +1,44 @@
 'use client';
 
 import { useState } from 'react';
-import { User, Mail, MessageSquare, CheckCircle2, AlertCircle } from 'lucide-react';
+import { User, Mail, Phone, MessageSquare, CheckCircle2, AlertCircle } from 'lucide-react';
 import GuestCounter from '@/components/GuestCounter';
 import HotelSelect from '@/components/HotelSelect';
 import DatePicker from '@/components/DatePicker';
 import FormField from '@/components/FormField';
-
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/myzgqqrl';
+import { FORMSPREE_BY_HOTEL } from '@/lib/formspree';
 
 export default function LandingContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(false);
+  const [fieldErrors, setFieldErrors] = useState({});
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setSubmitting(true);
     setError(false);
+    const formData = new FormData(e.target);
+    const errors = {
+      hotel: !formData.get('hotel'),
+      checkin: !formData.get('fecha-entrada'),
+      checkout: !formData.get('fecha-salida'),
+    };
+    if (Object.values(errors).some(Boolean)) {
+      setFieldErrors(errors);
+      return;
+    }
+    setFieldErrors({});
+    setSubmitting(true);
+    const endpoint = FORMSPREE_BY_HOTEL[formData.get('hotel')];
+    if (!endpoint) {
+      setError(true);
+      setSubmitting(false);
+      return;
+    }
     try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
+      const res = await fetch(endpoint, {
         method: 'POST',
-        body: new FormData(e.target),
+        body: formData,
         headers: { Accept: 'application/json' },
       });
       if (res.ok) {
@@ -53,8 +70,9 @@ export default function LandingContactForm() {
             <form className="mx-auto mt-10 max-w-[600px] text-left" onSubmit={handleSubmit}>
               <FormField icon={User} label="Nombre y apellido" name="name" required className="mb-6" />
               <FormField icon={Mail} label="Email" name="email" type="email" required className="mb-6" />
+              <FormField icon={Phone} label="Teléfono" name="phone" type="tel" className="mb-6" />
               <div className="mb-6">
-                <HotelSelect required />
+                <HotelSelect required invalid={fieldErrors.hotel} />
               </div>
 
               <div className="mb-6">
@@ -62,8 +80,8 @@ export default function LandingContactForm() {
               </div>
 
               <div className="mb-6 flex flex-col gap-5 sm:flex-row">
-                <DatePicker label="Fecha de entrada" name="fecha-entrada" required className="flex-1" />
-                <DatePicker label="Fecha de salida" name="fecha-salida" required className="flex-1" />
+                <DatePicker label="Fecha de entrada" name="fecha-entrada" required invalid={fieldErrors.checkin} className="flex-1" />
+                <DatePicker label="Fecha de salida" name="fecha-salida" required invalid={fieldErrors.checkout} className="flex-1" />
               </div>
 
               <FormField icon={MessageSquare} label="Mensaje" name="message" as="textarea" rows={5} className="mb-6" />

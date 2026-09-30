@@ -1,7 +1,10 @@
 import ServiceGrid from '@/components/ServiceGrid';
 import RevealSection from '@/components/RevealSection';
 
-export const metadata = { title: 'Hoteles Savoia | Puerto Hamlet — Servicios' };
+export const metadata = {
+  title: 'Servicios — Puerto Hamlet Cariló',
+  description: 'Pileta climatizada, hidromasaje, sauna seco, gimnasio, Club House con desayuno buffet y Club de chicos. Puerto Hamlet, Cariló.',
+};
 
 const SERVICES = [
   {
@@ -40,7 +43,7 @@ const INCLUYE = [
   'Desayuno en su cabaña sin cargo.',
   'Recreación para niños a partir de los 3 años.',
   'Uso del gimnasio y sectores comunes.',
-  'Mucama, ropa blanca y lavado de vajilla.',
+  'Servicio de limpieza, ropa blanca y lavado de vajilla.',
   'Servicio de sombrilla en Balneario Hemingwey con costo adicional (en Temporada Alta).',
 ];
 

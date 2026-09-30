@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Puerto Hamlet — Monoambiente Full' };
+export const metadata = {
+  title: 'Cabaña Monoambiente Full — Puerto Hamlet Cariló',
+  description: 'Un ambiente con baño y cocina completos, para 2 a 3 personas, con parrilla individual. Puerto Hamlet, Cariló.',
+};
 
 const IMAGES = [
   { src: '/img/puerto-hamlet/cabanas/real-2.jpg', alt: 'Dormitorio de una cabaña Monoambiente Full de Puerto Hamlet' },

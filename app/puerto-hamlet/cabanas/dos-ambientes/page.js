@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Puerto Hamlet — Dos Ambientes' };
+export const metadata = {
+  title: 'Cabaña Dos Ambientes — Puerto Hamlet Cariló',
+  description: 'Dos ambientes con baño y cocina completos, para 3 a 4 personas, con living comedor y hogar a leños. Puerto Hamlet, Cariló.',
+};
 
 const IMAGES = [
   { src: '/img/puerto-hamlet/cabanas/dos-ambientes-portada.jpg', alt: 'Dormitorio matrimonial con ventana de la cabaña Dos Ambientes de Puerto Hamlet' },

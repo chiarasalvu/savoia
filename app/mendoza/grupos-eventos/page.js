@@ -4,7 +4,10 @@ import Link from 'next/link';
 import RevealSection from '@/components/RevealSection';
 import { SALONES } from '@/lib/mendozaSalones';
 
-export const metadata = { title: 'Hoteles Savoia | Grupos & Eventos' };
+export const metadata = {
+  title: 'Grupos & Eventos — Hotel Savoia Mendoza',
+  description: 'Tres salones propios para reuniones empresariales, convenciones, celebraciones y eventos grupales, cerca del aeropuerto de Mendoza.',
+};
 
 const WHATSAPP_HREF = whatsappHref('/mendoza', 'Hola! Quiero consultar por grupos y eventos en Mendoza.');
 

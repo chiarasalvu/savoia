@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Mini Club' };
+export const metadata = {
+  title: 'Mini Club — Hotel Savoia Ostende',
+  description: 'Actividades recreativas organizadas por nuestro equipo, con juegos habilitados durante todo el día para los más chicos. Hotel Savoia Ostende.',
+};
 
 const IMAGES = [
   { src: '/img/ostende/servicios2/salaJuegos/miniclub-portada.jpg', alt: 'Mini Club' },

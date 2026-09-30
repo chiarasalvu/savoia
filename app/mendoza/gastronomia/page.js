@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Mendoza — Gastronomía' };
+export const metadata = {
+  title: 'Gastronomía — Hotel Savoia Mendoza',
+  description: 'Oferta gastronómica elaborada con materia prima de primera calidad, con sabores propios de la mejor cocina casera. Hotel Savoia Mendoza.',
+};
 
 const IMAGES = [
   { src: '/img/mendoza/gastronomia-mendoza.jpg', alt: 'Gastronomía Savoia' },

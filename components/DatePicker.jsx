@@ -31,7 +31,7 @@ function pad(n) {
   return String(n).padStart(2, '0');
 }
 
-export default function DatePicker({ label, name, required, className = '' }) {
+export default function DatePicker({ label, name, required, invalid, className = '' }) {
   const [open, setOpen] = useState(false);
   const [viewDate, setViewDate] = useState(() => new Date());
   const [selected, setSelected] = useState(null);
@@ -68,7 +68,7 @@ export default function DatePicker({ label, name, required, className = '' }) {
           type="button"
           onClick={() => setOpen((o) => !o)}
           className={`flex w-full items-center gap-3 rounded-2xl border bg-white px-5 py-4 text-left transition-colors ${
-            open ? 'border-savoia-charcoal' : 'border-savoia-taupe/30 hover:border-savoia-charcoal'
+            invalid ? 'border-red-400' : open ? 'border-savoia-charcoal' : 'border-savoia-taupe/30 hover:border-savoia-charcoal'
           }`}
         >
           <CalendarIcon size={20} className="shrink-0 text-savoia-charcoal" />
@@ -154,6 +154,8 @@ export default function DatePicker({ label, name, required, className = '' }) {
           </div>
         )}
       </div>
+
+      {invalid && <p className="mt-1.5 text-left text-xs text-red-600">Elegí una fecha.</p>}
 
       <input type="hidden" name={name} value={isoValue} required={required} />
     </div>

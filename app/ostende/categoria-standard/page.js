@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Categoría Estándar' };
+export const metadata = {
+  title: 'Categoría Estándar — Hotel Savoia Ostende',
+  description: 'Habitaciones dobles de 20 m², ideales para una estadía cómoda y funcional, con posibilidad de cama adicional o habitaciones comunicadas. Hotel Savoia Ostende.',
+};
 
 const IMAGES = [
   { src: '/img/ostende/habitaciones2/piso2/portada-standard.jpg', alt: 'Categoría Estandar' },

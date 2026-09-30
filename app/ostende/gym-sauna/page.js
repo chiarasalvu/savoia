@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | Gimnasio y sauna' };
+export const metadata = {
+  title: 'Gimnasio y Sauna — Hotel Savoia Ostende',
+  description: 'Gimnasio equipado y sauna con turnos por recepción. Hotel Savoia Ostende, Pinamar.',
+};
 
 const IMAGES = [
   { src: '/img/ostende/servicios2/Gimnasio/gym-hero.jpg', alt: 'Gimnasio y sauna' },

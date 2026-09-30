@@ -2,8 +2,12 @@ import Image from 'next/image';
 import CenterCarousel from '@/components/CenterCarousel';
 import SplitContent from '@/components/SplitContent';
 import RevealSection from '@/components/RevealSection';
+import HotelJsonLd from '@/components/HotelJsonLd';
 
-export const metadata = { title: 'Hoteles Savoia | San Bernardo' };
+export const metadata = {
+  title: 'Hotel Savoia San Bernardo',
+  description: 'Hotel Savoia San Bernardo: habitaciones, gastronomía y atención personalizada a metros de la playa, en un ambiente familiar y tranquilo.',
+};
 
 const HIGHLIGHTS = [
   {
@@ -32,19 +36,21 @@ const HIGHLIGHTS = [
 export default function SanBernardoPage() {
   return (
     <main>
+      <HotelJsonLd hotel="san-bernardo" />
       <div id="property-hero" className="relative flex h-screen w-full items-center justify-center">
         <Image
           src="/img/san-bernardo/san-bernardo-7.jpg"
           alt="Hotel Savoia San Bernardo"
           fill
           priority
+          sizes="100vw"
           className="object-cover object-[75%_center] md:object-center"
         />
       </div>
 
-      <h2 className="mx-auto mt-10 max-w-[1400px] px-6 text-2xl font-medium tracking-tight md:mt-14 md:px-8 md:text-3xl">
+      <h1 className="mx-auto mt-10 max-w-[1400px] px-6 text-2xl font-medium tracking-tight md:mt-14 md:px-8 md:text-3xl">
         VIVÍ UNA EXPERIENCIA ÚNICA
-      </h2>
+      </h1>
 
       <RevealSection className="py-10 md:py-14">
         <CenterCarousel items={HIGHLIGHTS} initialActive={1} />

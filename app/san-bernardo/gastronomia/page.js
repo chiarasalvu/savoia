@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | San Bernardo — Gastronomía' };
+export const metadata = {
+  title: 'Gastronomía — Hotel Savoia San Bernardo',
+  description: 'Espacio amplio y cómodo para disfrutar de las comidas durante la estadía, pensado para vacacionar en familia. Hotel Savoia San Bernardo.',
+};
 
 const IMAGES = [
   { src: '/img/ostende/desayuno/desayuno-1.jpg', alt: 'Masitas del desayuno de Hoteles Savoia' },

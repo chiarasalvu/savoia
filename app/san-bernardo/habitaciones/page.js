@@ -1,6 +1,9 @@
 import RoomDetail from '@/components/RoomDetail';
 
-export const metadata = { title: 'Hoteles Savoia | San Bernardo — Habitaciones' };
+export const metadata = {
+  title: 'Habitaciones — Hotel Savoia San Bernardo',
+  description: 'Dobles, triples y departamentos para 4, 5 y 6 personas, todos con baño. Hotel Savoia San Bernardo.',
+};
 
 const IMAGES = [
   { src: '/img/san-bernardo/habitacion.jpg', alt: 'Habitación Hotel Savoia San Bernardo' },
