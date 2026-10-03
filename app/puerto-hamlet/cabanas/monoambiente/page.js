@@ -7,7 +7,6 @@ export const metadata = {
 
 const IMAGES = [
   { src: '/img/puerto-hamlet/cabanas/monoambiente-portada.jpg', alt: 'Cama matrimonial de la cabaña Monoambiente de Puerto Hamlet' },
-  { src: '/img/puerto-hamlet/cabanas/monoambiente-2.jpg', alt: 'Kitchenette con anafe y heladera de la cabaña Monoambiente de Puerto Hamlet' },
 ];
 
 const AMENITIES = [

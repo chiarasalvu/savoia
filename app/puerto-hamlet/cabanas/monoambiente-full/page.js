@@ -8,6 +8,7 @@ export const metadata = {
 const IMAGES = [
   { src: '/img/puerto-hamlet/cabanas/real-2.jpg', alt: 'Dormitorio de una cabaña Monoambiente Full de Puerto Hamlet' },
   { src: '/img/puerto-hamlet/cabanas/monoambiente-full-cama.jpg', alt: 'Cama matrimonial de la cabaña Monoambiente Full de Puerto Hamlet' },
+  { src: '/img/puerto-hamlet/cabanas/monoambiente-full-3.jpg', alt: 'Cocina y comedor de la cabaña Monoambiente Full de Puerto Hamlet' },
   { src: '/img/puerto-hamlet/cabanas/monoambiente-full-4.jpg', alt: 'Deck con sombrilla de la cabaña Monoambiente Full de Puerto Hamlet' },
 ];
 
